@@ -29,12 +29,7 @@
 
 .card-title {
     font-size: 1.8rem;
-    color: #FAFAFA;
+    color: var(--f-white);
     margin-bottom: 1.6rem;
 
-}
-
-.card-desc {
-    font-size: 1.4rem;
-    color: #C9C9CF;
 }

@@ -22,7 +22,7 @@
       #01D3FEFF 100%,
       #01D3FE99 60%,
       #01D3FE00 95%);
-  filter: blur(150px);
+  filter: blur(180px);
   opacity: 0.4;
   z-index: 1;
 }
@@ -41,4 +41,10 @@
   top: 80px;
   left: -300px;
   height: 390px;
+}
+
+.response-1 {
+  top: 40px;
+  /* left: -300px; */
+  right: -380px;
 }

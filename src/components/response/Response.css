@@ -1,0 +1,9 @@
+.response-section{
+    margin-top: 12.8rem;
+}
+
+.response-text-content{
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+}

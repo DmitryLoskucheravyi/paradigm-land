@@ -95,3 +95,14 @@ ul {
     font-size: 2.8rem;
     color: var(--f-white);
 }
+
+
+.p-small-secondary{
+    color: var(--f-secondary);
+    font-size: 1.4rem;
+}
+
+.rel-section {
+    position: relative;
+    z-index: 0;
+}

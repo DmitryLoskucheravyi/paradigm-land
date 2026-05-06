@@ -2,6 +2,7 @@ import Hero from "../../hero/Hero";
 import About from "../../about/About";
 import Cources from "../../Cources/Cources";
 import FaqAccordion from "../../faqAccordion/FaqAccordion";
+import Response from "../../response/Response";
 import "./Main.css"
 const Main = () => {
     return (
@@ -10,6 +11,8 @@ const Main = () => {
             <About></About>
             <Cources></Cources>
             <FaqAccordion></FaqAccordion>
+            <Response></Response>
+
         </div>
 
     )

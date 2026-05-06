@@ -13,8 +13,8 @@ const CourcesCard = (props) => {
                 <p className="age-range">{ageRange ? ageRange : title}</p>
                 <img src={image} alt="" />
                 <div className="course-card-text-content">
-                    <h3>{title}</h3>
-                    <p>{description}</p>
+                    <h3 >{title}</h3>
+                    <p className="p-small-secondary">{description}</p>
                 </div>
                 <div className="course-card-btns">
                     <Button text={"Детальніше"} classes={'btn-course more '}></Button>

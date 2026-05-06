@@ -11,7 +11,7 @@
     align-items: center;
 }
 
-.age-range{
+.age-range {
     font-family: var(--font-g-regular);
     font-size: 1.4rem;
     padding: 0.8rem 0.8rem;
@@ -39,10 +39,7 @@
     margin-bottom: 1.2rem;
 }
 
-.course-card-text-content p {
-    font-size: 1.4rem;
-    color: #C9C9CF;
-}
+
 
 .course-card-btns {
     width: 100%;

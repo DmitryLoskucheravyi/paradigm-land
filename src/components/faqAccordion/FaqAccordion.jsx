@@ -27,7 +27,7 @@ const FaqAccordion = () => {
     return (
         <div className=" faq-section container">
             <div className="accordion-text-content">
-                <h2 className="h2">Відповіді на найпоширеніші питання</h2>
+                <h2 className="h2">Відповіді на <br/> найпоширеніші питання</h2>
                 <p>Не знайшли потрібне? Напишіть нам.</p>
                 <Button text='Поставити питання' classes={'btn-course step-2 accordion-quest-btn'}></Button>
             </div>

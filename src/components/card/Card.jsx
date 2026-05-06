@@ -8,7 +8,7 @@ const Card = (props) => {
             <img src={icon} alt="" className="card-icon"/>
             <h3 className="card-num">{number}+</h3>
             <p className="card-title">{title}</p>
-            <p className="card-desc">{desc}</p>
+            <p className="card-desc p-small-secondary" >{desc}</p>
         </li>
     )
 }
