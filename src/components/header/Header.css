@@ -1,0 +1,35 @@
+  header {
+      background: transparent;
+      padding: 65px 0  1.6rem;
+  }
+
+  .header-nav {
+      display: flex;
+      justify-content: space-between;
+  }
+
+  .logo {
+      position: relative;
+  }
+
+  .logo-icon {
+      position: absolute;
+      width: 24px;
+      height: 24px;
+  }
+
+  .logo-text {
+      position: absolute;
+      left: 28px;
+      padding-top: 10px;
+  }
+
+  .burger-menu {
+      background-color: #101012;
+      border-radius: 10px;
+      width: fit-content;
+      padding: 8px 8px 4px;
+  }
+
+
+  @media (min-width:400px) {}
