@@ -1,0 +1,53 @@
+.arrows {
+    display: none;
+    /* display: flex; */
+    gap: 4rem;
+
+
+}
+
+.arrow-btn {
+    background-color: #101012;
+    outline: 1px solid #93939F;
+    padding: 0.8rem;
+    border-radius: 1rem;
+    transition: .2s;
+
+}
+
+.arrow-btn-dis {
+    background-color: #101012;
+    outline: 1px solid #303036;
+    padding: 0.8rem;
+    border-radius: 1rem;
+    opacity: 1;
+    pointer-events: none;
+    transition: .2s;
+}
+
+.left-arrow {
+    rotate: 180deg;
+}
+
+
+.course-dots {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    margin-top: 1.2rem;
+}
+
+.dot {
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    background: #555;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.dot.active {
+    /* width: 20px; */
+    border-radius: 10px;
+    background: #01D3FE;
+}

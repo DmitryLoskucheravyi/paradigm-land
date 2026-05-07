@@ -1,28 +1,39 @@
-import { useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import "./VideoCard.css";
 import play from "../../assets/icons/play-icon.png";
 
-const VideoCard = ({ src }) => {
+const VideoCard = ({ src, isActive }) => {
     const videoRef = useRef(null);
-
+    const [playing, setPlaying] = useState(false)
     const handleToggle = () => {
         const video = videoRef.current;
 
         if (video.paused) {
             video.play();
+            setPlaying((state) => state = !state)
         } else {
             video.pause();
+            setPlaying((state) => state = !state)
+
         }
     };
 
+    useEffect(() => {
+        const video = videoRef.current;
+
+        if (!isActive && video) {
+            video.pause();
+        }
+    }, [isActive]);
+
     return (
-        <div className="video-card" onClick={handleToggle}>
+        <div className="video-card" onClick={handleToggle} >
             <video ref={videoRef}>
                 <source src={src} type="video/mp4" />
             </video>
 
-            <div className="video-toggle-btn" onClick={handleToggle}>
-                <img src={play} alt="" />
+            <div className={`video-toggle-btn ` + (playing ? 'none' : null)} onClick={handleToggle}>
+                <img src={play} alt="" onClick={handleToggle} />
             </div>
         </div>
     );

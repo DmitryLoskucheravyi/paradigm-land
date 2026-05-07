@@ -106,3 +106,7 @@ ul {
     position: relative;
     z-index: 0;
 }
+
+.none{
+    display: none;
+}
