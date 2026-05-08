@@ -1,23 +1,58 @@
-.free-lesson-pr{
+.form-section {
+    position: relative;
+    z-index: 1;
+}
+
+.form-2 {
+    position: absolute;
+    bottom: -150px;
+    left: -380px;
+    z-index: -1;
+}
+
+.free-lesson-pr {
     position: relative;
     width: fit-content;
 }
 
-.free-lesson-pr::after{
-content: "безкоштовний!";
-position: absolute;
-display: block;
-top: 0;
-right:-16.3rem ;
-bottom: 0;
-width: fit-content;
-height: auto;
-background-color: #09FF80;
-border-radius: 1.6rem;
-color:#101012;
-padding: 1.6rem 0.8rem ;
-display: flex;
-justify-content: center;
-align-items: center;
-transform: rotateZ(5deg);
+.free-lesson-pr::after {
+    content: "безкоштовний!";
+    position: absolute;
+    top: 0;
+    right: -16.3rem;
+    bottom: 0;
+    width: fit-content;
+    height: auto;
+    background-color: #09FF80;
+    border-radius: 1.6rem;
+    color: #101012;
+    padding: 1.6rem 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotateZ(5deg);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 3.2rem 0;
+    max-width: 37rem;
+}
+
+form>*:last-child {
+    margin-top: 2rem;
+}
+
+.group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.group textarea {
+    width: 100% !important;
+
 }

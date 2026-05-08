@@ -33,6 +33,7 @@
     --f-secondary: #C9C9CF;
     --bg-secondary: #242428;
     --bg-def: #303036;
+    --bg-primary:#101012;
 }
 
 html {
@@ -56,7 +57,6 @@ body {
     font-family: "Gilroy-Regular", serif;
     width: 100vw;
     overflow-x: hidden;
-    padding-bottom: 10rem;
 }
 
 ul {
@@ -179,6 +179,27 @@ sm: 1.6rem
 }
 
 
+input, textarea {
+    background-color: transparent;
+    outline: 1px solid var(--bg-def);
+    border: none;
+    resize: none;
+    width: 100%;
+    color: var(--f-white);
+    box-sizing: border-box;
+    display: block;
+
+}
+
+textarea {
+    min-height: 8rem;
+}
+
+label {
+    font-family: var(--font-g-medium);
+    color: var(--f-secondary);
+    font-size: 1.2rem;
+}
 
 .none {
     display: none;
