@@ -28,7 +28,7 @@ const VideoCard = ({ src, isActive }) => {
     }, [isActive]);
 
     return (
-        <div className="video-card" onClick={handleToggle} >
+        <div className="video-card base-card" onClick={handleToggle} >
             <video ref={videoRef}>
                 <source src={src} type="video/mp4" />
             </video>

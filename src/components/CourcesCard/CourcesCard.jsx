@@ -9,8 +9,8 @@ const CourcesCard = (props) => {
 
     return (
         <>
-            <div className="course-card">
-                <p className="age-range">{ageRange ? ageRange : title}</p>
+            <div className="course-card br-sm p-sm bg-secondary base-card">
+                <p className=" absolute-card-span">{ageRange ? ageRange : title}</p>
                 <img src={image} alt="" />
                 <div className="course-card-text-content">
                     <h3 >{title}</h3>

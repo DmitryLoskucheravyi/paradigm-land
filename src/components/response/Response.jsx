@@ -75,7 +75,7 @@ const Response = () => {
 
 
     return (
-        <div className="response-section container rel-section">
+        <div className="response-section container rel-section section">
 
             <Elipse parametr="glow-blue response-1" />
 

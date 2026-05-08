@@ -24,8 +24,8 @@ const FaqAccordion = () => {
         setActiveId(activeId === id ? null : id);
     };
 
-    return (
-        <div className=" faq-section container">
+    return (    
+        <div className=" faq-section container section">
             <div className="accordion-text-content">
                 <h2 className="h2">Відповіді на <br/> найпоширеніші питання</h2>
                 <p>Не знайшли потрібне? Напишіть нам.</p>

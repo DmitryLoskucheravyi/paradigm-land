@@ -3,6 +3,8 @@ import About from "../../about/About";
 import Cources from "../../Cources/Cources";
 import FaqAccordion from "../../faqAccordion/FaqAccordion";
 import Response from "../../response/Response";
+import Form from "../../Form/Form";
+
 import "./Main.css"
 const Main = () => {
     return (
@@ -12,7 +14,7 @@ const Main = () => {
             <Cources></Cources>
             <FaqAccordion></FaqAccordion>
             <Response></Response>
-
+            <Form></Form>
         </div>
 
     )

@@ -1,29 +1,11 @@
 .course-card {
     color: white;
-    padding: 1.6rem;
-    background-color: #242428;
-    position: relative;
-    z-index: 2;
-    border-radius: 1.6rem;
-    outline: 1px solid #303036;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.age-range {
-    font-family: var(--font-g-regular);
-    font-size: 1.4rem;
-    padding: 0.8rem 0.8rem;
 
-    position: absolute;
-    width: fit-content;
-    top: 0.8rem;
-    right: 0.8rem;
-    background-color: #484851;
-    border-radius: 1.2rem;
-
-}
 
 .course-card img {
     width: 70%;

@@ -15,13 +15,13 @@ const Hero = () => {
                 <Header></Header>
                 <div className="hero__content">
                     <div className="hero__tags">
-                        <div className="tag">
+                        <div className="tag br-sm">
                             <img src={medalIcon} alt="" />
                             <p>Сертифікат про навчання</p></div>
-                        <div className="tag">
+                        <div className="tag br-sm">
                             <img src={academicIcon} alt="" />
                             <p>IT-професія</p></div>
-                        <div className="tag">
+                        <div className="tag br-sm">
                             <img src={layersIcon} alt="" />
                             <p>Портфоліо проектів</p></div>
                     </div>
