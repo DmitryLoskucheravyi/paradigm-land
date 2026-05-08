@@ -10,10 +10,10 @@ const VideoCard = ({ src, isActive }) => {
 
         if (video.paused) {
             video.play();
-            setPlaying((state) => state = !state)
+            setPlaying((state) => state = true)
         } else {
             video.pause();
-            setPlaying((state) => state = !state)
+            setPlaying((state) => state = false)
 
         }
     };
@@ -23,6 +23,7 @@ const VideoCard = ({ src, isActive }) => {
 
         if (!isActive && video) {
             video.pause();
+            setPlaying((state) => state = false)
         }
     }, [isActive]);
 

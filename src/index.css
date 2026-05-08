@@ -107,6 +107,12 @@ ul {
     z-index: 0;
 }
 
+.response-sliders-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap:3.2rem;
+}
+
 .none{
     display: none;
 }

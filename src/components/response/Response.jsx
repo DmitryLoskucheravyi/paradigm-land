@@ -1,6 +1,7 @@
 import Elipse from "../elipse/Elipse";
 import VideoCard from "../video-card/VideoCard";
 import CustomSlider from "../CustomSlider/CustomSlider";
+import ReviewCard from "../ReviewCard/ReviewCard";
 
 import { SwiperSlide } from "swiper/react";
 import { useState } from "react";
@@ -22,12 +23,53 @@ const data = [
     { src: video6, id: 6 },
 ];
 
+const reviewData = [
+    {
+        id: 1,
+        name: "Ірина",
+        course: "Scratch",
+        review: "Доброго вечора, дитина задоволена, заняття дуже подобаються."
+    },
+    {
+        id: 2,
+        name: "Олександр",
+        course: "Roblox",
+        review: "Син із задоволенням чекає кожного уроку, вже створив свою першу гру."
+    },
+    {
+        id: 3,
+        name: "Марина",
+        course: "Web",
+        review: "Дякуємо викладачам за цікаву подачу матеріалу та підтримку дітей."
+    },
+    {
+        id: 4,
+        name: "Андрій",
+        course: "Unity",
+        review: "Донька почала цікавитися розробкою і тепер постійно щось тестує вдома."
+    },
+    {
+        id: 5,
+        name: "Наталія",
+        course: "Scratch",
+        review: "Уроки проходять дуже цікаво, дитина стала більш уважною та творчою."
+    }
+];
+
 const Response = () => {
+
+
     const [currentSlide, setCurrentSlide] = useState(0);
 
     const videos = data.map(({ src, id }, index) => (
         <SwiperSlide key={id}>
             <VideoCard src={src} isActive={currentSlide === index} />
+        </SwiperSlide>
+    ));
+
+    const reviews = reviewData.map(({ id, name, course, review }, index) => (
+        <SwiperSlide key={id}>
+            <ReviewCard id={id} name={name} course={course} review={review} />
         </SwiperSlide>
     ));
 
@@ -46,15 +88,25 @@ const Response = () => {
                 </p>
             </div>
 
-            <CustomSlider
-                slidesCount={data.length}
-                spaceBetween={16}
-                slidesPerView={1}
-                 onSlideChange={(index) => setCurrentSlide(index)}
-            >
-                {videos}
-            </CustomSlider>
+            <div className="response-sliders-wrapper">
+                <CustomSlider
+                    slidesCount={data.length}
+                    spaceBetween={16}
+                    slidesPerView={1}
+                    onSlideChange={(index) => setCurrentSlide(index)}
+                >
+                    {videos}
+                </CustomSlider>
 
+                <CustomSlider
+                    slidesCount={reviewData.length}
+                    spaceBetween={16}
+                    slidesPerView={1}
+                    onSlideChange={(index) => setCurrentSlide(index)}
+                >
+                    {reviews}
+                </CustomSlider>
+            </div>
         </div>
     );
 };
