@@ -63,6 +63,12 @@ ul {
     list-style-type: none;
 }
 
+a{
+    text-decoration: none;
+    color: unset;
+
+}
+
 .container {
     padding-right: 1.6rem;
     padding-left: 1.6rem;
@@ -204,3 +210,6 @@ label {
 .none {
     display: none;
 }
+
+
+/* @media (min-width: 992px) */
