@@ -64,7 +64,12 @@ const Cources = () => {
                 </p>
             </div>
 
-            <CustomSlider slidesCount={data.length}>
+            <CustomSlider slidesCount={data.length} 
+                            breakpoints={{
+                            950: { slidesPerView: 2, spaceBetween: 18, },
+                            1400: { slidesPerView: 3, spaceBetween: 24, },
+                        }}
+                        >
                 {data.map(({ id, title, ageRange, description, image }) => (
                     <SwiperSlide key={id}>
                         <CourcesCard

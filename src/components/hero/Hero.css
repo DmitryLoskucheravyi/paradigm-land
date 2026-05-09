@@ -2,7 +2,7 @@
     background: url('../../assets/bg/main-bg.png') left/cover no-repeat;
     /* min-height: 644px; */
     position: relative;
-    z-index: 0;
+    z-index: auto;
 }
 
 .hero__tags {
@@ -11,6 +11,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     row-gap: 1.4rem;
+    column-gap: 0.7rem;
 }
 
 .hero__content {
@@ -94,4 +95,12 @@
     z-index: -1;
     pointer-events: none;
     border-radius: inherit;
+}
+
+
+@media (min-width: 950px){
+    .hero {
+    background: transparent;
+   
+}
 }

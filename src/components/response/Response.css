@@ -1,7 +1,22 @@
+.response-section{
+    z-index: 98;
+}
 
-
-.response-text-content{
+.response-text-content {
     display: flex;
     flex-direction: column;
     gap: 1.6rem;
+}
+
+.response-slider-video-wrapper {}
+
+@media (min-width: 950px) {
+    .response-text-content {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .response-text-content p {
+        width: 100%;
+        max-width: 39rem;
+    }
 }

@@ -9,7 +9,7 @@ const CourcesCard = (props) => {
 
     return (
         <>
-            <div className="course-card br-sm p-sm bg-secondary base-card">
+            <div className=" br-sm p-sm bg-secondary base-card course-card">
                 <p className=" absolute-card-span">{ageRange ? ageRange : title}</p>
                 <img src={image} alt="" />
                 <div className="course-card-text-content">
@@ -17,8 +17,8 @@ const CourcesCard = (props) => {
                     <p className="p-small-secondary">{description}</p>
                 </div>
                 <div className="course-card-btns">
-                    <Button text={"Детальніше"} classes={'btn-course more '}></Button>
-                    <Button text={'Записатись'} classes={'btn-course   course-card-step-1 '}></Button>
+                    <Button text={"Детальніше"} classes={'btn-course more course-card-more'}></Button>
+                    <Button text={'Записатися'} classes={'btn-course course-card-step-1 '}></Button>
                 </div>
             </div>
         </>

@@ -1,13 +1,17 @@
+
+
 .video-card {
-    width: 100%;
+    /* width: clamp(30.8rem, 90vw, 87.2rem); */
+    height: clamp(24.2rem, 45vw, 43.6rem) !important; 
+    width: 100% !important;
+    max-width: 87.2rem !important;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 242px;
+
     border-radius: 1.6rem;
     overflow: hidden;
     margin-top: 3.2rem;
-
 }
 
 video {

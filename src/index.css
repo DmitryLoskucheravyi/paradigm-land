@@ -33,7 +33,9 @@
     --f-secondary: #C9C9CF;
     --bg-secondary: #242428;
     --bg-def: #303036;
-    --bg-primary:#101012;
+    --bg-primary: #101012;
+    --desctop: 950px;
+    --tablet: 490px;
 }
 
 html {
@@ -63,15 +65,16 @@ ul {
     list-style-type: none;
 }
 
-a{
+a {
     text-decoration: none;
     color: unset;
 
 }
 
 .container {
-    padding-right: 1.6rem;
-    padding-left: 1.6rem;
+    padding-left: clamp(1.6rem, 3vw + 0.4rem, 8rem);
+    padding-right: clamp(1.6rem, 3vw + 0.4rem, 8rem);
+    /* z-index: 99; */
 }
 
 .section {
@@ -87,7 +90,7 @@ a{
 }
 
 .step-1 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     border: 1px solid black;
     background-color: #01D3FE;
 
@@ -144,6 +147,7 @@ sm: 1.6rem
     color: var(--f-secondary);
     font-size: 1.4rem;
     line-height: 2.2rem;
+    max-width: 47rem;
 }
 
 .bg-secondary {
@@ -182,7 +186,9 @@ sm: 1.6rem
     z-index: 2;
     outline: 1px solid #303036;
     border-radius: 1.6rem;
+    max-width: 42.4rem;
 }
+
 
 
 input, textarea {
@@ -194,6 +200,7 @@ input, textarea {
     color: var(--f-white);
     box-sizing: border-box;
     display: block;
+    padding: 1.4rem;
 
 }
 
@@ -211,5 +218,88 @@ label {
     display: none;
 }
 
+@media (min-width: 492px) {
+    /* .container {
+        padding-left: 4rem;
+        padding-right: 4rem;
+    } */
 
-/* @media (min-width: 992px) */
+    .h2 {
+        font-size: 3.8rem;
+    }
+
+    .h3 {
+        font-size: 2.2rem;
+    }
+
+    .p-sm {
+        padding: 2rem;
+    }
+
+    .p-med {
+        padding: 2.4rem;
+    }
+
+    input, textarea {
+        /* font-size: ; */
+        padding: 1.6rem;
+    }
+
+    .p-small-secondary {
+        font-size: 1.5rem;
+    }
+
+    .step-1 {
+        font-size: 1.8rem;
+    }
+}
+
+
+@media (min-width: 950px) {
+    /* .container {
+        padding-left: 6rem;
+        padding-right: 6rem;
+    } */
+
+    .h2 {
+        font-size: 4.8rem;
+    }
+
+    .h3 {
+        font-size: 2.4rem;
+
+    }
+
+    /* .arrows {
+        display: flex;
+        gap: 4rem;
+    } */
+
+
+    .p-sm {
+        padding: 2.4rem;
+    }
+
+    .p-med {
+        padding: 3.2rem;
+    }
+
+    input, textarea {
+        /* font-size: ; */
+        padding: 1.8rem;
+
+    }
+
+    .p-small-secondary {
+        font-size: 1.6rem;
+    }
+}
+
+
+@media (min-width: 1550px) {
+   .container {
+    padding-left: clamp(1.6rem, 10vw + 0.4rem, 13rem);
+    padding-right: clamp(1.6rem, 10vw + 0.4rem, 13rem);
+    /* z-index: 99; */
+}
+}

@@ -2,8 +2,7 @@
     display: none;
     /* display: flex; */
     gap: 4rem;
-
-
+    height: fit-content;
 }
 
 .arrow-btn {
@@ -20,9 +19,15 @@
     outline: 1px solid #303036;
     padding: 0.8rem;
     border-radius: 1rem;
-    opacity: 1;
+    opacity: 0.5;
     pointer-events: none;
-    transition: .2s;
+    transition: .33s;
+    filter: blur(1px);
+}
+
+.arrow-btn:active {
+    scale: 0.95;
+
 }
 
 .left-arrow {
@@ -50,4 +55,98 @@
     /* width: 20px; */
     border-radius: 10px;
     background: #01D3FE;
+}
+
+.arrows-fullhide {
+    display: none !important;
+}
+
+.cources-container .custom-slider .swiper .swiper-slide {
+    display: flex;
+    justify-content: center;
+}
+
+.swiper-wrapper .swiper-slide {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+.response-slider-video-wrapper .custom-slider {
+    position: relative;
+}
+
+.cources-container .custom-slider {
+    width: 100%;
+    height: 100%;
+    /* ← додати */
+}
+
+.cources-container .custom-slider .swiper {
+    height: 100%;
+    /* ← додати */
+}
+
+.cources-container .custom-slider .swiper .swiper-wrapper .swiper-slide {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    /* ← Додати це */
+    height: 100%;
+    max-width: none !important;
+    max-height: none !important;
+    /* ← І це */
+}
+
+
+
+.cources-container .custom-slider .arrows {
+    margin-top: 4.8rem;
+}
+
+
+.swiper-wrapper {
+    transition-timing-function: linear !important;
+}
+
+
+
+@media (min-width: 950px) {
+    .arrows {
+        display: flex;
+        justify-content: end;
+    }
+
+    .course-dots {
+        display: none;
+
+    }
+
+    .response-sliders-wrapper {
+        gap: 6.4rem !important;
+    }
+
+    .response-slider-video-wrapper .custom-slider .arrows {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 3rem;
+    }
+
+    .cources-container .custom-slider .swiper {
+        height: 100%;
+        padding-top: 6.4rem;
+        /* ← додати */
+    }
+}
+
+@media (min-width: 1215px) {
+    .response-slider-video-wrapper .custom-slider .arrows {
+        position: absolute;
+        top: 4rem;
+        right: 0;
+        padding-top: 0;
+        z-index: 9;
+    }
 }

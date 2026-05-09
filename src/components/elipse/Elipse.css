@@ -1,30 +1,146 @@
-.glow-green {
+/* Спільне для всіх glow */
+.glow-green, .glow-blue {
   position: absolute;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle,
-      #00DB6AFF 100%,
-      #00DB6AFF 100%,
-      #00DB6A96 60%,
-      #00DB6A00 95%);
-  filter: blur(150px);
-  opacity: 0.4;
+  width: 50rem;
+  height: 35rem;
+
+  filter: blur(120px);
+  opacity: 0.7;
+
   z-index: 1;
   pointer-events: none;
 }
 
-.glow-blue {
-  position: absolute;
-  width: 500px;
-  height: 500px;
+/* Green glow */
+.glow-green {
   background: radial-gradient(circle,
-      #01D3FEFF 100%,
-      #01D3FEFF 100%,
-      #01D3FE99 60%,
-      #01D3FE00 95%);
-  filter: blur(180px);
-  opacity: 0.4;
-  z-index: 1;
+      #00DB6A 0%,
+
+      #00DB6AFF 2%,
+      #00DB6AFF 4%,
+      #00DB6AFE 6%,
+      #00DB6AFE 8%,
+      #00DB6AFD 10%,
+      #00DB6AFD 12%,
+      #00DB6AFC 14%,
+      #00DB6AFC 16%,
+      #00DB6AFB 18%,
+      #00DB6AFB 20%,
+
+      #00DB6AFA 22%,
+      #00DB6AF9 24%,
+      #00DB6AF8 26%,
+      #00DB6AF7 28%,
+      #00DB6AF6 30%,
+      #00DB6AF4 32%,
+      #00DB6AF2 34%,
+      #00DB6AF0 36%,
+      #00DB6AEE 38%,
+      #00DB6AEC 40%,
+
+      #00DB6AEA 42%,
+      #00DB6AE7 44%,
+      #00DB6AE5 46%,
+      #00DB6AE3 48%,
+      #00DB6AE0 50%,
+      #00DB6ADD 52%,
+      #00DB6ADA 54%,
+      #00DB6AD7 56%,
+      #00DB6AD3 58%,
+      #00DB6ACF 60%,
+
+      #00DB6ACA 62%,
+      #00DB6AC5 64%,
+      #00DB6AC0 66%,
+      #00DB6ABA 68%,
+      #00DB6AB4 70%,
+      #00DB6AAD 72%,
+      #00DB6AA6 74%,
+      #00DB6A9F 76%,
+      #00DB6A97 78%,
+      #00DB6A8F 80%,
+
+      #00DB6A86 82%,
+      #00DB6A7D 84%,
+      #00DB6A73 86%,
+      #00DB6A68 88%,
+      #00DB6A5D 90%,
+      #00DB6A51 92%,
+      #00DB6A45 94%,
+      #00DB6A38 95.5%,
+      #00DB6A2C 97%,
+      #00DB6A1F 98%,
+
+      #00DB6A12 99%,
+      #00DB6A08 99.5%,
+      transparent 100%);
+}
+
+
+
+/* Blue glow */
+.glow-blue {
+  background: radial-gradient(circle,
+      #01D3FE 0%,
+
+      #01D3FEFF 2%,
+      #01D3FEFF 4%,
+      #01D3FEFE 6%,
+      #01D3FEFE 8%,
+      #01D3FEFD 10%,
+      #01D3FEFD 12%,
+      #01D3FEFC 14%,
+      #01D3FEFC 16%,
+      #01D3FEFB 18%,
+      #01D3FEFB 20%,
+
+      #01D3FEFA 22%,
+      #01D3FEF9 24%,
+      #01D3FEF8 26%,
+      #01D3FEF7 28%,
+      #01D3FEF6 30%,
+      #01D3FEF4 32%,
+      #01D3FEF2 34%,
+      #01D3FEF0 36%,
+      #01D3FEEE 38%,
+      #01D3FEEC 40%,
+
+      #01D3FEEA 42%,
+      #01D3FEE7 44%,
+      #01D3FEE5 46%,
+      #01D3FEE3 48%,
+      #01D3FEE0 50%,
+      #01D3FEDD 52%,
+      #01D3FEDA 54%,
+      #01D3FED7 56%,
+      #01D3FED3 58%,
+      #01D3FECF 60%,
+
+      #01D3FECA 62%,
+      #01D3FEC5 64%,
+      #01D3FEC0 66%,
+      #01D3FEBA 68%,
+      #01D3FEB4 70%,
+      #01D3FEAD 72%,
+      #01D3FEA6 74%,
+      #01D3FE9F 76%,
+      #01D3FE97 78%,
+      #01D3FE8F 80%,
+
+      #01D3FE86 82%,
+      #01D3FE7D 84%,
+      #01D3FE73 86%,
+      #01D3FE68 88%,
+      #01D3FE5D 90%,
+      #01D3FE51 92%,
+      #01D3FE45 94%,
+      #01D3FE38 95.5%,
+      #01D3FE2C 97%,
+      #01D3FE1F 98%,
+
+      #01D3FE12 99%,
+      #01D3FE08 99.5%,
+      transparent 100%);
 }
 
 .hero-1 {
@@ -37,6 +153,15 @@
   right: -360px;
 }
 
+.hero-3 {
+  width: 60rem;
+  height: 40rem;
+  top: 1250px;
+  opacity: 0.4;
+  right: -440px;
+  display: none;
+}
+
 .accordion-2 {
   top: 80px;
   left: -300px;
@@ -45,10 +170,52 @@
 
 .response-1 {
   top: 40px;
- 
+  opacity: 0.4;
   right: -380px;
 }
+
 .form-2 {
   top: 700px;
   left: -380px;
+}
+
+@media (min-width:950px) {
+  .form-2 {
+    top: 500px;
+    left: -380px;
+    opacity: 0.4;
+
+  }
+
+  .response-1 {
+    top: 440px;
+    right: -480px;
+    opacity: 0.6;
+
+    width: 60rem;
+    height: 41rem;
+  }
+
+  .accordion-2 {
+    display: none;
+  }
+
+  .hero-1 {
+    top: 350px;
+    left: -150px;
+    width: 30rem;
+    height: 23rem;
+    opacity: 0.5;
+  }
+
+  .hero-2 {
+    top: 60px;
+    right: -360px;
+    z-index: 1;
+    opacity: 0.2;
+  }
+
+  .hero-3 {
+    display: block;
+  }
 }

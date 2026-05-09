@@ -35,7 +35,7 @@ const Form = () => {
                         <input type="text"
                             name='name'
                             id="name"
-                            className="br-sm p-sm"
+                            className="br-sm "
                             required onChange={(e) => {
                                 setValue(e, setName)
                             }}
@@ -46,7 +46,7 @@ const Form = () => {
                         <input type="tel"
                             name='tel'
                             id="tel"
-                            className="br-sm p-sm"
+                            className="br-sm "
                             required onChange={(e) => {
                                 setValue(e, setEmail)
                             }}
@@ -56,7 +56,7 @@ const Form = () => {
                         <label htmlFor="textarea">Поставте запитання</label>
                         <textarea name='textarea'
                             id="textarea"
-                            className="br-sm p-sm"
+                            className="br-sm "
                             onChange={(e) => {
                                 setValue(e, setMessage)
                             }}

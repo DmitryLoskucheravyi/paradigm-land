@@ -3,6 +3,17 @@
     z-index: 1;
 }
 
+.form-section-content {
+    max-width: 80rem;
+}
+
+.form-section-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: clamp(1.8rem, 3vw, 3.2rem) !important;
+}
+
 .form-2 {
     position: absolute;
     bottom: -150px;
@@ -34,10 +45,12 @@
 }
 
 form {
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
-    padding: 3.2rem 0;
+    padding: 3.2rem 0 0 !important;
+
     max-width: 37rem;
 }
 
@@ -55,4 +68,36 @@ form>*:last-child {
 .group textarea {
     width: 100% !important;
 
+}
+
+@media (min-width: 492px) {
+    form {
+        max-width: 52rem;
+    }
+
+    .free-lesson-pr::after {
+        right: -18.3rem;
+    }
+}
+
+@media (min-width: 950px) {
+    form {
+        max-width: 43rem;
+    }
+
+    .free-lesson-pr::after {
+        right: -19.3rem;
+    }
+
+    .form-section-inner {
+        display: flex;
+        flex-direction: row;
+        align-items: start;
+        justify-content: space-between;
+        gap: 50px;
+    }
+
+    form {
+        padding: 0 !important;
+    }
 }

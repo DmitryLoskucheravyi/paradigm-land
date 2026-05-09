@@ -12,6 +12,8 @@
     flex-direction: column;
     gap: 2rem;
     margin-bottom: 3.2rem;
+    z-index: 3;
+
 }
 
 .accordion {
@@ -93,4 +95,14 @@
     width: 50%;
     font-size: 1.6rem;
     padding: 1.2rem !important;
+}
+
+@media(min-width: 1100px){
+    .faq-section{
+        display: flex;
+    }
+    .accordion {
+        margin: 0 0 0 auto;
+        max-width: 62rem;
+    }
 }

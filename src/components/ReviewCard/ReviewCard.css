@@ -11,3 +11,22 @@
     font-size: 2rem;
     margin-bottom: 1.2rem;
 }
+
+@media (min-width: 950px) {
+    .response-slider-text-wrapper{
+        width: 125%;
+        z-index: 999;
+        transform: translateX(-190px);
+    }
+    .response-slider-text-wrapper .custom-slider .swiper .swiper-wrapper .swiper-slide{
+        width: 46rem !important;
+        flex-shrink: 0;
+        margin: 0 !important;
+
+    }
+    .review-card {
+        width: 46rem !important;
+        /* flex-shrink: 0; */
+        
+    }
+}

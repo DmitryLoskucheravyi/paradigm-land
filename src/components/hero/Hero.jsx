@@ -40,6 +40,8 @@ const Hero = () => {
                 </div>
                 <Elipse parametr='glow-blue hero-1'></Elipse>
                 <Elipse parametr='glow-green hero-2'></Elipse>
+                <Elipse parametr='glow-blue hero-3'></Elipse>
+
             </div>
 
 

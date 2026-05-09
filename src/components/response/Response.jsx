@@ -49,12 +49,43 @@ const reviewData = [
         review: "Донька почала цікавитися розробкою і тепер постійно щось тестує вдома."
     },
     {
-        id: 5,
+        id: 13,
+        name: "Ірина",
+        course: "Scratch",
+        review: "Доброго вечора, дитина задоволена, заняття дуже подобаються."
+    },
+    {
+        id: 23,
+        name: "Олександр",
+        course: "Roblox",
+        review: "Син із задоволенням чекає кожного уроку, вже створив свою першу гру."
+    },
+    {
+        id: 31,
+        name: "Марина",
+        course: "Web",
+        review: "Дякуємо викладачам за цікаву подачу матеріалу та підтримку дітей."
+    },
+    {
+        id: 44,
+        name: "Андрій",
+        course: "Unity",
+        review: "Донька почала цікавитися розробкою і тепер постійно щось тестує вдома."
+    },
+    {
+        id: 534,
         name: "Наталія",
         course: "Scratch",
         review: "Уроки проходять дуже цікаво, дитина стала більш уважною та творчою."
     }
 ];
+
+const swiperOptions = {
+    slidesPerView: 1,
+    spaceBetween: 10,
+
+
+};
 
 const Response = () => {
 
@@ -89,25 +120,39 @@ const Response = () => {
             </div>
 
             <div className="response-sliders-wrapper">
-                <CustomSlider
-                    slidesCount={data.length}
-                    spaceBetween={16}
-                    slidesPerView={1}
-                    onSlideChange={(index) => setCurrentSlide(index)}
-                >
-                    {videos}
-                </CustomSlider>
+                <div className="response-slider-video-wrapper">
+                    <CustomSlider
+                        slidesCount={data.length}
+                        spaceBetween={16}
+                        slidesPerView={1}
+                        onSlideChange={(index) => setCurrentSlide(index)}
+                    >
+                        {videos}
+                    </CustomSlider>
+                </div>
 
-                <CustomSlider
-                    slidesCount={reviewData.length}
-                    spaceBetween={16}
-                    slidesPerView={1}
-                    onSlideChange={(index) => setCurrentSlide(index)}
-                >
-                    {reviews}
-                </CustomSlider>
+                <div className="response-slider-text-wrapper">
+                    <CustomSlider
+                        slidesCount={reviewData.length}
+                        loop={true}
+                        spaceBetween={16}
+                        slidesPerView={1}
+                        breakpoints={{
+                            950: { slidesPerView: 3, spaceBetween: 18, },
+                            1440: { slidesPerView: 4, spaceBetween: 24, },
+                        }}
+                        onSlideChange={(index) => setCurrentSlide(index)
+
+                        }
+
+                        arrowHideClass='arrows-fullhide'
+
+                    >
+                        {reviews}
+                    </CustomSlider>
+                </div>
             </div>
-        </div>
+        </div >
     );
 };
 

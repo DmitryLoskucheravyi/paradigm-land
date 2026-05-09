@@ -1,6 +1,8 @@
   header {
       background: transparent;
       padding: 65px 0  1.6rem;
+      position: relative;
+      z-index: 3;
   }
 
   .header-nav {

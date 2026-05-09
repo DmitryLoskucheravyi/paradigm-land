@@ -3,10 +3,14 @@
     padding-bottom: 6.4rem;
 }
 
+
+
 .about__cards {
     padding-top: 12.8rem;
-    display: flex;
-    flex-direction: column;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, auto);
     gap: 1.6rem;
 }
 
@@ -14,3 +18,23 @@
     margin-top: 1.6rem;
 }
 
+
+
+
+@media(min-width: 650px) {
+    .about__cards {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(2, auto);
+        gap: calc(2.5vw);
+    }
+
+}
+
+@media(min-width: 1200px) {
+    .about__cards {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, auto);
+        gap: calc(2vw - 0.4rem);
+    }
+
+}

@@ -6,7 +6,7 @@
     border-top: 1px solid var(--bg-secondary);
     box-shadow: 0 0 32px #000000D4;
     position: relative;
-    z-index: 1;
+    z-index: 99;
 }
 
 .footer-top {
@@ -66,7 +66,7 @@
 .footer-contact-block {
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
+    gap: 1.6rem;
 }
 
 .footer-title {
@@ -146,7 +146,7 @@
 }
 
 /* Desktop */
-@media (min-width: 992px) {
+@media (min-width: 950px) {
     .footer-top {
         display: grid;
         grid-template-columns: 1.7fr 1fr;
@@ -158,6 +158,7 @@
 
     .footer-left {
         max-width: 70rem;
+        gap: 2rem;
     }
 
     .footer-right {
