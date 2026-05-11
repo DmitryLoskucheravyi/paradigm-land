@@ -21,6 +21,12 @@
 
 
 
+@media(min-width: 520px) {
+   .mobile-hero-btn {
+    display: none;
+}
+
+}
 @media(min-width: 650px) {
     .about__cards {
         grid-template-columns: 1fr 1fr;
