@@ -179,6 +179,15 @@
   left: -380px;
 }
 
+@media (min-width:520px) {
+  .hero-2 {
+    top: -50px;
+    right: -350px;
+    z-index: 1;
+    opacity: 0.5;
+  }
+}
+
 @media (min-width:950px) {
   .form-2 {
     top: 500px;
@@ -191,9 +200,8 @@
     top: 440px;
     right: -480px;
     opacity: 0.6;
-
-    width: 60rem;
-    height: 41rem;
+    width: 80rem;
+    height: 61rem;
   }
 
   .accordion-2 {
@@ -201,16 +209,16 @@
   }
 
   .hero-1 {
-    top: 350px;
-    left: -150px;
-    width: 30rem;
-    height: 23rem;
+    top: 550px;
+    left: -80px;
+    width: 45rem;
+    height: 38rem;
     opacity: 0.5;
   }
 
   .hero-2 {
-    top: 60px;
-    right: -360px;
+    top: 160px;
+    right: -200px;
     z-index: 1;
     opacity: 0.2;
   }
@@ -219,3 +227,5 @@
     display: block;
   }
 }
+
+@media (min-width:950px) {}

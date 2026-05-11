@@ -10,10 +10,9 @@ import "./Main.css"
 const Main = () => {
     return (
         <div className="main ">
-           
-            <Hero></Hero>
-            <About></About>
-            <Cources></Cources>
+            <Hero ></Hero>
+            <About ></About>
+            <Cources ></Cources>
             <FaqAccordion></FaqAccordion>
             <Response></Response>
             <Form></Form>

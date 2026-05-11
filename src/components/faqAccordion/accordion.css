@@ -1,6 +1,6 @@
 .faq-section {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     background: transparent;
     color: var(--f-white);
 
@@ -12,6 +12,7 @@
     flex-direction: column;
     gap: 2rem;
     margin-bottom: 3.2rem;
+    position: relative;
     z-index: 3;
 
 }
@@ -23,7 +24,7 @@
     background: transparent;
     font-family: var(--font-g-medium);
     position: relative;
-    z-index: 2;
+    z-index: 4;
 
 }
 
@@ -91,18 +92,39 @@
 }
 
 
-.accordion-quest-btn{
+.accordion-quest-btn {
     width: 50%;
     font-size: 1.6rem;
+    max-width: 25rem;
     padding: 1.2rem !important;
 }
 
-@media(min-width: 1100px){
-    .faq-section{
+@media(min-width: 1100px) {
+    .faq-section {
         display: flex;
+        gap: 4rem;
     }
+
     .accordion {
         margin: 0 0 0 auto;
-        max-width: 62rem;
+        max-width: 63rem;
     }
+
+    .accordion-header {
+        align-items: center;
+        gap: 1.6rem;
+    }
+
+    .accordion-quest-btn {
+        width: 100%;
+    }
+
+    .accordion-title {
+        font-size: 2rem !important;
+        min-width: fit-content;
+    }
+
+    .accordion-faq-desc {
+    font-size: 1.6rem;
+}
 }

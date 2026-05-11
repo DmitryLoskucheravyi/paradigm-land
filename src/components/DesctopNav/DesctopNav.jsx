@@ -4,10 +4,10 @@ import "./DesctopNav.css"
 const DesctopNav = () => {
     return (
         <div className="desctop-nav">
-            <a href="#">Головна</a>
-            <a href="#">Переваги</a>
-            <a href="#">Курси</a>
-            <a href="#">Відгуки</a>
+            <a href="#main">Головна</a>
+            <a href="#about">Переваги</a>
+            <a href="#cources">Курси</a>
+            <a href="#responses">Відгуки</a>
         </div>
     )
 }

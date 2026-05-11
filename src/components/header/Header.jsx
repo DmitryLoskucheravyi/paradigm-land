@@ -4,6 +4,7 @@ import "./Header.css"
 
 import logo from "../../assets/icons/logo.png"
 import logoText from "../../assets/icons/logo-text.png"
+import logoTextDesctop from "../../assets/icons/logo-text-big.png"
 import burger from "../../assets/icons/menu-burger.png"
 const Header = (props) => {
 
@@ -15,6 +16,7 @@ const Header = (props) => {
                 <div className="logo">
                     <img src={logo} alt="" className="logo-icon" />
                     <img src={logoText} alt="" className="logo-text" />
+                    <img src={logoTextDesctop} alt="" className="logo-text-desctop" />
 
                 </div>
                 <div className="burger-menu">

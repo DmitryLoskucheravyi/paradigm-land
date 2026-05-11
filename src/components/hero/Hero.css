@@ -196,6 +196,10 @@
         display: flex;
         flex-direction: column-reverse;
     }
+
+    .btns>* {
+        padding: 1.4rem 4rem !important;
+    }
 }
 
 @media (min-width: 1240px) {
@@ -224,6 +228,9 @@
 
     .hero__wrapper-imgs img {
         object-fit: cover;
+    }
+    .btns>* {
+        padding: 1.4rem 5rem !important;
     }
 }
 
