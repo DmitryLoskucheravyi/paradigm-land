@@ -1,6 +1,6 @@
   header {
       background: transparent;
-      padding: 65px 0  1.6rem;
+      padding: 65px 0 1.6rem !important;
       position: relative;
       z-index: 3;
   }
@@ -8,6 +8,10 @@
   .header-nav {
       display: flex;
       justify-content: space-between;
+  }
+
+  .desctop-nav {
+      display: none;
   }
 
   .logo {
@@ -33,5 +37,44 @@
       padding: 8px 8px 4px;
   }
 
+  .header-btns {
+      display: none;
+  }
+
+  .header-btns>* {
+      padding: 1.4rem 2.6rem !important;
+  }
+
+  .header-btns>*:first-child {
+      font-size: 1.6rem;
+      border: none;
+  }
+
+  .desctop-nav {
+    display: none;
+  }
+
 
   @media (min-width:400px) {}
+
+  @media (min-width:1050px) {
+      .burger-menu {
+          display: none;
+      }
+
+      .header-btns {
+          display: flex;
+      }
+
+      .desctop-nav {
+          padding: 0.6rem 1.2rem;
+          margin-left: clamp(17rem, 12vw, 25rem);   
+          display: flex;
+          color: var(--f-secondary);
+          font-size: 1.6rem;
+          gap: 4.8rem;
+          background-color: var(--bg-secondary);
+          align-items: center;
+          border-radius: 1.6rem;
+      }
+  }

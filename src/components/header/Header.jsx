@@ -1,3 +1,4 @@
+import Button from "../buttons/Button"
 
 import "./Header.css"
 
@@ -9,7 +10,7 @@ const Header = (props) => {
 
 
     return (
-        <header>
+        <header className="container">
             <nav className="header-nav">
                 <div className="logo">
                     <img src={logo} alt="" className="logo-icon" />
@@ -18,6 +19,13 @@ const Header = (props) => {
                 </div>
                 <div className="burger-menu">
                     <img src={burger} alt="" />
+                </div>
+
+                {props.children}
+
+                <div className="header-btns">
+                    <Button text={'+380 50 600 60 94'} classes={'btn-course step-2 header-btn'} />
+                    <Button text={'Записатися'} classes={'btn-course step-1 header-btn'} />
                 </div>
             </nav>
         </header>

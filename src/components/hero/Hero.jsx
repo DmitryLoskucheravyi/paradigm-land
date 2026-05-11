@@ -1,8 +1,8 @@
-import Header from "../header/Header"
 import About from "../about/About"
 import Button from "../buttons/Button"
 import Elipse from "../elipse/Elipse"
-
+import Header from "../header/Header"
+import DesctopNav from "../DesctopNav/DesctopNav"
 import academicIcon from "../../assets/icons/academic-icon.png"
 import medalIcon from "../../assets/icons/medal-icon.png"
 import layersIcon from "../../assets/icons/layers-icon.png"
@@ -13,8 +13,10 @@ const Hero = () => {
     return (
         <>
             <div className="hero container  ">
+                <Header>
+                    <DesctopNav></DesctopNav>
+                </Header>
 
-                <Header></Header>
                 <div className="hero__wrapper">
                     <div className="hero__content">
                         <div className="hero__tags">
@@ -42,8 +44,8 @@ const Hero = () => {
                     </div>
 
                     <div className="hero__wrapper-imgs">
-                        <img src={image1} alt=""/>
-                        <img src={image2} alt=""/>
+                        <img src={image1} alt="" />
+                        <img src={image2} alt="" />
                     </div>
                 </div>
 
