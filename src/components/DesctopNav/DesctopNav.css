@@ -5,7 +5,7 @@
 @media (min-width:1050px) {
     .desctop-nav {
         padding: 0.6rem 1.2rem;
-        margin-left: clamp(17rem, 12vw, 25rem);
+        margin-left: clamp(22.5rem, 12vw, 25rem);
         display: flex;
         color: var(--f-secondary);
         font-size: 1.6rem;

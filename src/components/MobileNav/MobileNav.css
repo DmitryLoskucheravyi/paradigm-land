@@ -1,0 +1,19 @@
+.mobile__nav {
+    position: fixed;
+    z-index: 9999;
+
+}
+
+.mobile__nav-ul {
+    position: fixed;
+    inset: 0;
+    padding: 0.6rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+    color: var(--f-secondary);
+    font-size: 2rem;
+    gap: 4.8rem;
+    background-color: var(--bg-secondary);
+    align-items: center;
+    z-index:9999999;
+}

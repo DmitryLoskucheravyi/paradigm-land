@@ -3,12 +3,12 @@ import "./DesctopNav.css"
 
 const DesctopNav = () => {
     return (
-        <div className="desctop-nav">
-            <a href="#main">Головна</a>
-            <a href="#about">Переваги</a>
-            <a href="#cources">Курси</a>
-            <a href="#responses">Відгуки</a>
-        </div>
+        <ul className="desctop-nav">
+            <li><a href="#main">Головна</a></li>
+            <li><a href="#about">Переваги</a></li>
+            <li><a href="#cources">Курси</a></li>
+            <li><a href="#responses">Відгуки</a></li>
+        </ul>
     )
 }
 
