@@ -6,7 +6,7 @@
     border-top: 1px solid var(--bg-secondary);
     box-shadow: 0 0 32px #000000D4;
     position: relative;
-    z-index: 9;
+    z-index: 2;
 }
 
 .footer-top {

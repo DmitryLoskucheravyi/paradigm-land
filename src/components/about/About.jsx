@@ -39,13 +39,13 @@ const About = (props) => {
 
     return (
         <>
-            <div className="about container">
-                <Button text={'Обрати курс'} classes={'btn-course step-2 mobile-hero-btn'} />
+            <section id="about" className="about container">
+                <Button text={'Обрати курс'} classes={'btn-course step-2 mobile-hero-btn '} />
 
                 <ul className="about__cards">
                     {data}
                 </ul>
-            </div>
+            </section>
         </>
     )
 

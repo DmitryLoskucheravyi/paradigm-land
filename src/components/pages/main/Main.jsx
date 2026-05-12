@@ -10,13 +10,13 @@ import "./Main.css"
 const Main = () => {
     return (
         <div className="main ">
-            <Hero ></Hero>
-            <About ></About>
-            <Cources ></Cources>
-            <FaqAccordion></FaqAccordion>
-            <Response></Response>
-            <Form></Form>
-            <Footer></Footer>
+            <Hero />
+            <About />
+            <Cources />
+            <FaqAccordion />
+            <Response />
+            <Form />
+            <Footer />
         </div>
 
     )

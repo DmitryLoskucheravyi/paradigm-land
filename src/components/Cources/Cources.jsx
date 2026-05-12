@@ -54,7 +54,7 @@ const data = [
 
 const Cources = () => {
     return (
-        <div className="container cources-container section">
+        <section id="courses" className="container cources-container section">
 
             <div className="courses-top-content">
                 <h2 className="h2">Наші курси</h2>
@@ -83,7 +83,7 @@ const Cources = () => {
                 ))}
             </CustomSlider>
 
-        </div>
+        </section>
     );
 };
 

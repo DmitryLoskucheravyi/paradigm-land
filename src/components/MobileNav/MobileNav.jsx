@@ -5,20 +5,18 @@ import close from "../../assets/icons/burger-close-icon.png";
 import phone from "../../assets/icons/phone-icon.png";
 
 
-const MobileNav = ({active}) => {
+const MobileNav = ({ active, setActive }) => {
     return (
-        <div className={'mobile__nav container ' + (active ? 'active' : null)}>
-            <img src={close} alt="close" />
+        <div className={'mobile__nav container ' + (active ? 'active' : null)} onClick={() => { setActive(prev => !prev) }}>
+            <div className='mobile__nav-top'><img src={close} alt="close" /></div>
             <ul className="mobile__nav-ul">
                 <li><a href="#main">Головна</a></li>
                 <li><a href="#about">Переваги</a></li>
-                <li><a href="#cources">Курси</a></li>
+                <li><a href="#courses">Курси</a></li>
                 <li><a href="#responses">Відгуки</a></li>
             </ul>
             <div className='mobile__nav-bottom'>
-                <img src={phone} alt="phone" />
                 <Button text={'+380 50 600 60 94'} link={'+380 50 600 60 94'} classes={'btn-course step-2 mobile-nav-btn'} />
-
             </div>
         </div>
     )

@@ -11,6 +11,8 @@ const Header = (props) => {
 
     const [active, setActive] = useState(false)
 
+
+    
     return (
         <header className="container">
             <nav className="header-nav">
@@ -20,9 +22,7 @@ const Header = (props) => {
                     <img src={logoTextDesctop} alt="" className="logo-text-desctop" />
 
                 </div>
-                <div className="burger-menu" onClick={() => {
-                    setActive((prev) => prev = !prev)
-                }}>
+                <div className="burger-menu" onClick={() => { setActive(prev => !prev) }}>
                     <img src={burger} alt="" />
                 </div>
 
@@ -33,7 +33,7 @@ const Header = (props) => {
                     <Button text={'Записатися'} classes={'btn-course step-1 header-btn'} />
                 </div>
             </nav>
-            <MobileNav active={active} />
+            <MobileNav active={active} setActive={setActive} />
 
 
         </header>

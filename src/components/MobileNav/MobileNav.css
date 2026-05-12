@@ -1,19 +1,60 @@
 .mobile__nav {
     position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
     z-index: 9999;
+    padding: 4.4rem 1.6rem 4.4rem 3.2rem !important;
+    background-color: var(--bg-secondary);
+    font-family: var(--font-g-medium);
+    transform: translate(100%);
+    transition: 0.33s;
 
 }
 
 .mobile__nav-ul {
-    position: fixed;
-    inset: 0;
-    padding: 0.6rem 1.2rem;
+    padding: 3.2rem 0 35rem;
     display: flex;
     flex-direction: column;
-    color: var(--f-secondary);
-    font-size: 2rem;
+    color: var(--f-white);
     gap: 4.8rem;
-    background-color: var(--bg-secondary);
-    align-items: center;
-    z-index:9999999;
+}
+
+.mobile__nav-ul li a {
+    font-size: 2.4rem;
+    line-height: 100%;
+}
+
+.mobile__nav-top {
+    display: flex;
+    justify-content: end;
+}
+
+.mobile__nav.active {
+        transform: translate(0);
+
+}
+
+.mobile__nav-bottom button {
+    border: none;
+}
+
+.mobile__nav-bottom button::before {
+    content: url('../../assets/icons/phone-icon.png');
+    position: absolute;
+    top: 28%;
+    left: -18px;
+}
+
+.mobile__nav-bottom {
+    margin-left: 1.8rem;
+    position: absolute;
+    bottom: 1.6rem;
+    width: fit-content !important;
+}
+
+.mobile__nav-bottom a {
+    font-size: 1.6rem !important;
+    line-height: 24px;
+
 }

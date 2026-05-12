@@ -16,6 +16,8 @@
 
 .mobile-hero-btn {
     margin-top: 1.6rem;
+    position: relative;
+    z-index:2 !important;
 }
 
 

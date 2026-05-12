@@ -6,7 +6,7 @@ const DesctopNav = () => {
         <ul className="desctop-nav">
             <li><a href="#main">Головна</a></li>
             <li><a href="#about">Переваги</a></li>
-            <li><a href="#cources">Курси</a></li>
+            <li><a href="#courses">Курси</a></li>
             <li><a href="#responses">Відгуки</a></li>
         </ul>
     )

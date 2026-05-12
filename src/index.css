@@ -41,6 +41,7 @@
 html {
     font-size: 10px;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 
 }
 
@@ -90,7 +91,7 @@ a {
 }
 
 .step-1 {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     border: 1px solid black;
     background-color: #01D3FE;
 
@@ -98,7 +99,7 @@ a {
 
 .step-2 {
     position: relative;
-    z-index: 3;
+    z-index: 1;
     color: var(--f-white);
     border: 1px solid #09FF80;
     background: transparent;

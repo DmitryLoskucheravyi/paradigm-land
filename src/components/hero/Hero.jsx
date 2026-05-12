@@ -12,7 +12,7 @@ import "./Hero.css"
 const Hero = () => {
     return (
         <>
-            <div className="hero container  ">
+            <section id="main" className="hero container  ">
                 <Header>
                     <DesctopNav></DesctopNav>
                 </Header>
@@ -56,7 +56,7 @@ const Hero = () => {
                 <Elipse parametr='glow-green hero-2'></Elipse>
                 <Elipse parametr='glow-blue hero-3'></Elipse>
 
-            </div>
+            </section>
 
 
         </>

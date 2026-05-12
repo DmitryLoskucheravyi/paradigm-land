@@ -106,7 +106,7 @@ const Response = () => {
 
 
     return (
-        <div className="response-section container rel-section section">
+        <section id="responses" className="response-section container rel-section section">
 
             <Elipse parametr="glow-blue response-1" />
 
@@ -152,7 +152,7 @@ const Response = () => {
                     </CustomSlider>
                 </div>
             </div>
-        </div >
+        </section >
     );
 };
 
