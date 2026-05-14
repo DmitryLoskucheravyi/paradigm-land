@@ -77,11 +77,13 @@
 }
 
 
-
+/* .glow-blue{
+  background-color: #01D3FE;
+} */
 /* Blue glow */
 .glow-blue {
   background: radial-gradient(circle,
-      #01D3FE 0%,
+      #01D3FE 1%,
 
       #01D3FEFF 2%,
       #01D3FEFF 4%,
@@ -228,4 +230,16 @@
   }
 }
 
-@media (min-width:950px) {}
+@media (min-width:1200px) {
+  .hero-3 {
+    width: 70rem;
+    opacity: 0.5;
+    border-radius: 50%;
+    height: 70rem;
+    top: 1550px;
+    display: block;
+  }
+  .hero-1 {
+  left: -180px;
+}
+}
