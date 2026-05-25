@@ -9,7 +9,17 @@
     isolation: isolate;
 
     .form-section {
+        width: 100%;
+        max-width: 132rem;
         padding: 0 clamp(1.8rem, 3vw, 3.2rem) !important;
     }
 }
 
+@media (max-width: 950px) {
+    .modal_outer {
+        .form-section {
+            max-width: 56rem;
+        }
+    }
+
+}
