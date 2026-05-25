@@ -20,13 +20,13 @@ const Hero = () => {
                 <div className="hero__wrapper">
                     <div className="hero__content">
                         <div className="hero__tags">
-                            <div className="tag br-sm">
+                            <div className="tag" style={{ borderRadius: '1.6rem' }}>
                                 <img src={medalIcon} alt="" />
                                 <p>Сертифікат про навчання</p></div>
-                            <div className="tag br-sm">
+                            <div className="tag" style={{ borderRadius: '1.6rem' }}>
                                 <img src={academicIcon} alt="" />
                                 <p>IT-професія</p></div>
-                            <div className="tag br-sm">
+                            <div className="tag" style={{ borderRadius: '1.6rem' }}>
                                 <img src={layersIcon} alt="" />
                                 <p>Портфоліо проектів</p></div>
                         </div>

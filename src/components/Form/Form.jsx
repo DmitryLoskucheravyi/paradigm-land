@@ -19,10 +19,10 @@ const Form = () => {
 
     return (
         <div className="form-section container section">
-            <div className="form-section-inner br-sm p-sm bg-secondary">
+            <div className="form-section-inner form-section-utility bg-secondary">
                 <div className="form-section-content   ">
                     <h2 className="h2">Запишіть дитину на IT-курси </h2>
-                    <p className="h3 mb-med mt-sm free-lesson-pr ">Перший урок</p>
+                    <p className="h3 free-lesson-pr" style={{ marginBottom: '2.4rem', marginTop: '1.6rem' }}>Перший урок</p>
                     <p className="p-small-secondary">Допоможіть дитині зробити перші кроки в програмуванні. Ми підберемо курс та формат навчання саме для вашої дитини.</p>
                 </div>
 
@@ -35,7 +35,8 @@ const Form = () => {
                         <input type="text"
                             name='name'
                             id="name"
-                            className="br-sm "
+                            className="input-utility"
+                            style={{ borderRadius: '1.6rem' }}
                             required onChange={(e) => {
                                 setValue(e, setName)
                             }}
@@ -46,7 +47,8 @@ const Form = () => {
                         <input type="tel"
                             name='tel'
                             id="tel"
-                            className="br-sm "
+                            className="input-utility"
+                            style={{ borderRadius: '1.6rem' }}
                             required onChange={(e) => {
                                 setValue(e, setEmail)
                             }}
@@ -56,7 +58,8 @@ const Form = () => {
                         <label htmlFor="textarea">Поставте запитання</label>
                         <textarea name='textarea'
                             id="textarea"
-                            className="br-sm "
+                            className="textarea-utility"
+                            style={{ borderRadius: '1.6rem' }}
                             onChange={(e) => {
                                 setValue(e, setMessage)
                             }}

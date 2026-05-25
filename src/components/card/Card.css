@@ -11,6 +11,23 @@
     margin-bottom: 2.4rem;
 }
 
+.about_card-container {
+    border-radius: 1.6rem;
+    padding: 2.4rem;
+}
+
+@media (min-width: 492px) {
+    .about_card-container {
+        padding: 2.4rem;
+    }
+}
+
+@media (min-width: 950px) {
+    .about_card-container {
+        padding: 3.2rem;
+    }
+}
+
 
 .card-num {
     font-family: var(--font-g-bold);
