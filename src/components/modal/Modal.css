@@ -1,0 +1,9 @@
+.modal_outer {
+    position: fixed;
+    inset: 0;
+    background-color: #101012f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999999999999999;
+}

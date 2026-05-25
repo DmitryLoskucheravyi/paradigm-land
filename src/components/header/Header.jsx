@@ -30,7 +30,7 @@ const Header = (props) => {
 
                 <div className="header-btns">
                     <Button text={'+380 50 600 60 94'} link={'+380 50 600 60 94'} classes={'btn-course step-2 header-btn'} />
-                    <Button text={'Записатися'} classes={'btn-course step-1 header-btn'} />
+                    <Button text={'Записатися'} classes={'btn-course step-1 header-btn'} action='modal'/>
                 </div>
             </nav>
             <MobileNav active={active} setActive={setActive} />

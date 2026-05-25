@@ -37,6 +37,31 @@ const CustomSlider = ({
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
     }, []);
+
+    const MAX_VISIBLE_DOTS = 10;
+
+    const getVisibleDots = () => {
+        if (slidesCount <= MAX_VISIBLE_DOTS) {
+            return Array.from({ length: slidesCount }, (_, i) => i);
+        }
+
+        let start = Math.max(
+            0,
+            activeIndex - Math.floor(MAX_VISIBLE_DOTS / 2)
+        );
+
+        let end = start + MAX_VISIBLE_DOTS;
+
+        if (end > slidesCount) {
+            end = slidesCount;
+            start = end - MAX_VISIBLE_DOTS;
+        }
+
+        return Array.from(
+            { length: end - start },
+            (_, i) => start + i
+        );
+    };
     return (
         <div className="custom-slider">
             <Swiper
@@ -83,7 +108,7 @@ const CustomSlider = ({
             </Swiper>
 
             <div className="course-dots">
-                {Array.from({ length: slidesCount }).map((_, index) => (
+                {getVisibleDots().map((index) => (
                     <div
                         key={index}
                         onClick={() => swiperRef.current?.slideTo(index)}

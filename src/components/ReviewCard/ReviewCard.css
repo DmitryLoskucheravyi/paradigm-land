@@ -9,6 +9,10 @@
 .review-card-container {
     border-radius: 1.6rem;
     padding: 1.6rem;
+    min-height: 32rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 @media (min-width: 492px) {
@@ -27,6 +31,7 @@
     font-family: var(--font-g-semi-bold);
     font-size: 2rem;
     margin-bottom: 1.2rem;
+    color: var(--f-white);
 }
 
 @media (min-width: 950px) {

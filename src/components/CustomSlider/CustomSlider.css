@@ -40,6 +40,7 @@
     justify-content: center;
     gap: 1.2rem;
     margin-top: 1.2rem;
+    overflow: hidden;
 }
 
 .dot {
@@ -49,6 +50,7 @@
     background: #555;
     transition: 0.3s;
     cursor: pointer;
+    flex-shrink: 0;
 }
 
 .dot.active {
