@@ -37,8 +37,8 @@ const Hero = () => {
                                 <p className="hero__content-desc">З IT Paradigma ваша дитина вже на перших заняттях створить власну гру, програму або сайт. </p>
                             </div>
                             <div className="btns hero_btns">
-                                <Button text={'Записатися'} classes={'btn-course step-1 hero-mobile-shadow-btn'} />
-                                <Button text={'Обрати курс'} classes={'btn-course step-2 hero-desctop-btn'} />
+                                <Button text={'Записатися'} classes={'btn-course step-1 hero-mobile-shadow-btn'} action='modal' />
+                                <Button text={'Обрати курс'} classes={'btn-course step-2 hero-desctop-btn'} action='scroll-to'/>
                             </div>
                         </div>
                     </div>

@@ -18,7 +18,7 @@ const CourcesCard = (props) => {
                 </div>
                 <div className="course-card-btns">
                     <Button text={"Детальніше"} classes={'btn-course more course-card-more'}></Button>
-                    <Button text={'Записатися'} classes={'btn-course course-card-step-1 '}></Button>
+                    <Button text={'Записатися'} classes={'btn-course course-card-step-1 '} action='modal'></Button>
                 </div>
             </div>
         </>

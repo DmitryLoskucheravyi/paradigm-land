@@ -68,7 +68,6 @@ const Form = () => {
                     <Button text={'Записатись'} classes={'btn-course   course-card-step-1 '}></Button>
                 </form>
             </div>
-            <Elipse parametr='glow-green form-2'></Elipse>
         </div>
 
     )

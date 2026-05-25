@@ -40,7 +40,7 @@ const About = (props) => {
     return (
         <>
             <section id="about" className="about container">
-                <Button text={'Обрати курс'} classes={'btn-course step-2 mobile-hero-btn '} />
+                <Button text={'Обрати курс'} classes={'btn-course step-2 mobile-hero-btn '} action='scroll-to' />
 
                 <ul className="about__cards">
                     {data}

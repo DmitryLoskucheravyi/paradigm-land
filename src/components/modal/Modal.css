@@ -1,9 +1,15 @@
 .modal_outer {
     position: fixed;
     inset: 0;
-    background-color: #101012f8;
+    background-color: #000000de;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 999999999999999;
+    isolation: isolate;
+
+    .form-section {
+        padding: 0 clamp(1.8rem, 3vw, 3.2rem) !important;
+    }
 }
+

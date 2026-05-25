@@ -66,13 +66,11 @@ ul {
 a {
     text-decoration: none;
     color: unset;
-
 }
 
 .container {
     padding-left: clamp(1.6rem, 3vw + 0.4rem, 8rem);
     padding-right: clamp(1.6rem, 3vw + 0.4rem, 8rem);
-    /* z-index: 99; */
 }
 
 .section {
@@ -113,14 +111,6 @@ a {
     font-size: 2rem;
     color: var(--f-white);
 }
-
-/* 
-
-med: 2.4rem
-sm: 1.6rem
-
-*/
-
 
 .p-small-secondary {
     color: var(--f-secondary);
@@ -199,11 +189,6 @@ label {
 }
 
 @media (min-width: 492px) {
-    /* .container {
-        padding-left: 4rem;
-        padding-right: 4rem;
-    } */
-
     .h2 {
         font-size: 3.8rem;
     }
@@ -213,7 +198,6 @@ label {
     }
 
     input, textarea {
-        /* font-size: ; */
         padding: 1.6rem;
     }
 
@@ -228,29 +212,16 @@ label {
 
 
 @media (min-width: 950px) {
-    /* .container {
-        padding-left: 6rem;
-        padding-right: 6rem;
-    } */
-
     .h2 {
         font-size: 4.8rem;
     }
 
     .h3 {
         font-size: 2.4rem;
-
     }
 
-    /* .arrows {
-        display: flex;
-        gap: 4rem;
-    } */
-
     input, textarea {
-        /* font-size: ; */
         padding: 1.8rem;
-
     }
 
     .p-small-secondary {
@@ -258,11 +229,9 @@ label {
     }
 }
 
-
 @media (min-width: 1550px) {
-   .container {
-    padding-left: clamp(1.6rem, 10vw + 0.4rem, 13rem);
-    padding-right: clamp(1.6rem, 10vw + 0.4rem, 13rem);
-    /* z-index: 99; */
-}
+    .container {
+        padding-left: clamp(1.6rem, 10vw + 0.4rem, 13rem);
+        padding-right: clamp(1.6rem, 10vw + 0.4rem, 13rem);
+    }
 }

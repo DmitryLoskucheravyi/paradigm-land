@@ -14,6 +14,13 @@ const Button = (props) => {
                 case 'modal':
                     modalVissionToggler()
                     break;
+                case 'scroll-to':
+                    document
+                        .getElementById("courses")
+                        ?.scrollIntoView({
+                            behavior: "smooth"
+                        });
+                    break;
                 default:
                     console.log('no action!')
             }

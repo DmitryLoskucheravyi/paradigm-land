@@ -29,7 +29,7 @@ const FaqAccordion = () => {
             <div className="accordion-text-content">
                 <h2 className="h2">Відповіді на <br/> найпоширеніші питання</h2>
                 <p className="p-small-secondary">Не знайшли потрібне? Напишіть нам.</p>
-                <Button text='Поставити питання' classes={'btn-course step-2 accordion-quest-btn'}></Button>
+                <Button text='Поставити питання' classes={'btn-course step-2 accordion-quest-btn'} action='modal'></Button>
             </div>
             <Elipse parametr='glow-green accordion-2'></Elipse>
             <div className="accordion ">
