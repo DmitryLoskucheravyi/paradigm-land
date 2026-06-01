@@ -62,8 +62,6 @@ const CustomSlider = ({
         <div className="custom-slider">
 
             <Swiper
-                loopedSlides={slidesCount}
-                loopAdditionalSlides={slidesCount}
                 loop={loop}
                 spaceBetween={spaceBetween}
                 slidesPerView={slidesPerView}
@@ -77,25 +75,27 @@ const CustomSlider = ({
                 speed={300}
                 breakpoints={breakpoints || undefined}
 
-                onBeforeInit={(swiper) => {
 
-                    swiper.params.navigation.prevEl =
-                        prevRef.current;
 
-                    swiper.params.navigation.nextEl =
-                        nextRef.current;
-                }}
 
-                onInit={(swiper) => {
-
-                    setIsBeginning(swiper.isBeginning);
-                    setIsEnd(swiper.isEnd);
-                }}
 
                 onSwiper={(swiper) => {
-                    swiperRef.current = swiper;
-                }}
 
+                    swiperRef.current = swiper;
+
+                    setTimeout(() => {
+
+                        if (!swiper.navigation) return;
+
+                        swiper.params.navigation.prevEl = prevRef.current;
+                        swiper.params.navigation.nextEl = nextRef.current;
+
+                        swiper.navigation.init();
+                        swiper.navigation.update();
+
+                    });
+
+                }}
                 onSlideChange={(swiper) => {
 
                     setActiveIndex(swiper.activeIndex);
