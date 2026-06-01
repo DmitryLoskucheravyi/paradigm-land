@@ -15,9 +15,12 @@ const CustomSlider = ({
     slidesPerView = 1,
     breakpoints,
     onSlideChange,
+    onReachEnd,
     arrowHideClass,
     freeScroll = false,
+    loop = false,
 }) => {
+
     const prevRef = useRef(null);
     const nextRef = useRef(null);
     const swiperRef = useRef(null);
@@ -29,6 +32,7 @@ const CustomSlider = ({
     const MAX_VISIBLE_DOTS = 10;
 
     const getVisibleDots = () => {
+
         if (slidesCount <= MAX_VISIBLE_DOTS) {
             return Array.from(
                 { length: slidesCount },
@@ -56,7 +60,11 @@ const CustomSlider = ({
 
     return (
         <div className="custom-slider">
+
             <Swiper
+                loopedSlides={slidesCount}
+                loopAdditionalSlides={slidesCount}
+                loop={loop}
                 spaceBetween={spaceBetween}
                 slidesPerView={slidesPerView}
                 navigation={{
@@ -65,23 +73,31 @@ const CustomSlider = ({
                 }}
                 modules={[Navigation, FreeMode]}
                 freeMode={freeScroll}
+                grabCursor={true}
+                speed={300}
+                breakpoints={breakpoints || undefined}
+
                 onBeforeInit={(swiper) => {
+
                     swiper.params.navigation.prevEl =
                         prevRef.current;
 
                     swiper.params.navigation.nextEl =
                         nextRef.current;
                 }}
-                grabCursor={true}
-                speed={300}
+
                 onInit={(swiper) => {
+
                     setIsBeginning(swiper.isBeginning);
                     setIsEnd(swiper.isEnd);
                 }}
+
                 onSwiper={(swiper) => {
                     swiperRef.current = swiper;
                 }}
+
                 onSlideChange={(swiper) => {
+
                     setActiveIndex(swiper.activeIndex);
 
                     setIsBeginning(swiper.isBeginning);
@@ -89,28 +105,37 @@ const CustomSlider = ({
 
                     onSlideChange?.(swiper.activeIndex);
                 }}
-                breakpoints={breakpoints || undefined}
+
+                onReachEnd={() => {
+                    onReachEnd?.();
+                }}
             >
+
                 {children}
+
             </Swiper>
 
             <div className="course-dots">
+
                 {getVisibleDots().map((index) => (
+
                     <div
                         key={index}
                         onClick={() =>
                             swiperRef.current?.slideTo(index)
                         }
-                        className={`dot ${
-                            activeIndex === index
-                                ? "active"
-                                : ""
-                        }`}
+                        className={`dot ${activeIndex === index
+                            ? "active"
+                            : ""
+                            }`}
                     />
+
                 ))}
+
             </div>
 
             <div className={`arrows ${arrowHideClass || ""}`}>
+
                 <div
                     className={
                         isBeginning
@@ -140,9 +165,12 @@ const CustomSlider = ({
                         alt="next"
                     />
                 </div>
+
             </div>
+
         </div>
     );
+
 };
 
 export default CustomSlider;

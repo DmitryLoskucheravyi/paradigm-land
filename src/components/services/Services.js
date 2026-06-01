@@ -7,16 +7,23 @@ const useServices = () => {
 
     const { loading, req, error } = useHttp();
 
-
     const getVideoResponses = () => {
         return req(_VidAPI);
-    }
-    const getTextResponses = () => {
-        return req(_RevAPI);
-    }
+    };
 
-    return { loading, error, getVideoResponses, getTextResponses }
-}
+    const getTextResponses = (page = 1, limit = 6) => {
+        return req(
+            `${_RevAPI}?_page=${page}&_per_page=${limit}`
+        );
+    };
 
+    return {
+        loading,
+        error,
+        getVideoResponses,
+        getTextResponses
+    };
+
+};
 
 export default useServices;
