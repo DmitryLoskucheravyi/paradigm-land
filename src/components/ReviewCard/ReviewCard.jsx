@@ -7,7 +7,7 @@ const ReviewCard = ({ id, name, course, review }) => {
         <div className="review-card-container base-card bg-secondary">
             <span className="absolute-card-span ">{course}</span>
             <h3 className="review-card-name">{name}</h3>
-            <p className="p-small-secondary">{review}</p>
+            <p className="p-small-secondary review-card-desc">{review}</p>
         </div>
     )
 }

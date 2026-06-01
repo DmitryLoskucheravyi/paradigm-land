@@ -74,7 +74,7 @@ const Response = () => {
                     {reviews.length > 0 && (
                         <CustomSlider
                             slidesCount={reviewsData.length}
-                            loop={true}
+                            freeScroll={true}
                             spaceBetween={16}
                             slidesPerView={1}
                             breakpoints={{
