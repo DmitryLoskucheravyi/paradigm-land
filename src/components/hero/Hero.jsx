@@ -12,7 +12,7 @@ import "./Hero.css"
 const Hero = () => {
     return (
         <>
-            <section id="main" className="hero container  ">
+            <section id="hero" className="hero container  ">
                 <Header>
                     <DesctopNav></DesctopNav>
                 </Header>

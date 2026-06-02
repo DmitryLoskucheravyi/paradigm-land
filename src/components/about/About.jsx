@@ -39,7 +39,7 @@ const About = (props) => {
 
     return (
         <>
-            <section id="about" className="about container">
+            <section id="features" className="about container">
                 <Button text={'Обрати курс'} classes={'btn-course step-2 mobile-hero-btn '} action='scroll-to' />
 
                 <ul className="about__cards">

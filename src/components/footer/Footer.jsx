@@ -9,7 +9,7 @@ import telegram from "../../assets/icons/footer-icons/telegram-icon.png";
 
 import './Footer.css';
 
-const Footer = () => {
+const Footer = (props) => {
   return (
     <div className="footer_outer">
 
@@ -28,12 +28,8 @@ const Footer = () => {
               Онлайн-школа програмування для дітей від 5 до 17 років. Ми навчаємо створювати ігри, сайти та додатки через практику та роботу над реальними проєктами. Ми допомагаємо зробити перші кроки в IT та поступово доводимо учнів до створення власних повноцінних проєктів.
             </p>
 
-            <ul className="footer-nav">
-              <li><a href="#home">Головна</a></li>
-              <li><a href="#features">Переваги</a></li>
-              <li><a href="#courses">Курси</a></li>
-              <li><a href="#reviews">Відгуки</a></li>
-            </ul>
+            {props.children}
+
           </div>
 
           <div className="footer-right">

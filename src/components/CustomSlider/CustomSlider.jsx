@@ -1,7 +1,6 @@
 import { Swiper } from "swiper/react";
 import { Navigation, FreeMode } from "swiper/modules";
-import { useRef, useState } from "react";
-
+import { useRef, useState, memo } from "react";
 import "swiper/css";
 import "swiper/css/navigation";
 
@@ -19,6 +18,7 @@ const CustomSlider = ({
     arrowHideClass,
     freeScroll = false,
     loop = false,
+    useCarousell
 }) => {
 
     const prevRef = useRef(null);
@@ -63,7 +63,7 @@ const CustomSlider = ({
 
             <Swiper
                 loop={loop}
-                  loopAdditionalSlides={slidesCount}
+                loopAdditionalSlides={slidesCount}
                 spaceBetween={spaceBetween}
                 slidesPerView={slidesPerView}
                 navigation={{
@@ -139,7 +139,7 @@ const CustomSlider = ({
 
                 <div
                     className={
-                        isBeginning
+                        isBeginning && !useCarousell
                             ? "arrow-btn-dis"
                             : "arrow-btn"
                     }
@@ -154,7 +154,7 @@ const CustomSlider = ({
 
                 <div
                     className={
-                        isEnd
+                        isEnd && !useCarousell
                             ? "arrow-btn-dis"
                             : "arrow-btn"
                     }
@@ -174,4 +174,4 @@ const CustomSlider = ({
 
 };
 
-export default CustomSlider;
+export default memo(CustomSlider);

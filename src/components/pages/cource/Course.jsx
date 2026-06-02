@@ -1,27 +1,21 @@
-import Hero from "../../hero/Hero";
-import About from "../../about/About";
-import Cources from "../../Cources/Cources";
-import FaqAccordion from "../../faqAccordion/FaqAccordion";
 import Response from "../../response/Response";
 import Form from "../../Form/Form";
 import Footer from "../../footer/Footer";
 import { ResponseTextWrapper, ResponseVideoWrapper } from "../../response/Response";
-import "./Main.css"
-const Main = () => {
+
+import { Link } from "react-router-dom";
+import "./Course.css"
+const Course = () => {
     return (
         <div className="main ">
-            <Hero />
-            <About />
-            <Cources />
-            <FaqAccordion />
-            <Response >
-                <ResponseVideoWrapper></ResponseVideoWrapper>
-                <ResponseTextWrapper arrowHideClass={"arrows-fullhide"} ></ResponseTextWrapper>
+            <Response>
+                <ResponseTextWrapper arrowHideClass={"arrows-mobile-hide"} useCarousell={true}></ResponseTextWrapper>
+
             </Response>
             <Form />
-            <Footer>
+            <Footer >
                 <ul className="footer-nav">
-                    <li><a href="#hero">Головна</a></li>
+                    <li><Link to="/">Головна</Link></li>
                     <li><a href="#features">Переваги</a></li>
                     <li><a href="#courses">Курси</a></li>
                     <li><a href="#responses">Відгуки</a></li>
@@ -32,4 +26,4 @@ const Main = () => {
     )
 }
 
-export default Main;
+export default Course;

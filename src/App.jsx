@@ -1,12 +1,21 @@
-import { useState } from 'react'
-import Main from './components/pages/main/Main'
+import { useState, lazy } from 'react'
 import Modal from './components/modal/Modal'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+
+const Main = lazy(() => import('./components/pages/main/Main'))
+const Course = lazy(() => import('./components/pages/cource/Course'))
 function App() {
 
   return (
     <>
-      <Main></Main>
-      <Modal/>
+      <Router>
+        <Routes>
+          <Route path='/' element={<Main />} />
+          <Route path='/course' element={<Course />} />
+        </Routes>
+      </Router>
+
+      <Modal />
     </>
   )
 }
