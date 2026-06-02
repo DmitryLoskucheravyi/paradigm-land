@@ -63,6 +63,7 @@ const CustomSlider = ({
 
             <Swiper
                 loop={loop}
+                  loopAdditionalSlides={slidesCount}
                 spaceBetween={spaceBetween}
                 slidesPerView={slidesPerView}
                 navigation={{

@@ -29,8 +29,8 @@ const VideoCard = ({ src, isActive }) => {
 
     return (
         <div className="video-card base-card" onClick={handleToggle} >
-            <video ref={videoRef}>
-                <source src={src} type="video/mp4" />
+            <video  ref={videoRef} style={playing ? {objectFit : 'contain'} : undefined}>
+                <source  src={src} type="video/mp4" />
             </video>
 
             <div className={`video-toggle-btn ` + (playing ? 'none' : null)} onClick={handleToggle}>
