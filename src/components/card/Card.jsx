@@ -1,12 +1,12 @@
 import "./Card.css"
 
 const Card = (props) => {
-    const { number, title, desc, icon } = props
+    const { number, title, desc, icon, useCoursePageCard } = props
 
     return (
         <li className="about_card-container bg-def about_card">
             <img src={icon} alt="" className="card-icon"/>
-            <h3 className="card-num">{number}+</h3>
+            <h3 className="card-num">{useCoursePageCard ? null : number + '+'}</h3>
             <p className="card-title">{title}</p>
             <p className="card-desc p-small-secondary" >{desc}</p>
         </li>

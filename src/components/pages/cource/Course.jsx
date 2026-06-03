@@ -1,5 +1,6 @@
 import Response from "../../response/Response";
 import CourseHero from "../../CourseHero/CourseHero";
+import AboutCourse from "../../AboutCourse/AboutCourse";
 import Form from "../../Form/Form";
 import Footer from "../../footer/Footer";
 import { ResponseTextWrapper } from "../../response/Response";
@@ -51,7 +52,8 @@ const Course = () => {
     return (
         <div className="main" >
             <CourseHero content={content} />
-            <div style={{width: 200 + 'px', height: 2000 + 'px'}}></div>
+            <AboutCourse content={content.fit} />
+            <div style={{ width: 200 + 'px', height: 2000 + 'px' }}></div>
             <Response>
                 <ResponseTextWrapper arrowHideClass={"arrows-mobile-hide"} useCarousell={true}></ResponseTextWrapper>
             </Response>
