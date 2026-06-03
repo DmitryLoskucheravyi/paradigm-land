@@ -5,13 +5,13 @@ import "./CourcesCard.css"
 
 
 const CourcesCard = (props) => {
-    const { id, title, ageRange, description, image } = props
+    const { id, title, ageRange, description, cardImage } = props
 
     return (
         <>
             <div className="course-card-container bg-secondary base-card course-card">
                 <p className=" absolute-card-span">{ageRange ? ageRange : title}</p>
-                <img src={image} alt="" />
+                <img src={cardImage} alt="" />
                 <div className="course-card-text-content">
                     <h3 >{title}</h3>
                     <p className="p-small-secondary">{description}</p>
