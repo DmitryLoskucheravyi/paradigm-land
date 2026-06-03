@@ -59,6 +59,15 @@
       display: none;
   }
 
+  .header-course-tel {
+      background: transparent;
+      border: none;
+      font-size: 1.4rem;
+      font-family: var(--font-g-regular);
+      color: var(--f-secondary);
+       padding: 1rem !important;
+  }
+
 
   @media (min-width:400px) {}
 
@@ -71,7 +80,7 @@
       }
 
       .logo-text {
-        display: none;
+          display: none;
       }
 
       .logo-text-desctop {
@@ -81,14 +90,16 @@
           padding-top: 14px;
       }
 
-
-
       .burger-menu {
           display: none;
       }
 
       .header-btns {
           display: flex;
+      }
+
+      .header-course-tel {
+          display: none;
       }
   }
 
@@ -99,6 +110,8 @@
           position: relative;
           z-index: 3;
       }
+
+
 
       .burger-menu {
           display: none;

@@ -1,9 +1,11 @@
 import useHttp from "../hooks/http.hook";
-
+import { useCallback } from "react";
 const useServices = () => {
 
     const _VidAPI = 'http://localhost:3000/video';
     const _RevAPI = 'http://localhost:3000/reviews';
+    const _CourseAPI = 'http://localhost:3000/coursesCards';
+    const _CoursePageAPI = 'http://localhost:3000/courses';
 
     const { loading, req, error } = useHttp();
 
@@ -17,11 +19,24 @@ const useServices = () => {
         );
     };
 
+    const getCourses = () => {
+        return req(
+            `${_CourseAPI}`
+        );
+    }
+    const getCourse = useCallback(async (id) => {
+        return req(
+            `${_CoursePageAPI}/${id}`
+        );
+    }, [])
+
     return {
         loading,
         error,
         getVideoResponses,
-        getTextResponses
+        getTextResponses,
+        getCourses,
+        getCourse
     };
 
 };

@@ -17,7 +17,7 @@ const CourcesCard = (props) => {
                     <p className="p-small-secondary">{description}</p>
                 </div>
                 <div className="course-card-btns">
-                    <Link to={'/course'}>
+                    <Link to={`/course/${id}`}>
                         <Button text={"Детальніше"} classes={'btn-course more course-card-more'}></Button>
                     </Link>
                     <Button text={'Записатися'} classes={'btn-course course-card-step-1 '} action='modal'></Button>

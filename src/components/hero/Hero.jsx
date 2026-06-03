@@ -13,7 +13,7 @@ const Hero = () => {
     return (
         <>
             <section id="hero" className="hero container  ">
-                <Header>
+                <Header mainPageHeader={true}>
                     <DesctopNav></DesctopNav>
                 </Header>
 

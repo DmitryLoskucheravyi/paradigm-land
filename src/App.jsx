@@ -1,4 +1,4 @@
-import { useState, lazy } from 'react'
+import { useState, lazy, Suspense } from 'react'
 import Modal from './components/modal/Modal'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
@@ -8,14 +8,15 @@ function App() {
 
   return (
     <>
-      <Router>
-        <Routes>
-          <Route path='/' element={<Main />} />
-          <Route path='/course' element={<Course />} />
-        </Routes>
-      </Router>
-
-      <Modal />
+      <Suspense fallback={'load...'}>
+        <Router>
+          <Routes>
+            <Route path='/' element={<Main />} />
+            <Route path='/course/:id' element={<Course />} />
+          </Routes>
+        </Router>
+        <Modal />
+      </Suspense>
     </>
   )
 }

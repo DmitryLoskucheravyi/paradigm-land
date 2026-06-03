@@ -159,6 +159,15 @@ a {
     max-width: 42.4rem;
 }
 
+.course-card-step-1 {
+    padding: 1.2rem 1.8rem;
+    border: 1px solid black;
+    font-size: 1.6rem;
+    background: #01D3FE;
+
+}
+
+
 
 
 input, textarea {
@@ -226,6 +235,13 @@ label {
 
     .p-small-secondary {
         font-size: 1.6rem;
+    }
+
+    .course-card-step-1, .course-card-more {
+        font-size: 1.8rem !important;
+        padding: 2.4rem 2.4rem !important;
+        line-height: 0 !important;
+        max-height: 54px !important;
     }
 }
 
