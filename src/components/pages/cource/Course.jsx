@@ -55,7 +55,7 @@ const Course = () => {
             <AboutCourse content={content.fit} />
             <div style={{ width: 200 + 'px', height: 2000 + 'px' }}></div>
             <Response>
-                <ResponseTextWrapper arrowHideClass={"arrows-mobile-hide"} useCarousell={true}></ResponseTextWrapper>
+                <ResponseTextWrapper filter={id}  arrowHideClass={"arrows-mobile-hide"} useCarousell={true}></ResponseTextWrapper>
             </Response>
             <Form />
             <Footer >

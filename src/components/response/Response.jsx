@@ -90,6 +90,7 @@ export const ResponseTextWrapper = (props) => {
 
     const [reviews, setReviews] = useState([]);
 
+
     const [currentSlide, setCurrentSlide] = useState(0);
 
     const [page, setPage] = useState(1);
@@ -110,7 +111,7 @@ export const ResponseTextWrapper = (props) => {
         if (isFetching || !hasMore) return;
         try {
             setIsFetching(true);
-            const response = await getTextResponses(currentPage, 6);
+            const response = await getTextResponses(currentPage, 6, props.filter);
             const reviewsData = response.data;
             if (!reviewsData.length) {
                 setHasMore(false);
@@ -151,7 +152,7 @@ export const ResponseTextWrapper = (props) => {
             <ReviewCard
                 id={id}
                 name={name}
-                course={course}
+                course={course[0] === 'w' ? 'Web' : course}
                 review={review}
             />
         </SwiperSlide>

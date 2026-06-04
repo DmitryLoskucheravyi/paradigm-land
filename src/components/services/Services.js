@@ -12,10 +12,10 @@ const useServices = () => {
         return req(_VidAPI);
     };
 
-    const getTextResponses = (page = 1, limit = 6) => {
-        return req(
-            `${_RevAPI}?_page=${page}&_per_page=${limit}`
-        );
+    const getTextResponses = (page = 1, limit = 6, filter) => {
+        if (filter) return req(`${_RevAPI}?course=${filter}&_page=${page}&_per_page=${limit}`)
+        else return req(`${_RevAPI}?_page=${page}&_per_page=${limit}`)
+       
     };
 
     const getCourses = () => {
