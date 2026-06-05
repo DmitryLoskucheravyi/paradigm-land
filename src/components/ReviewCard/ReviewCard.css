@@ -7,6 +7,7 @@
 }
 
 .review-card-container {
+    margin: 5px;
     border-radius: 1.6rem;
     padding: 1.6rem;
     min-height: 32rem;
@@ -16,19 +17,32 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: #242428 !important;
+    background-color: #242428;
 }
 
 .review-card-container:hover {
     background-color: var(--bg-hover-grey) !important;
-    /* filter: drop-shadow(); */
-    box-shadow:0 0 32px black;
+    box-shadow: 0 0 32px black;
     overflow: visible !important;
     z-index: 10;
 }
 
+.swiper-slide {
+    overflow-y: visible !important;
+
+}
+
+.swiper-wrapper {
+    overflow-y: visible !important;
+}
+
+.swiper {
+    overflow-y: visible !important;
+}
+
 .swiper-slide:has(.review-card-container:hover) {
     overflow: visible !important;
+
 }
 
 .swiper-wrapper:has(.review-card-container:hover) {

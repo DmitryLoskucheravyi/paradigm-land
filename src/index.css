@@ -159,8 +159,10 @@ a {
     outline: 1px solid #303036;
     border-radius: 1.6rem;
     max-width: 42.4rem;
+    transition: 0.33s;
 }
-.base-card:not(.review-card-container):hover{
+
+.base-card:not(.review-card-container):hover {
     box-shadow: 0 0 32px rgba(0, 0, 0, 0.856);
 }
 
@@ -171,8 +173,6 @@ a {
     background: #01D3FE;
 
 }
-
-
 
 
 input, textarea {
