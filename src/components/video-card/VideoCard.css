@@ -1,8 +1,6 @@
-
-
 .video-card {
     /* width: clamp(30.8rem, 90vw, 87.2rem); */
-    height: clamp(24.2rem, 45vw, 43.6rem) !important; 
+    height: clamp(24.2rem, 45vw, 43.6rem) !important;
     width: 100% !important;
     max-width: 87.2rem !important;
     display: flex;
@@ -33,4 +31,5 @@ video {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    transition: 0.33s;
 }

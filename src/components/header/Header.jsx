@@ -1,7 +1,7 @@
 import Button from "../buttons/Button"
 import MobileNav from "../MobileNav/MobileNav"
 import "./Header.css"
-
+import { Link } from "react-router-dom"
 import logo from "../../assets/icons/logo.png"
 import logoText from "../../assets/icons/logo-text.png"
 import logoTextDesctop from "../../assets/icons/logo-text-big.png"
@@ -17,9 +17,11 @@ const Header = (props) => {
         <header className="container">
             <nav className="header-nav">
                 <div className="logo">
-                    <img src={logo} alt="" className="logo-icon" />
-                    <img src={logoText} alt="" className="logo-text" />
-                    <img src={logoTextDesctop} alt="" className="logo-text-desctop" />
+                    <Link to={`/`}>
+                        <img src={logo} alt="" className="logo-icon" />
+                        <img src={logoText} alt="" className="logo-text" />
+                        <img src={logoTextDesctop} alt="" className="logo-text-desctop" />
+                    </Link>
 
                 </div>
                 {

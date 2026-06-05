@@ -1,5 +1,5 @@
 import { Swiper } from "swiper/react";
-import { Navigation, FreeMode } from "swiper/modules";
+import { Navigation, FreeMode, Mousewheel } from "swiper/modules";
 import { useRef, useState, memo } from "react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -70,7 +70,11 @@ const CustomSlider = ({
                     prevEl: prevRef.current,
                     nextEl: nextRef.current,
                 }}
-                modules={[Navigation, FreeMode]}
+                modules={[Navigation, FreeMode, Mousewheel]}
+                mousewheel={{
+                    forceToAxis: true,
+                    releaseOnEdges: true,
+                }}
                 freeMode={freeScroll}
                 grabCursor={true}
                 speed={300}
@@ -97,18 +101,45 @@ const CustomSlider = ({
                     });
 
                 }}
-                onSlideChange={(swiper) => {
+                // onSlideChange={(swiper) => {
 
+                //     setActiveIndex(swiper.activeIndex);
+
+                //     setIsBeginning(swiper.isBeginning);
+                //     setIsEnd(swiper.isEnd);
+
+                //     onSlideChange?.(swiper.activeIndex);
+                // }}
+
+                onSlideChange={(swiper) => {
                     setActiveIndex(swiper.activeIndex);
 
                     setIsBeginning(swiper.isBeginning);
                     setIsEnd(swiper.isEnd);
 
+                    const visibleSlides =
+                        typeof swiper.params.slidesPerView === "number"
+                            ? swiper.params.slidesPerView
+                            : 1;
+
+                    const remaining =
+                        slidesCount - (swiper.activeIndex + visibleSlides);
+
+                    if (remaining <= 3) {
+                        onReachEnd?.();
+                    }
+
                     onSlideChange?.(swiper.activeIndex);
                 }}
 
-                onReachEnd={() => {
-                    onReachEnd?.();
+                // onReachEnd={() => {
+                //     onReachEnd?.();
+                // }}
+
+                onProgress={(swiper, progress) => {
+                    if (progress > 0.8) {
+                        onReachEnd?.();
+                    }
                 }}
             >
 

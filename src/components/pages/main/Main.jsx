@@ -21,10 +21,10 @@ const Main = () => {
             <Form />
             <Footer>
                 <ul className="footer-nav">
-                    <li><a href="#hero">Головна</a></li>
-                    <li><a href="#features">Переваги</a></li>
-                    <li><a href="#courses">Курси</a></li>
-                    <li><a href="#responses">Відгуки</a></li>
+                    <li><a className="footer-link" href="#hero">Головна</a></li>
+                    <li><a className="footer-link" href="#features">Переваги</a></li>
+                    <li><a className="footer-link" href="#courses">Курси</a></li>
+                    <li><a className="footer-link" href="#responses">Відгуки</a></li>
                 </ul>
             </Footer>
         </div>

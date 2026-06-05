@@ -3,20 +3,55 @@ import "./VideoCard.css";
 import play from "../../assets/icons/play-icon.png";
 
 const VideoCard = ({ src, isActive }) => {
+    const isMobileOrTablet = () => {
+        return window.matchMedia("(max-width: 1024px)").matches;
+    };
     const videoRef = useRef(null);
     const [playing, setPlaying] = useState(false)
-    const handleToggle = () => {
+    const handleToggle = async () => {
         const video = videoRef.current;
 
         if (video.paused) {
             video.play();
-            setPlaying((state) => state = true)
+            setPlaying(true);
+
+            if (isMobileOrTablet()) {
+                try {
+                    if (video.requestFullscreen) {
+                        await video.requestFullscreen();
+                    } else if (video.webkitRequestFullscreen) {
+                        await video.webkitRequestFullscreen();
+                    }
+                } catch (e) {
+                    console.log(e);
+                }
+            }
         } else {
             video.pause();
-            setPlaying((state) => state = false)
+            setPlaying(false);
 
+            if (document.fullscreenElement) {
+                document.exitFullscreen();
+            }
         }
     };
+    useEffect(() => {
+        const handleFullscreenChange = () => {
+            if (!document.fullscreenElement) {
+                setPlaying(false);
+                videoRef.current?.pause();
+            }
+        };
+
+        document.addEventListener("fullscreenchange", handleFullscreenChange);
+
+        return () => {
+            document.removeEventListener(
+                "fullscreenchange",
+                handleFullscreenChange
+            );
+        };
+    }, []);
 
     useEffect(() => {
         const video = videoRef.current;
@@ -29,8 +64,8 @@ const VideoCard = ({ src, isActive }) => {
 
     return (
         <div className="video-card base-card" onClick={handleToggle} >
-            <video  ref={videoRef} style={playing ? {objectFit : 'contain'} : undefined}>
-                <source  src={src} type="video/mp4" />
+            <video controls={playing} ref={videoRef} style={playing ? { objectFit: 'contain' } : undefined}>
+                <source src={src} type="video/mp4" />
             </video>
 
             <div className={`video-toggle-btn ` + (playing ? 'none' : null)} onClick={handleToggle}>

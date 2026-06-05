@@ -34,6 +34,8 @@
     --bg-secondary: #242428;
     --bg-def: #303036;
     --bg-primary: #101012;
+    --hover-green: #00DB6A;
+    --bg-hover-grey: #303036;
     --desctop: 950px;
     --tablet: 490px;
 }
@@ -158,6 +160,9 @@ a {
     border-radius: 1.6rem;
     max-width: 42.4rem;
 }
+.base-card:not(.review-card-container):hover{
+    box-shadow: 0 0 32px rgba(0, 0, 0, 0.856);
+}
 
 .course-card-step-1 {
     padding: 1.2rem 1.8rem;
@@ -194,8 +199,14 @@ label {
 }
 
 .none {
-    display: none;
+    opacity: 0 !important;
 }
+
+.footer-nav li a:hover {
+    color: var(--hover-green) !important;
+}
+
+.step-1:hover {}
 
 @media (min-width: 492px) {
     .h2 {
