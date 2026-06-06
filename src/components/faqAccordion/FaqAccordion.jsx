@@ -46,7 +46,7 @@ const FaqAccordion = () => {
                                 <span className="accordion-title">{item.title}</span>
                             </div>
 
-                            <div className={`accordion-icon ${activeId === item.id ? "open" : ""}`}>
+                            <div tabIndex={0} className={`accordion-icon ${activeId === item.id ? "open" : ""}`}>
                                 <img src={arrow} alt="" />
                             </div>
                         </div>

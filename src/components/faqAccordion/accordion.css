@@ -67,7 +67,29 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: 0.33s;
 }
+
+.accordion-icon:hover {
+    background-color: #303036;
+}
+
+.accordion-icon.open {
+    background-color: #484851;
+}
+
+.accordion-icon.open:hover {
+    background-color: #303036;
+}
+
+.accordion-icon.open:active {
+    background-color: #484851;
+}
+
+.accordion-icon:active {
+    background-color: #484851;
+}
+
 
 .accordion-icon img {
     transition: transform 0.3s ease;
@@ -77,6 +99,7 @@
 .accordion-icon.open>img {
     transform: rotate(180deg);
 }
+
 
 .accordion-content {
     max-height: 0;
@@ -125,6 +148,6 @@
     }
 
     .accordion-faq-desc {
-    font-size: 1.6rem;
-}
+        font-size: 1.6rem;
+    }
 }

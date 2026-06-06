@@ -28,6 +28,11 @@
     color: var(--hover-green);
 }
 
+.course-card-more:active {
+    color: #52FFA5 !important;
+
+}
+
 .course-card img {
     height: 200px;
     object-fit: contain;

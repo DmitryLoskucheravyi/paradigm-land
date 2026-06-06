@@ -2,12 +2,12 @@
     display: none;
 }
 
-.desctop-nav li {
+.desctop-nav li a {
     padding: 6px 16px;
     border-radius: 8px;
 }
 
-.desctop-nav li:hover {
+.desctop-nav li a:hover {
     outline: 1px solid white;
 }
 

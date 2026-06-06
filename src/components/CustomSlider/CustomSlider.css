@@ -14,6 +14,21 @@
 
 }
 
+.arrow-btn:hover {
+    background-color: #303036;
+    outline: 1px solid #303036;
+}
+
+.arrow-btn:focus-visible {
+    background-color: #101012;
+    outline: 1px solid #FAFAFA;
+}
+
+.arrow-btn:active {
+    background-color: #484851;
+    outline: 1px solid #484851;
+}
+
 .arrow-btn-dis {
     background-color: #101012;
     outline: 1px solid #303036;

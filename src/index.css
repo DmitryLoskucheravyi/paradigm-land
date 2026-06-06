@@ -70,6 +70,11 @@ a {
     color: unset;
 }
 
+
+button {
+    transition: 0.33s;
+}
+
 .container {
     padding-left: clamp(1.6rem, 3vw + 0.4rem, 8rem);
     padding-right: clamp(1.6rem, 3vw + 0.4rem, 8rem);
@@ -94,12 +99,62 @@ a {
 
 }
 
+.step-1:hover, .course-card-step-1:hover {
+    color: var(--f-white);
+    background-color: #019CBC !important;
+
+}
+
+.step-1:focus-visible {
+    color: var(--f-white);
+    background-color: #019CBC !important;
+    outline: 1px solid #019CBC !important;
+}
+
+.course-card-step-1:focus-visible {
+    color: var(--f-white);
+    background-color: #019CBC !important;
+    outline: 1px solid #019CBC !important;
+}
+
+.step-1:active, .course-card-step-1:active {
+    color: #101012;
+    background-color: #4DE0FE !important;
+}
+.header-btn:not(.step-1):hover{
+    color: #00DB6A;
+}
+
+.course-card-more:active, .header-btn:not(.step-1):active {
+    color: #52FFA5 !important;
+}
+
+.course-card-more:focus-visible, .header-btn:not(.step-1):focus-visible {
+    color: #09FF80 !important;
+    outline: 1px solid #09FF80 !important;
+}
+
 .step-2 {
     position: relative;
     z-index: 1;
     color: var(--f-white);
     border: 1px solid #09FF80;
     background: transparent;
+}
+
+.step-2:not(.header-btn):hover {
+    background-color: #00DB6A;
+}
+
+.step-2:not(.header-btn):focus-visible, .hero-desctop-btn:focus-visible {
+    background-color: #00DB6A !important;
+    border-color: black;
+    outline: 1px solid #00DB6A !important;
+}
+
+.step-2:not(.header-btn):active {
+    color: #101012;
+    background-color: #52FFA5;
 }
 
 .h2 {
@@ -206,7 +261,13 @@ label {
     color: var(--hover-green) !important;
 }
 
-.step-1:hover {}
+.footer-nav li a:active {
+    color: #52FFA5 !important;
+
+}
+
+
+
 
 @media (min-width: 492px) {
     .h2 {

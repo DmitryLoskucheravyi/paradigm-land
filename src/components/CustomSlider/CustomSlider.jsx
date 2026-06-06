@@ -79,78 +79,41 @@ const CustomSlider = ({
                 grabCursor={true}
                 speed={300}
                 breakpoints={breakpoints || undefined}
-
-
-
-
-
                 onSwiper={(swiper) => {
-
                     swiperRef.current = swiper;
-
                     setTimeout(() => {
-
                         if (!swiper.navigation) return;
-
                         swiper.params.navigation.prevEl = prevRef.current;
                         swiper.params.navigation.nextEl = nextRef.current;
-
                         swiper.navigation.init();
                         swiper.navigation.update();
-
                     });
-
                 }}
-                // onSlideChange={(swiper) => {
-
-                //     setActiveIndex(swiper.activeIndex);
-
-                //     setIsBeginning(swiper.isBeginning);
-                //     setIsEnd(swiper.isEnd);
-
-                //     onSlideChange?.(swiper.activeIndex);
-                // }}
-
                 onSlideChange={(swiper) => {
                     setActiveIndex(swiper.activeIndex);
-
                     setIsBeginning(swiper.isBeginning);
                     setIsEnd(swiper.isEnd);
-
                     const visibleSlides =
                         typeof swiper.params.slidesPerView === "number"
                             ? swiper.params.slidesPerView
                             : 1;
-
                     const remaining =
                         slidesCount - (swiper.activeIndex + visibleSlides);
-
                     if (remaining <= 3) {
                         onReachEnd?.();
                     }
-
                     onSlideChange?.(swiper.activeIndex);
                 }}
-
-                // onReachEnd={() => {
-                //     onReachEnd?.();
-                // }}
-
                 onProgress={(swiper, progress) => {
                     if (progress > 0.8) {
                         onReachEnd?.();
                     }
                 }}
             >
-
                 {children}
-
             </Swiper>
-
             <div className="course-dots">
-
                 {getVisibleDots().map((index) => (
-
                     <div
                         key={index}
                         onClick={() =>
@@ -161,14 +124,11 @@ const CustomSlider = ({
                             : ""
                             }`}
                     />
-
                 ))}
-
             </div>
-
             <div className={`arrows ${arrowHideClass || ""}`}>
-
                 <div
+                    tabIndex={0}
                     className={
                         isBeginning && !useCarousell
                             ? "arrow-btn-dis"
@@ -182,8 +142,8 @@ const CustomSlider = ({
                         alt="previous"
                     />
                 </div>
-
                 <div
+                    tabIndex={0}
                     className={
                         isEnd && !useCarousell
                             ? "arrow-btn-dis"
@@ -197,12 +157,9 @@ const CustomSlider = ({
                         alt="next"
                     />
                 </div>
-
             </div>
-
         </div>
     );
-
 };
 
 export default memo(CustomSlider);
