@@ -17,6 +17,21 @@ const Modal = () => {
             document.body.style.overflow = "";
         };
     }, [isModalOpen]);
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            if (e.key === "Escape") modalVissionToggler();
+        };
+
+        if (isModalOpen) {
+            document.body.style.overflow = "hidden";
+            document.addEventListener("keydown", handleKeyDown);
+        }
+
+        return () => {
+            document.body.style.overflow = "";
+            document.removeEventListener("keydown", handleKeyDown);
+        };
+    }, [isModalOpen, modalVissionToggler]);
 
     if (!isModalOpen) return null
 
