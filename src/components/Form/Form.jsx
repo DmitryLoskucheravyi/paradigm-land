@@ -1,76 +1,130 @@
-import { useState } from "react"
+import { useForm, Controller } from "react-hook-form";
+import { IMaskInput } from "react-imask";
+import { useState } from "react";
 
-import Button from "../buttons/Button"
-import Elipse from "../elipse/Elipse"
-import "./Form.css"
+import Button from "../buttons/Button";
+import errorIcon from '../../assets/icons/invalid-icon.png'
+import "./Form.css";
+
+const DEFAULT_VALUES = {
+    name: "",
+    tel: "+380",
+    message: "",
+};
 
 const Form = () => {
+    const [formKey, setFormKey] = useState(0);
 
+    const {
+        register,
+        control,
+        handleSubmit,
+        reset,
+        formState: { errors },
+    } = useForm({
+        mode: "onBlur",
+        reValidateMode: "onChange",
+        defaultValues: DEFAULT_VALUES,
+    });
 
-    const [name, setName] = useState('')
-    const [email, setEmail] = useState('')
-    const [message, setMessage] = useState('')
-
-
-    const setValue = (e, setValue) => {
-        const value = e.target.value
-        setValue((prev => prev = value))
-    }
+    const onSubmit = (data) => {
+        reset(DEFAULT_VALUES);
+        setFormKey(prev => prev + 1);
+    };
 
     return (
         <div className="form-section container section">
             <div className="form-section-inner form-section-utility bg-secondary">
-                <div className="form-section-content   ">
-                    <h2 className="h2">Запишіть дитину на IT-курси </h2>
-                    <p className="h3 free-lesson-pr" style={{ marginBottom: '2.4rem', marginTop: '1.6rem' }}>Перший урок</p>
-                    <p className="p-small-secondary">Допоможіть дитині зробити перші кроки в програмуванні. Ми підберемо курс та формат навчання саме для вашої дитини.</p>
+                <div className="form-section-content">
+                    <h2 className="h2">Запишіть дитину на IT-курси</h2>
+                    <p className="h3 free-lesson-pr" style={{ marginBottom: "2.4rem", marginTop: "1.6rem" }}>
+                        Перший урок
+                    </p>
+                    <p className="p-small-secondary">
+                        Допоможіть дитині зробити перші кроки в програмуванні.
+                        Ми підберемо курс та формат навчання саме для вашої дитини.
+                    </p>
                 </div>
 
-                <form bindsubmit="" onSubmit={(e) => {
-                    e.preventDefault()
-                    e.target.reset()
-                }}>
+                <form key={formKey} noValidate onSubmit={handleSubmit(onSubmit)}>
                     <div className="group">
                         <label htmlFor="name">Ім'я *</label>
-                        <input type="text"
-                            name='name'
+                        <input
                             id="name"
-                            className="input-utility"
-                            style={{ borderRadius: '1.6rem' }}
-                            required onChange={(e) => {
-                                setValue(e, setName)
-                            }}
+                            className={`input-utility ${errors.name ? "input-error" : ""}`}
+                            style={{ borderRadius: "1.6rem" }}
+                            {...register("name", {
+                                required: "Введіть ім'я",
+                                minLength: { value: 2, message: "Ім'я має містити мінімум 2 символи" },
+                                maxLength: { value: 30, message: "Ім'я не може бути довшим за 30 символів" },
+                                pattern: {
+                                    value: /^[A-Za-zА-Яа-яІіЇїЄєҐґ' -]+$/,
+                                    message: "Ім'я містить недопустимі символи",
+                                },
+                            })}
                         />
+                        {errors.name && <ErrorMessage trigger={errors.name.message} classNames="error-message" />}
                     </div>
+
                     <div className="group">
                         <label htmlFor="tel">Номер телефону *</label>
-                        <input type="tel"
-                            name='tel'
-                            id="tel"
-                            className="input-utility"
-                            style={{ borderRadius: '1.6rem' }}
-                            required onChange={(e) => {
-                                setValue(e, setEmail)
+                        <Controller
+                            name="tel"
+                            control={control}
+                            rules={{
+                                required: "Введіть номер телефону",
+                                validate: (value) =>
+                                    value.replace(/\D/g, "").length === 12
+                                        ? true
+                                        : "Введіть повний номер телефону",
                             }}
+                            render={({ field }) => (
+                                <IMaskInput
+                                    id="tel"
+                                    mask="+{380}000000000"
+                                    value={field.value}
+                                    onAccept={(value) => field.onChange(value)}
+                                    onBlur={field.onBlur}
+                                    inputRef={field.ref}
+                                    placeholder="+380XXXXXXXXX"
+                                    className={`input-utility ${errors.tel ? "input-error" : ""}`}
+                                    style={{ borderRadius: "1.6rem" }}
+                                />
+                            )}
                         />
+                        {errors.tel && <ErrorMessage trigger={errors.tel.message} classNames="error-message" />}
                     </div>
+
                     <div className="group">
-                        <label htmlFor="textarea">Поставте запитання</label>
-                        <textarea name='textarea'
-                            id="textarea"
-                            className="textarea-utility"
-                            style={{ borderRadius: '1.6rem' }}
-                            onChange={(e) => {
-                                setValue(e, setMessage)
-                            }}
-                        ></textarea>
+                        <label htmlFor="message">Поставте запитання</label>
+                        <textarea
+                            id="message"
+                            className={`textarea-utility ${errors.message ? "input-error" : ""}`}
+                            style={{ borderRadius: "1.6rem" }}
+                            {...register("message", {
+                                maxLength: { value: 500, message: "Повідомлення не може перевищувати 500 символів" },
+                            })}
+                        />
+                        {errors.message && <ErrorMessage trigger={errors.message.message} classNames="error-message" />}
                     </div>
-                    <Button text={'Записатись'} classes={'btn-course   course-card-step-1 '}></Button>
+
+                    <Button
+                        text={"Записатись"}
+                        classes={
+                            "btn-course course-card-step-1"
+                        }
+                    />
                 </form>
             </div>
         </div>
+    );
+};
 
-    )
-}
+const ErrorMessage = ({ trigger, classNames }) => (
+    <div className="error-wrapper">
+        <img src={errorIcon} alt="" />
+        <p className={classNames}>{trigger}</p>
+    </div>
+);
 
-export default Form
+export default Form;

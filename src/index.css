@@ -121,7 +121,8 @@ button {
     color: #101012;
     background-color: #4DE0FE !important;
 }
-.header-btn:not(.step-1):hover{
+
+.header-btn:not(.step-1):hover {
     color: #00DB6A;
 }
 
