@@ -4,6 +4,7 @@ import academicIcon from "../../assets/icons/card-icons/academic-icon.png"
 import clockIcon from "../../assets/icons/card-icons/clock-icon.png"
 import feedIcon from "../../assets/icons/card-icons/feed-icon.png"
 import listIcon from "../../assets/icons/card-icons/list-icon.png"
+import Reveal from "../Reveal/Reveal";
 import "./About.css"
 
 
@@ -35,7 +36,7 @@ const statisticsData = [
 
 const About = (props) => {
 
-    const data = statisticsData.map(({ number, title, desc }, index) => <Card number={number} title={title} desc={desc} icon={icons[index]} key={index} />)
+    const data = statisticsData.map(({ number, title, desc }, index) => <Reveal><Card number={number} title={title} desc={desc} icon={icons[index]} key={index} /></Reveal>)
 
     return (
         <>

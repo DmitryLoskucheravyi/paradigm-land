@@ -15,11 +15,12 @@ const Response = (props) => {
             id="responses"
             className="response-section container rel-section section"
         >
-            <Elipse parametr="glow-blue response-1" />
+
+            {props.useElipse ? <Elipse parametr="glow-blue response-1" /> : null}
             <ResponseTitle />
             <div className="response-sliders-wrapper">
                 {props.children}
-                
+
             </div>
         </section>
     );
@@ -184,7 +185,7 @@ export const ResponseTextWrapper = (props) => {
                         breakpoints={breakpoints}
                         arrowHideClass={props.arrowHideClass}
                         onReachEnd={handleReachEnd}
-                        useCarousell= {props.useCarousell}
+                        useCarousell={props.useCarousell}
                     >
                         {reviewsData}
                     </CustomSlider>

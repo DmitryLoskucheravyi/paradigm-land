@@ -8,8 +8,10 @@ import ChildWork from "../../ChildWork/ChildWork";
 import { ResponseTextWrapper } from "../../response/Response";
 import useServices from "../../services/Services";
 import { Link, useParams } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import { useEffect, useState } from "react";
 import "./Course.css"
+import Reveal from "../../Reveal/Reveal";
 const Course = () => {
 
     const { id } = useParams();
@@ -53,19 +55,35 @@ const Course = () => {
     }
     return (
         <div className="main" >
-            <CourseHero content={content} />
-            <AboutCourse content={content.fit} suitable={content.suitable} />
-            <ChildWork video={content.video} isActive={true}/>
-            <Tabs />
-            <Response>
-                <ResponseTextWrapper filter={id} arrowHideClass={"arrows-mobile-hide"} useCarousell={true} />
-            </Response>
-            <Form />
+            <Reveal>
+                <CourseHero content={content} />
+            </Reveal>
+            <Reveal>
+                <AboutCourse content={content.fit} suitable={content.suitable} />
+            </Reveal>
+            <Reveal>
+                <ChildWork video={content.video} isActive={true} />
+            </Reveal>
+            <Reveal>
+                <Tabs />
+            </Reveal>
+            <Reveal>
+                <Response>
+                    <Reveal>
+                        <ResponseTextWrapper filter={id} arrowHideClass={"arrows-mobile-hide"} useCarousell={true} />
+                    </Reveal>
+                </Response>
+            </Reveal>
+            <Reveal>
+                <Form />
+            </Reveal>
+
+
             <Footer >
                 <ul className="footer-nav">
                     <li><Link to="/">Головна</Link></li>
-                    <li><a href="#features">Переваги</a></li>
-                    <li><a href="#courses">Курси</a></li>
+                    <li><a href="#about">Переваги</a></li>
+                    <li><HashLink to="/#courses">Курси</HashLink></li>
                     <li><a href="#responses">Відгуки</a></li>
                 </ul>
             </Footer>

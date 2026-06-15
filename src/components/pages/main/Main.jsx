@@ -6,19 +6,36 @@ import Response from "../../response/Response";
 import Form from "../../Form/Form";
 import Footer from "../../footer/Footer";
 import { ResponseTextWrapper, ResponseVideoWrapper } from "../../response/Response";
+
+import Reveal from "../../Reveal/Reveal";
 import "./Main.css"
 const Main = () => {
     return (
         <div className="main ">
-            <Hero />
+
+            <Reveal>
+                <Hero />
+            </Reveal>
             <About />
-            <Cources />
-            <FaqAccordion />
-            <Response >
-                <ResponseVideoWrapper></ResponseVideoWrapper>
-                <ResponseTextWrapper arrowHideClass={"arrows-fullhide"} ></ResponseTextWrapper>
-            </Response>
-            <Form />
+            <Reveal>
+                <Cources />
+            </Reveal>
+            <Reveal>
+                <FaqAccordion />
+            </Reveal>
+            <Reveal>
+                <Response useElipse>
+                    <Reveal>
+                        <ResponseVideoWrapper></ResponseVideoWrapper>
+                    </Reveal>
+                    <Reveal>
+                        <ResponseTextWrapper arrowHideClass={"arrows-fullhide"} ></ResponseTextWrapper>
+                    </Reveal>
+                </Response>
+            </Reveal>
+            <Reveal>
+                <Form />
+            </Reveal>
             <Footer>
                 <ul className="footer-nav">
                     <li><a className="footer-link" href="#hero">Головна</a></li>
@@ -27,6 +44,7 @@ const Main = () => {
                     <li><a className="footer-link" href="#responses">Відгуки</a></li>
                 </ul>
             </Footer>
+
         </div>
 
     )

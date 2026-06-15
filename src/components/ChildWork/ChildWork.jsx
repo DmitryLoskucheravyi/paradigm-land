@@ -1,5 +1,5 @@
 import VideoCard from "../video-card/VideoCard"
-
+import Elipse from "../elipse/Elipse"
 import './ChildWork.css'
 
 const ChildWork = ({ video, isActive }) => {
@@ -8,6 +8,8 @@ const ChildWork = ({ video, isActive }) => {
     return (
         <>
             <section className=" childwork__section section container">
+            <Elipse parametr="glow-blue child-1" />
+
                 <div className="childwork__top">
                     <h2 className="h2">Що створить дитина</h2>
                     <div className="childwork__top-left__content">

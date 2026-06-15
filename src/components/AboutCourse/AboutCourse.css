@@ -9,12 +9,10 @@
 
 
 .about-course {
-    position: relative !important;
+    position: relative ;
+    z-index: auto;
 }
-.about-course-1 {
-  top: 0;
-  left: 0;
-}
+
 
 
 @media (min-width: 1200px) {

@@ -1,3 +1,6 @@
+.childwork__section{
+    position: relative;
+}
 .childwork__top {
     display: flex;
     flex-direction: column;

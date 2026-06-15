@@ -1,11 +1,31 @@
 import Button from '../buttons/Button';
-
+import { useEffect } from 'react';
 import './MobileNav.css'
 import close from "../../assets/icons/burger-close-icon.png";
 import phone from "../../assets/icons/phone-icon.png";
 
 
 const MobileNav = ({ active, setActive }) => {
+
+    useEffect(() => {
+        if (active) {
+            document.body.style.overflow = 'hidden';
+            document.body.style.touchAction = 'none';
+        } else {
+            document.body.style.overflow = 'auto';
+            document.body.style.touchAction = 'auto';
+        }
+
+        return () => {
+            document.body.style.overflow = 'auto';
+            document.body.style.touchAction = 'auto';
+        };
+
+        return () => {
+            document.body.style.overflowY = 'auto';
+        };
+    }, [active]);
+
     return (
         <div className={'mobile__nav container ' + (active ? 'active' : null)} onClick={() => { setActive(prev => !prev) }}>
             <div className='mobile__nav-top'><img src={close} alt="close" /></div>

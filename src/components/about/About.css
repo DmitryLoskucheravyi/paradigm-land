@@ -1,6 +1,6 @@
 .about {
     z-index: -3;
-    padding-top: 12.8rem;
+    /* padding-top: 12.8rem; */
     padding-bottom: 6.4rem;
 }
 
@@ -9,6 +9,7 @@
 .about__cards {
     width: 100%;
     display: grid;
+    padding-top: 12rem;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, auto);
     gap: 1.6rem;

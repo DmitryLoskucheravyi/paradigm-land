@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Elipse from "../elipse/Elipse";
 import Button from "../buttons/Button";
+import Reveal from "../Reveal/Reveal";
 import arrow from "../../assets/icons/arrow-icon.png"
 import "./accordion.css";
 
@@ -24,10 +25,10 @@ const FaqAccordion = () => {
         setActiveId(activeId === id ? null : id);
     };
 
-    return (    
+    return (
         <div className=" faq-section container section">
             <div className="accordion-text-content">
-                <h2 className="h2">Відповіді на <br/> найпоширеніші питання</h2>
+                <h2 className="h2">Відповіді на <br /> найпоширеніші питання</h2>
                 <p className="p-small-secondary">Не знайшли потрібне? Напишіть нам.</p>
                 <Button text='Поставити питання' classes={'btn-course step-2 accordion-quest-btn'} action='modal'></Button>
             </div>
@@ -35,22 +36,24 @@ const FaqAccordion = () => {
             <div className="accordion ">
                 {faqData.map((item, index) => (
                     <div key={item.id} className="accordion-item">
-                        <div
-                            className="accordion-header"
-                            onClick={() => toggleItem(item.id)}
-                        >
-                            <div className="accordion-left">
-                                <span className="accordion-index">
-                                    {String(index + 1).padStart(2, "0")}
-                                </span>
-                                <span className="accordion-title">{item.title}</span>
-                            </div>
 
-                            <div tabIndex={0} className={`accordion-icon ${activeId === item.id ? "open" : ""}`}>
-                                <img src={arrow} alt="" />
-                            </div>
-                        </div>
+                        <Reveal>
+                            <div
+                                className="accordion-header"
+                                onClick={() => toggleItem(item.id)}
+                            >
+                                <div className="accordion-left">
+                                    <span className="accordion-index">
+                                        {String(index + 1).padStart(2, "0")}
+                                    </span>
+                                    <span className="accordion-title">{item.title}</span>
+                                </div>
 
+                                <div tabIndex={0} className={`accordion-icon ${activeId === item.id ? "open" : ""}`}>
+                                    <img src={arrow} alt="" />
+                                </div>
+                            </div>
+                        </Reveal>
                         <div
                             className={`accordion-content ${activeId === item.id ? "show" : ""
                                 }`}

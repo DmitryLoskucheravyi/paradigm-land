@@ -1,5 +1,6 @@
 import { useState } from "react";
-
+import Elipse from "../elipse/Elipse";
+import Reveal from "../Reveal/Reveal";
 import './Tabs.css'
 
 const plans = {
@@ -44,6 +45,9 @@ function Tabs() {
 
     return (
         <section className="roadmap container">
+            <Elipse parametr='glow-green tabs-1'></Elipse>
+            <Elipse parametr='glow-blue tabs-2'></Elipse>
+
             <div className="">
                 <div className="roadmap__top">
                     <h2 className="h2">План навчання</h2>
@@ -61,7 +65,7 @@ function Tabs() {
                                     }`}
                                 onClick={() => setActiveTab(tab.id)}
                             >
-                                <span className="roadmap__tab-label">{tab.label}</span> <span>{tab.id}</span> 
+                                <span className="roadmap__tab-label">{tab.label}</span> <span>{tab.id}</span>
                             </button>
                         ))}
                     </div>
@@ -70,13 +74,15 @@ function Tabs() {
 
                     <div className="roadmap__list" key={activeTab}>
                         {plans[activeTab].map((item, index) => (
-                            <div className={"roadmap__card "} key={index}>
-                                <span className="p-small-secondary">
-                                    {String(index + 1).padStart(2, "0")}
-                                </span>
+                            <Reveal>
+                                <div className={"roadmap__card "} key={index}>
+                                    <span className="p-small-secondary">
+                                        {String(index + 1).padStart(2, "0")}
+                                    </span>
 
-                                <p className="p-small-secondary">{item}</p>
-                            </div>
+                                    <p className="p-small-secondary">{item}</p>
+                                </div>
+                            </Reveal>
                         ))}
                     </div>
                 </div>
