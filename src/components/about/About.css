@@ -1,12 +1,12 @@
 .about {
     z-index: -3;
+    padding-top: 12.8rem;
     padding-bottom: 6.4rem;
 }
 
 
 
 .about__cards {
-    padding-top: 12.8rem;
     width: 100%;
     display: grid;
     grid-template-columns: 1fr;

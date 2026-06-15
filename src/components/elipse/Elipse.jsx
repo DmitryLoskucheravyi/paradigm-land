@@ -1,7 +1,6 @@
 import "./Elipse.css"
 
-const Elipse = (props) => {
-    const {parametr} = props
+const Elipse = ({ parametr }) => {
     return (
         <div className={parametr}></div>
     )

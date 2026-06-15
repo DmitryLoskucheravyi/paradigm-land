@@ -3,6 +3,8 @@ import CourseHero from "../../CourseHero/CourseHero";
 import AboutCourse from "../../AboutCourse/AboutCourse";
 import Form from "../../Form/Form";
 import Footer from "../../footer/Footer";
+import Tabs from "../../Tabs/Tabs";
+import ChildWork from "../../ChildWork/ChildWork";
 import { ResponseTextWrapper } from "../../response/Response";
 import useServices from "../../services/Services";
 import { Link, useParams } from "react-router-dom";
@@ -52,10 +54,11 @@ const Course = () => {
     return (
         <div className="main" >
             <CourseHero content={content} />
-            <AboutCourse content={content.fit} />
-            <div style={{ width: 200 + 'px', height: 2000 + 'px' }}></div>
+            <AboutCourse content={content.fit} suitable={content.suitable} />
+            <ChildWork video={content.video} isActive={true}/>
+            <Tabs />
             <Response>
-                <ResponseTextWrapper filter={id}  arrowHideClass={"arrows-mobile-hide"} useCarousell={true}></ResponseTextWrapper>
+                <ResponseTextWrapper filter={id} arrowHideClass={"arrows-mobile-hide"} useCarousell={true} />
             </Response>
             <Form />
             <Footer >

@@ -1,24 +1,27 @@
 import Card from '../card/Card'
-
-
+import Elipse from '../elipse/Elipse'
 import icon from '../../assets/icons/about-course-icon.png'
 
 // import './AboutCourse.css'
 import '../card/Card.css'
 import '../about/About.css'
-const AboutCourse = ({ content }) => {
+import './AboutCourse.css'
+const AboutCourse = ({ content, suitable }) => {
     const data = content.map(({ title, description }, index) => <Card useCoursePageCard={true} title={title} desc={description} icon={icon} key={index} use />)
 
     return (
-
-        <>
-
-            <section className="about-course  container">
-                <ul className="about__cards">
-                    {data}
-                </ul>
-            </section>
-        </>
+        <section className="about-course section container">
+            <Elipse parametr='glow-blue about-course-1-1'></Elipse>
+            <div className="about__course-top">
+                <h2 className="h2">Кому підходить цей курс</h2>
+                <p className="p-small-secondary">
+                    {suitable}
+                </p>
+            </div>
+            <ul className="about__cards">
+                {data}
+            </ul>
+        </section>
     )
 }
 

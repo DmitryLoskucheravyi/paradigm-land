@@ -21,10 +21,9 @@
 }
 
 .review-card-container:hover {
-    background-color: var(--bg-hover-grey) !important;
+    background: #303036 !important;
     box-shadow: 0 0 32px black;
-    overflow: visible !important;
-    z-index: 10;
+    z-index: 999999;
 }
 
 .swiper-slide {

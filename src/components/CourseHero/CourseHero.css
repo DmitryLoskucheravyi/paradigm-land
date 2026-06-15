@@ -10,6 +10,7 @@
 .hero__course-wrapper {
     padding-top: 3.2rem;
     position: relative;
+    padding-bottom: 3.2rem;
 }
 
 .hero__course-content {
@@ -146,6 +147,10 @@
         font-size: 6.4rem;
         line-height: 7rem;
     }
+    
+.hero__course-wrapper {
+    padding-bottom: 3.4rem;
+}
 
     .hero__content-desc {
         max-width: 53rem;

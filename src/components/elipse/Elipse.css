@@ -181,6 +181,14 @@
   left: -380px;
 }
 
+
+.about-course-1-1 {
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+
 @media (min-width:520px) {
   .hero-2 {
     top: -50px;
@@ -239,7 +247,8 @@
     top: 1550px;
     display: block;
   }
+
   .hero-1 {
-  left: -180px;
-}
+    left: -180px;
+  }
 }
