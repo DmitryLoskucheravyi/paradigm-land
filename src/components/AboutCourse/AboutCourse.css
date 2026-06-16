@@ -1,3 +1,8 @@
+.about-course {
+    position: relative;
+    z-index: auto;
+}
+
 .about__course-top {
     display: flex;
     flex-direction: column;
@@ -7,16 +12,28 @@
     padding-bottom: 6.4rem;
 }
 
-
-.about-course {
-    position: relative ;
-    z-index: auto;
+.about_course-cards {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+    padding-top: 0 !important;
 }
 
-
+@media (min-width: 650px) {
+    .about_course-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5vw;
+    }
+}
 
 @media (min-width: 1200px) {
     .about__course-top {
         flex-direction: row;
+    }
+
+    .about_course-cards {
+        grid-template-columns: repeat(3, 1fr);
+        gap: calc(2vw - 0.4rem);
     }
 }
