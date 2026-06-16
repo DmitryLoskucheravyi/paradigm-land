@@ -11,8 +11,6 @@ const Header = (props) => {
 
     const [active, setActive] = useState(false)
 
-
-
     return (
         <header className="container">
             <nav className="header-nav">
@@ -22,17 +20,13 @@ const Header = (props) => {
                         <img src={logoText} alt="" className="logo-text" />
                         <img src={logoTextDesctop} alt="" className="logo-text-desctop" />
                     </Link>
-
                 </div>
                 {
                     props.mainPageHeader ? <div className="burger-menu" onClick={() => { setActive(prev => !prev) }}>
                         <img src={burger} alt="" />
                     </div> : <Button text={'+380 50 600 60 94'} link={'+380 50 600 60 94'} classes={'btn-course header-course-tel'} />
                 }
-
-
                 {props.children}
-
                 <div className="header-btns">
                     <Button text={'+380 50 600 60 94'} link={'+380 50 600 60 94'} classes={'btn-course step-2 header-btn'} />
                     <Button text={'Записатися'} classes={'btn-course step-1 header-btn'} action='modal' />
@@ -42,11 +36,7 @@ const Header = (props) => {
             {
                 props.mainPageHeader ? <MobileNav active={active} setActive={setActive} /> : null
             }
-
-
-
         </header>
-
     )
 }
 

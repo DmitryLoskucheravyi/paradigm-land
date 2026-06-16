@@ -11,7 +11,6 @@ import image2 from "../../assets/images/image2.png"
 import "./Hero.css"
 const Hero = () => {
     return (
-        <>
             <section id="hero" className="hero container  ">
                 <Header mainPageHeader={true}>
                     <DesctopNav></DesctopNav>
@@ -49,17 +48,11 @@ const Hero = () => {
                     </div>
                 </div>
 
-
-
-
                 <Elipse parametr='glow-blue hero-1'></Elipse>
                 <Elipse parametr='glow-green hero-2'></Elipse>
                 <Elipse parametr='glow-blue hero-3'></Elipse>
 
             </section>
-
-
-        </>
     )
 }
 

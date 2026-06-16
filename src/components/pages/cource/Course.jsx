@@ -24,11 +24,8 @@ const Course = () => {
 
     const [content, setContent] = useState(null)
 
-
-
     useEffect(() => {
         let mounted = true;
-
         getCourse(id).then(course => {
             if (mounted) {
                 setContent(course);
@@ -55,9 +52,7 @@ const Course = () => {
     }
     return (
         <div className="main" >
-            <Reveal>
-                <CourseHero content={content} />
-            </Reveal>
+            <CourseHero content={content} />
             <Reveal>
                 <AboutCourse content={content.fit} suitable={content.suitable} />
             </Reveal>
@@ -65,7 +60,7 @@ const Course = () => {
                 <ChildWork video={content.video} isActive={true} />
             </Reveal>
             <Reveal>
-                <Tabs />
+                <Tabs content={content.plans} course={id} />
             </Reveal>
             <Reveal>
                 <Response>

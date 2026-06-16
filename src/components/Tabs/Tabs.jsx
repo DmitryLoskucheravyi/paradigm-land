@@ -1,54 +1,24 @@
 import { useState } from "react";
 import Elipse from "../elipse/Elipse";
 import Reveal from "../Reveal/Reveal";
-import './Tabs.css'
+import "./Tabs.css";
 
-const plans = {
-    junior: [
-        "Основи Python: змінні, типи даних, input/print",
-        "Оператори та базові обчислення",
-        "Умови та цикли (if, while, for)",
-        "Рядки та списки: методи, операції",
-        "Перші консольні проєкти",
-        "Функції (def) та модулі",
-        "Знайомство з графікою: Turtle",
-        "Основи створення інтерфейсу: Tkinter",
-        "Фінальний проєкт: розробка та захист",
-    ],
+function Tabs({ content, course }) {
+    const plans = Object.assign({}, ...content);
 
-    middle: [
-        "ООП",
-        "Робота з файлами",
-        "SQLite",
-        "API",
-        "Flask",
-        "Django",
-    ],
+    const tabs = Object.keys(plans).map((key) => ({
+        id: key,
+        label: key.charAt(0).toUpperCase() + key.slice(1),
+    }));
 
-    senior: [
-        "Архітектура",
-        "Патерни проєктування",
-        "Docker",
-        "CI/CD",
-        "Мікросервіси",
-        "Хмарні сервіси",
-    ],
-};
-function Tabs() {
-    const [activeTab, setActiveTab] = useState("junior");
-
-    const tabs = [
-        { id: "junior", label: "python" },
-        { id: "middle", label: "python" },
-        { id: "senior", label: "python" },
-    ];
+    const [activeTab, setActiveTab] = useState(tabs[0]?.id || "");
 
     return (
         <section className="roadmap container">
-            <Elipse parametr='glow-green tabs-1'></Elipse>
-            <Elipse parametr='glow-blue tabs-2'></Elipse>
+            <Elipse parametr="glow-green tabs-1" />
+            <Elipse parametr="glow-blue tabs-2" />
 
-            <div className="">
+            <div>
                 <div className="roadmap__top">
                     <h2 className="h2">План навчання</h2>
                     <p className="p-small-secondary">
@@ -58,29 +28,33 @@ function Tabs() {
 
                 <div className="roadmap__main">
                     <div className="roadmap__tabs">
-                        {tabs.map(tab => (
+                        {tabs.map((tab) => (
                             <button
                                 key={tab.id}
                                 className={`roadmap__tab ${activeTab === tab.id ? "active" : ""
                                     }`}
                                 onClick={() => setActiveTab(tab.id)}
                             >
-                                <span className="roadmap__tab-label">{tab.label}</span> <span>{tab.id}</span>
+                                <span className="roadmap__tab-label">{course} </span>
+                                <span >
+                                    {tab.label}
+                                </span>
+
                             </button>
                         ))}
                     </div>
 
-
-
                     <div className="roadmap__list" key={activeTab}>
-                        {plans[activeTab].map((item, index) => (
-                            <Reveal>
-                                <div className={"roadmap__card "} key={index}>
+                        {plans[activeTab]?.map((item, index) => (
+                            <Reveal key={index}>
+                                <div className="roadmap__card">
                                     <span className="p-small-secondary">
                                         {String(index + 1).padStart(2, "0")}
                                     </span>
 
-                                    <p className="p-small-secondary">{item}</p>
+                                    <p className="p-small-secondary">
+                                        {item}
+                                    </p>
                                 </div>
                             </Reveal>
                         ))}
@@ -91,4 +65,4 @@ function Tabs() {
     );
 }
 
-export default Tabs
+export default Tabs;

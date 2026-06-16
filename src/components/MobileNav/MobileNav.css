@@ -31,7 +31,7 @@
 }
 
 .mobile__nav.active {
-        transform: translate(0);
+    transform: translate(0);
 
 }
 
@@ -39,15 +39,17 @@
     border: none;
 }
 
-.mobile__nav-bottom button::before {
-    content: url('../../assets/icons/phone-icon.png');
+.mobile__nav-bottom {
+    position: relative;
+}
+
+.phone-icon {
     position: absolute;
-    top: 28%;
-    left: -18px;
+    top: 0;
+    left: -12px;
 }
 
 .mobile__nav-bottom {
-    margin-left: 1.8rem;
     position: absolute;
     bottom: 1.6rem;
     width: fit-content !important;
@@ -59,7 +61,7 @@
 
 }
 
-.mobile-nav-btn{
+.mobile-nav-btn {
     outline: none !important;
     border: none !important;
 }

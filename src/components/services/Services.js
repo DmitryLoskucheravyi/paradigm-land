@@ -2,9 +2,10 @@ import useHttp from "../hooks/http.hook";
 import { useCallback } from "react";
 const useServices = () => {
 
-    const _VidAPI = 'http://localhost:3000/video';
-    const _RevAPI = 'http://localhost:3000/reviews';
-    const _CourseAPI = 'http://localhost:3000/courses';
+    const API = `http://192.168.0.103:3000`
+    const _VidAPI = `${API}/video`;
+    const _RevAPI = `${API}/reviews`;
+    const _CourseAPI = `${API}/courses`;
 
     const { loading, req, error } = useHttp();
 

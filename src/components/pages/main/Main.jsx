@@ -12,10 +12,7 @@ import "./Main.css"
 const Main = () => {
     return (
         <div className="main ">
-
-            <Reveal>
-                <Hero />
-            </Reveal>
+            <Hero />
             <About />
             <Reveal>
                 <Cources />

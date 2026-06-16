@@ -36,6 +36,7 @@ const MobileNav = ({ active, setActive }) => {
                 <li><a href="#responses">Відгуки</a></li>
             </ul>
             <div className='mobile__nav-bottom'>
+                <img className='phone-icon' src={phone} alt="tel" />
                 <Button text={'+380 50 600 60 94'} link={'+380 50 600 60 94'} classes={'btn-course step-2 mobile-nav-btn'} />
             </div>
         </div>
