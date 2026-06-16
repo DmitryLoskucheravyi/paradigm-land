@@ -7,16 +7,7 @@ import './Modal.css'
 const Modal = () => {
 
     const { isModalOpen, modalVissionToggler } = useModal()
-
-    useEffect(() => {
-        if (isModalOpen) {
-            document.body.style.overflow = "hidden";
-        }
-
-        return () => {
-            document.body.style.overflow = "";
-        };
-    }, [isModalOpen]);
+    
     useEffect(() => {
         const handleKeyDown = (e) => {
             if (e.key === "Escape") modalVissionToggler();

@@ -18,7 +18,7 @@ const useHttp = () => {
             }
 
 
-            const data = res.json();
+            const data = await res.json();
             setLoading(false);
             return data;
         } catch (e) {

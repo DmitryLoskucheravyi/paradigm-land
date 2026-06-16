@@ -9,26 +9,26 @@ const useServices = () => {
 
     const { loading, req, error } = useHttp();
 
-    const getVideoResponses = () => {
+    const getVideoResponses = useCallback(() => {
         return req(_VidAPI);
-    };
+    }, [req]);
 
-    const getTextResponses = (page = 1, limit = 6, filter) => {
+    const getTextResponses = useCallback((page = 1, limit = 6, filter) => {
         if (filter) return req(`${_RevAPI}?course=${filter}&_page=${page}&_per_page=${limit}`)
         else return req(`${_RevAPI}?_page=${page}&_per_page=${limit}`)
-       
-    };
 
-    const getCourses = () => {
+    }, [req]);
+
+    const getCourses = useCallback(() => {
         return req(
             `${_CourseAPI}`
         );
-    }
+    }, [req])
     const getCourse = useCallback(async (id) => {
         return req(
             `${_CourseAPI}/${id}`
         );
-    }, [])
+    }, [req])
 
     return {
         loading,
