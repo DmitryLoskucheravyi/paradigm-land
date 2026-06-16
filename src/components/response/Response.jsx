@@ -6,7 +6,7 @@ import VideoCard from "../video-card/VideoCard";
 import CustomSlider from "../CustomSlider/CustomSlider";
 import ReviewCard from "../ReviewCard/ReviewCard";
 import useServices from "../services/Services";
-
+import Loader from "../Loader/Loader";
 import "./Response.css";
 
 const Response = ({ useElipse, children }) => {
@@ -41,7 +41,7 @@ export const ResponseVideoWrapper = () => {
     const [videos, setVideos] = useState([]);
     const [currentSlide, setCurrentSlide] = useState(0);
 
-    const { getVideoResponses } = useServices();
+    const { loading, error, getVideoResponses } = useServices();
 
     useEffect(() => {
         getVideoResponses().then(setVideos);
@@ -59,6 +59,8 @@ export const ResponseVideoWrapper = () => {
             )),
         [videos, currentSlide]
     );
+
+    if (loading) return (<Loader />)
 
     return (
         <div className="response-slider-video-wrapper">
@@ -84,7 +86,7 @@ export const ResponseTextWrapper = ({
     const [hasMore, setHasMore] = useState(true);
     const [isFetching, setIsFetching] = useState(false);
 
-    const { getTextResponses } = useServices();
+    const { loading, error, getTextResponses } = useServices();
 
     useEffect(() => {
         loadReviews(1);

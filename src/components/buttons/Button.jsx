@@ -1,11 +1,8 @@
-
-
 import { useModal } from "../../ModalContext"
 import { Link } from "react-router-dom"
 import "./Button.css"
 
-const Button = (props) => {
-    const { text, link, classes, action, useRouterLink } = props
+const Button = ({ text, link, classes, action, useRouterLink }) => {
     const classNames = classes + " button-utility"
     const { modalVissionToggler } = useModal()
     const styles = { borderRadius: '1.6rem', padding: '1.6rem' }
@@ -21,8 +18,6 @@ const Button = (props) => {
                         behavior: "smooth"
                     });
                 break;
-            default:
-                console.log('no action!')
         }
     }
     if (useRouterLink) return (<Link to={useRouterLink} className={classNames} style={styles}>{text}</Link>)

@@ -1,8 +1,6 @@
 import "./Card.css"
 
-const Card = (props) => {
-    const { number, title, desc, icon, useCoursePageCard } = props
-
+const Card = ({ number, title, desc, icon, useCoursePageCard }) => {
     return (
         <li className={"about_card-container bg-def " + (useCoursePageCard ? '' : 'about_card')}>
             <img src={icon} alt="" className="card-icon" />

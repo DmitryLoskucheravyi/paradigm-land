@@ -5,6 +5,7 @@ import Form from "../../Form/Form";
 import Footer from "../../footer/Footer";
 import Tabs from "../../Tabs/Tabs";
 import ChildWork from "../../ChildWork/ChildWork";
+import { CourseHeroSkeleton } from "../../Skeletons/Skeletons";
 import { ResponseTextWrapper } from "../../response/Response";
 import useServices from "../../services/Services";
 import { Link, useParams } from "react-router-dom";
@@ -46,7 +47,7 @@ const Course = () => {
     if (loading || !content) {
         return (
             <>
-                <div>Loading...</div>
+                <CourseHeroSkeleton />
             </>
         )
     }

@@ -1,10 +1,10 @@
 import { SwiperSlide } from 'swiper/react';
-
 import CourcesCard from "../CourcesCard/CourcesCard";
+import { SkeletonCard } from '../Skeletons/Skeletons';
 import CustomSlider from "../CustomSlider/CustomSlider";
 import useServices from '../services/Services';
-import "./Cources.css"
 import { useEffect, useState } from 'react';
+import "./Cources.css"
 
 const Cources = () => {
     const [courses, setCourses] = useState([])
@@ -17,6 +17,8 @@ const Cources = () => {
     useEffect(() => {
         getCourses().then(data => setCourses(data))
     }, [])
+
+
     return (
         <section id="courses" className="container cources-container section">
 
@@ -28,7 +30,18 @@ const Cources = () => {
                 </p>
             </div>
 
-            <CustomSlider slidesCount={courses.length}
+            {loading ? <CustomSlider slidesCount={3}
+                breakpoints={{
+                    950: { slidesPerView: 2, spaceBetween: 18, },
+                    1400: { slidesPerView: 3, spaceBetween: 24, },
+                }}
+            >
+                {[0, 1, 2].map((index) => (
+                    <SwiperSlide key={index}>
+                        <SkeletonCard />
+                    </SwiperSlide>
+                ))}
+            </CustomSlider> : <CustomSlider slidesCount={courses.length}
                 breakpoints={{
                     950: { slidesPerView: 2, spaceBetween: 18, },
                     1400: { slidesPerView: 3, spaceBetween: 24, },
@@ -45,7 +58,7 @@ const Cources = () => {
                         />
                     </SwiperSlide>
                 ))}
-            </CustomSlider>
+            </CustomSlider>}
 
         </section>
     );
