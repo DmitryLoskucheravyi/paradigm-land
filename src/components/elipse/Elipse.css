@@ -14,7 +14,7 @@
 /* Green glow */
 .glow-green {
   background: radial-gradient(circle,
-      #00DB6A 0%,
+      var(--hover-green) 0%,
 
       #00DB6AFF 2%,
       #00DB6AFF 4%,
@@ -78,12 +78,12 @@
 
 
 /* .glow-blue{
-  background-color: #01D3FE;
+  background-color: var(--primary-default);
 } */
 /* Blue glow */
 .glow-blue {
   background: radial-gradient(circle,
-      #01D3FE 1%,
+      var(--primary-default) 1%,
 
       #01D3FEFF 2%,
       #01D3FEFF 4%,

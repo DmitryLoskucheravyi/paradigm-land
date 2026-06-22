@@ -41,16 +41,16 @@ input:hover, textarea:hover {
 }
 
 input:focus, textarea:focus {
-    outline-color: #019CBC ;
+    outline-color: var(--primary-hover) ;
 }
 
 input:focus-visible, textarea:focus-visible{
-    outline-color: #FAFAFA ;
+    outline-color: var(--primary-focus) ;
 
 }
 input:user-valid,
 textarea:user-valid {
-    outline-color: #019CBC;
+    outline-color: var(--primary-hover);
 }
 
 label {
@@ -115,7 +115,7 @@ label {
     height: auto;
     background-color: #09FF80;
     border-radius: 1.6rem;
-    color: #101012;
+    color: var(--bg-primary);
     padding: 1.6rem 0.8rem;
     display: flex;
     justify-content: center;

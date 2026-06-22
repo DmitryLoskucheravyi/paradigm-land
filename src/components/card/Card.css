@@ -6,7 +6,7 @@
             #2b2b30 40%,
             #28282d 60%,
             #26262b 80%,
-            #242428 100%);
+            var(--bg-secondary) 100%);
     border-radius: 1.6rem;
     margin-bottom: 2.4rem;
 }
@@ -32,7 +32,7 @@
 .card-num {
     font-family: var(--font-g-bold);
     font-size: 2.4rem;
-    color: #FAFAFA;
+    color: var(--f-white);
     margin-bottom: 0.8rem;
 
 }
@@ -47,7 +47,7 @@
 .about_card {
     position: relative;
     z-index: 2;
-    outline: 1px solid #303036;
+    outline: 1px solid var(--outline-default);
     border-radius: 1.6rem;
     ;
 }

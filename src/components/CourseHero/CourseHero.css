@@ -30,7 +30,7 @@
     font-size: 1.4rem;
     font-weight: 100;
 
-    background-color: #484851 !important;
+    background-color: var(--bg-primary-pressed) !important;
     border-radius: .9rem !important;
     outline: none !important;
 }
@@ -92,7 +92,7 @@
     position: absolute;
     inset: -100px;
 
-    background: #01D3FE;
+    background: var(--primary-default);
     opacity: .4;
 
     filter: blur(100px);

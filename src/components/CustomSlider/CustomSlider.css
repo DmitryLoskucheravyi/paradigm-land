@@ -6,7 +6,7 @@
 }
 
 .arrow-btn {
-    background-color: #101012;
+    background-color: var(--bg-primary);
     outline: 1px solid #93939F;
     padding: 0.8rem;
     border-radius: 1rem;
@@ -15,23 +15,23 @@
 }
 
 .arrow-btn:hover {
-    background-color: #303036;
-    outline: 1px solid #303036;
+    background-color: var(--bg-primary-hover);
+    outline: 1px solid var(--outline-default);
 }
 
 .arrow-btn:focus-visible {
-    background-color: #101012;
-    outline: 1px solid #FAFAFA;
+    background-color: var(--bg-primary);
+    outline: 1px solid var(--primary-focus);
 }
 
 .arrow-btn:active {
-    background-color: #484851;
-    outline: 1px solid #484851;
+    background-color: var(--bg-primary-pressed);
+    outline: 1px solid var(--bg-primary-pressed);
 }
 
 .arrow-btn-dis {
-    background-color: #101012;
-    outline: 1px solid #303036;
+    background-color: var(--bg-primary);
+    outline: 1px solid var(--outline-default);
     padding: 0.8rem;
     border-radius: 1rem;
     opacity: 0.5;
@@ -71,7 +71,7 @@
 .dot.active {
     /* width: 20px; */
     border-radius: 10px;
-    background: #01D3FE;
+    background: var(--primary-default);
 }
 
 .arrows-fullhide {

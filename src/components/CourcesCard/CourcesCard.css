@@ -29,7 +29,7 @@
 }
 
 .course-card-more:active {
-    color: #52FFA5 !important;
+    color: var(--pressed-green) !important;
 
 }
 
@@ -64,7 +64,7 @@
     padding: 1.2rem 1.8rem;
     border: 1px solid black;
     font-size: 1.6rem;
-    background: #01D3FE;
+    background: var(--primary-default);
 }
 
 @media (min-width: 950px) {

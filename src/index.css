@@ -37,10 +37,16 @@
 
     --bg-primary: #101012;
     --bg-secondary: #242428;
+    --outline-default: #303036;
     --bg-def: #303036;
-
     --hover-green: #00DB6A;
-
+    --pressed-green: #52FFA5;
+    --primary-default: #01D3FE;
+    --primary-hover: #019CBC;
+    --primary-pressed: #4DE0FE;
+    --primary-focus: #FAFAFA;
+    --bg-primary-hover: #303036;
+    --bg-primary-pressed: #484851;
     --desctop: 950px;
     --tablet: 490px;
 }
@@ -63,6 +69,7 @@ html {
 
 body {
     background-color: var(--bg-primary);
+    /* background-color: #F5FFFA; */
     font-family: var(--font-g-regular), serif;
     width: 100vw;
     min-height: 100dvh;
@@ -145,27 +152,27 @@ button {
 .course-card-step-1 {
     font-size: 1.8rem;
     border: 1px solid black;
-    background-color: #01D3FE;
+    background-color: var(--primary-default);
     color: black;
 }
 
 .step-1:hover,
 .course-card-step-1:hover {
     color: var(--f-white);
-    background-color: #019CBC !important;
+    background-color: var(--primary-hover) !important;
 }
 
 .step-1:focus-visible,
 .course-card-step-1:focus-visible {
     color: var(--f-white);
-    background-color: #019CBC !important;
-    outline: 1px solid #019CBC !important;
+    background-color: var(--primary-hover) !important;
+    outline: 1px solid var(--primary-hover) !important;
 }
 
 .step-1:active,
 .course-card-step-1:active {
-    color: #101012;
-    background-color: #4DE0FE !important;
+    color: var(--bg-primary);
+    background-color: var(--primary-pressed) !important;
 }
 
 /* Step-2 (green outline) */
@@ -179,30 +186,30 @@ button {
 }
 
 .step-2:not(.header-btn):hover {
-    background-color: #00DB6A;
+    background-color: var(--hover-green);
 }
 
 .step-2:not(.header-btn):focus-visible,
 .hero-desctop-btn:focus-visible {
-    background-color: #00DB6A !important;
+    background-color: var(--hover-green) !important;
     border-color: black;
-    outline: 1px solid #00DB6A !important;
+    outline: 1px solid var(--hover-green) !important;
 }
 
 .step-2:not(.header-btn):active {
-    color: #101012;
-    background-color: #52FFA5;
+    color: var(--bg-primary);
+    background-color: var(--pressed-green);
 }
 
 /* Header ghost buttons */
 
 .header-btn:not(.step-1):hover {
-    color: #00DB6A;
+    color: var(--hover-green);
 }
 
 .header-btn:not(.step-1):active,
 .course-card-more:active {
-    color: #52FFA5 !important;
+    color: var(--pressed-green) !important;
 }
 
 .header-btn:not(.step-1):focus-visible,
@@ -216,7 +223,7 @@ button {
 .base-card {
     position: relative;
     z-index: 2;
-    outline: 1px solid #303036;
+    outline: 1px solid var(--outline-default);
     border-radius: 1.6rem;
     max-width: 42.4rem;
     transition: 0.33s;
@@ -234,7 +241,7 @@ button {
     width: fit-content;
     top: 1.6rem;
     right: 0.8rem;
-    background-color: #484851;
+    background-color: var(--bg-primary-pressed);
     border-radius: 1.2rem;
     color: var(--f-white);
 }
@@ -252,7 +259,7 @@ button {
 }
 
 .footer-nav li a:active {
-    color: #52FFA5 !important;
+    color: var(--pressed-green) !important;
 }
 
 /* ── Responsive ──────────────────────────────────────── */

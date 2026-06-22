@@ -36,7 +36,7 @@
   }
 
   .burger-menu {
-      background-color: #101012;
+      background-color: var(--bg-primary);
       border-radius: 10px;
       width: fit-content;
       padding: 8px 8px 4px;
