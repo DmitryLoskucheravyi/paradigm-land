@@ -35,7 +35,7 @@
     width: fit-content;
     display: flex;
     align-items: center;
-    background-color: #1010127a;
+    background-color: var(--tags-bg);
     outline: 1px solid var(--bg-primary-pressed);
     padding: 4px 8px;
     gap: 8px;
@@ -111,6 +111,21 @@
     z-index: -10;
     pointer-events: none;
     border-radius: inherit;
+}
+.hero-icon {
+    color: var(--f-white);
+    transition: color 0.3s ease;
+}
+
+.hero-icon path,
+.hero-icon circle,
+.hero-icon rect,
+.hero-icon polygon,
+.hero-icon line,
+.hero-icon polyline,
+.hero-icon ellipse {
+    stroke: currentColor;
+    fill: none;
 }
 
 @media (min-width: 440px) {

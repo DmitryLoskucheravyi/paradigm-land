@@ -33,6 +33,7 @@ const Main = () => {
             <Reveal>
                 <Form />
             </Reveal>
+            
             <Footer>
                 <ul className="footer-nav">
                     <li><a className="footer-link" href="#hero">Головна</a></li>

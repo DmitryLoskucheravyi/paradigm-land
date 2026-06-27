@@ -26,14 +26,22 @@
 
   .logo-text {
       position: absolute;
-      left: 28px;
       padding-top: 10px;
+      color: var(--f-white);
   }
 
-  .logo-text-desctop {
-      display: none;
-
+  .logo-text path {
+      fill: currentColor !important;
+      stroke: none !important;
   }
+
+.logo-text {
+    position: absolute;
+    top: 5px;
+    left: clamp(30px, 4vw, 40px);
+  width: clamp(100px, 20vw, 155px);
+  height: auto;
+}
 
   .burger-menu {
       background-color: var(--bg-primary);
@@ -65,7 +73,34 @@
       font-size: 1.4rem;
       font-family: var(--font-g-regular);
       color: var(--f-secondary);
-       padding: 1rem !important;
+      padding: 1rem !important;
+  }
+
+  .desctop-nav {
+      display: none;
+  }
+
+  .desctop-nav li a {
+      padding: 6px 16px;
+      border-radius: 8px;
+  }
+
+  .desctop-nav li a:hover {
+      outline: 1px solid white;
+  }
+
+  @media (min-width:1165px) {
+      .desctop-nav {
+          padding: 0.6rem 1.2rem;
+          margin-left: clamp(22.5rem, 12vw, 25rem);
+          display: flex;
+          color: var(--f-secondary);
+          font-size: 1.6rem;
+          gap: 3.8rem;
+          background-color: var(--bg-secondary);
+          align-items: center;
+          border-radius: 1.6rem;
+      }
   }
 
 
@@ -77,17 +112,6 @@
           position: absolute;
           width: 32px;
           height: 32px;
-      }
-
-      .logo-text {
-          display: none;
-      }
-
-      .logo-text-desctop {
-          display: block;
-          position: absolute;
-          left: 38px;
-          padding-top: 14px;
       }
 
       .burger-menu {

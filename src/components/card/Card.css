@@ -1,14 +1,35 @@
 .card-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     padding: 1.2rem;
     background: linear-gradient(180deg,
-            #2f2f35 0%,
-            #2d2d32 20%,
-            #2b2b30 40%,
-            #28282d 60%,
-            #26262b 80%,
             var(--bg-secondary) 100%);
     border-radius: 1.6rem;
     margin-bottom: 2.4rem;
+    color: var(--f-white);
+    transition: color 0.3s ease;
+}
+
+.card-icon img {
+    display: block;
+    width: 24px;
+    height: 24px;
+}
+
+.card-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.card-icon svg path,
+.card-icon svg circle,
+.card-icon svg rect,
+.card-icon svg polygon,
+.card-icon svg line,
+.card-icon svg polyline,
+.card-icon svg ellipse {
+    stroke: currentColor !important;
 }
 
 .about_card-container {

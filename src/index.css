@@ -25,7 +25,8 @@
 
 /* ── Tokens ─────────────────────────────────────────── */
 
-:root {
+:root,
+[data-theme="dark"] {
     --font-g-regular: "Gilroy-Regular";
     --font-g-extra-bold: "Gilroy-ExtraBold";
     --font-g-bold: "Gilroy-Bold";
@@ -47,8 +48,33 @@
     --primary-focus: #FAFAFA;
     --bg-primary-hover: #303036;
     --bg-primary-pressed: #484851;
+    --tags-bg: #1010127a;
+
     --desctop: 950px;
     --tablet: 490px;
+
+
+    color-scheme: dark;
+}
+
+[data-theme="light"] {
+    --f-white: #101012;
+    --f-secondary: #484851;
+
+    --bg-primary: #FAFAFA;
+    --bg-secondary: #F0F0F2;
+    --outline-default: #D6D6DC;
+    --bg-def: #E8E8EC;
+    --hover-green: #00DB6A;
+    --pressed-green: #52FFA5;
+    --primary-default: #01D3FE;
+    --primary-hover: #019CBC;
+    --primary-pressed: #4DE0FE;
+    --primary-focus: #101012;
+    --bg-primary-hover: #E8E8EC;
+    --bg-primary-pressed: #D6D6DC;
+    --tags-bg: #FAFAFA7a;
+    color-scheme: light;
 }
 
 /* ── Reset ───────────────────────────────────────────── */
@@ -69,11 +95,13 @@ html {
 
 body {
     background-color: var(--bg-primary);
+    color: var(--f-white);
     /* background-color: #F5FFFA; */
     font-family: var(--font-g-regular), serif;
     width: 100vw;
     min-height: 100dvh;
     overflow-x: hidden !important;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 ul {
