@@ -1,5 +1,5 @@
 .course-card {
-    color: white;
+    color: var(--f-white);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -23,9 +23,11 @@
         padding: 2.4rem;
     }
 }
-
+.course-card-more{
+    color: var(--f-white) !important;
+}
 .course-card-more:hover {
-    color: var(--hover-green);
+    color: var(--hover-green) !important;
 }
 
 .course-card-more:active {
@@ -62,7 +64,7 @@
 
 .course-card-step-1 {
     padding: 1.2rem 1.8rem;
-    border: 1px solid black;
+    border: none;
     font-size: 1.6rem;
     background: var(--primary-default);
 }
