@@ -9,7 +9,7 @@ import { CourseHeroSkeleton } from "../../Skeletons/Skeletons";
 import { ResponseTextWrapper } from "../../response/Response";
 import { Link, useParams } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
-import useCourse from "../../../hooks/useCourse";
+import useCourse from "@hooks/useCourse";
 import "./Course.css"
 import Reveal from "../../Reveal/Reveal";
 

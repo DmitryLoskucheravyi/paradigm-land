@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Elipse from "../elipse/Elipse";
 import Reveal from "../Reveal/Reveal";
+import { capitalize } from "../../utils/string";
 import "./Tabs.css";
 
 function Tabs({ content, course }) {
@@ -8,7 +9,7 @@ function Tabs({ content, course }) {
 
     const tabs = Object.keys(plans).map((key) => ({
         id: key,
-        label: key.charAt(0).toUpperCase() + key.slice(1),
+        label: capitalize(key),
     }));
 
     const [activeTab, setActiveTab] = useState(tabs[0]?.id || "");

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { useLocation } from "react-router-dom";
 import useServices from "../services/Services";
+import useIsCoursePage from "./useIsCoursePage";
 
 const useHeader = () => {
     const [active, setActive] = useState(false);
@@ -13,8 +13,7 @@ const useHeader = () => {
     const headerRef = useRef(null);
 
     const { getCourses } = useServices();
-    const location = useLocation();
-    const isCoursePage = location.pathname.startsWith('/course');
+    const isCoursePage = useIsCoursePage();
 
     useEffect(() => {
         getCourses().then(data => setCourses(data || []));

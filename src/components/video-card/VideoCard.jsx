@@ -1,6 +1,7 @@
 import "./VideoCard.css";
 import play from "../../assets/icons/play-icon.png";
 import useVideoCard from "../../hooks/useVideoCard";
+import { cn } from "../../utils/classNames";
 
 const VideoCard = ({ src, isActive }) => {
     const { videoRef, playing, handleToggle } = useVideoCard(isActive);
@@ -11,7 +12,7 @@ const VideoCard = ({ src, isActive }) => {
                 <source src={src} type="video/mp4" />
             </video>
 
-            <div className={`video-toggle-btn ` + (playing ? 'none' : null)} onClick={handleToggle}>
+            <div className={cn('video-toggle-btn', playing && 'none')} onClick={handleToggle}>
                 <img src={play} alt="" onClick={handleToggle} />
             </div>
         </div>

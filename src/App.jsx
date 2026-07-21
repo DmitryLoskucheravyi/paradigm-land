@@ -1,5 +1,6 @@
-import { useState, lazy, Suspense } from 'react'
+import { lazy, Suspense } from 'react'
 import Modal from './components/modal/Modal'
+import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Loader from './components/Loader/Loader'
 const Main = lazy(() => import('./components/pages/main/Main'))
@@ -8,7 +9,7 @@ const NotFound = lazy(() => import('./components/pages/NotFound/NotFound'))
 function App() {
 
   return (
-    <>
+    <ErrorBoundary>
       <Suspense fallback={<Loader />}>
         <Router>
           <Routes>
@@ -19,7 +20,7 @@ function App() {
         </Router>
         <Modal />
       </Suspense>
-    </>
+    </ErrorBoundary>
   )
 }
 

@@ -3,6 +3,8 @@ import { Toggler } from '../Toggler';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import useMobileNav from '../../hooks/useMobileNav';
+import { capitalize } from '../../utils/string';
+import { cn } from '../../utils/classNames';
 import './MobileNav.css'
 
 const CloseIcon = () => (
@@ -28,7 +30,7 @@ const MobileNav = ({ active, setActive }) => {
     const { coursesOpen, courses, isCoursePage, toggleCoursesDropdown } = useMobileNav(active);
 
     return (
-        <div className={'mobile__nav container ' + (active ? 'active' : null)} onClick={() => { setActive(prev => !prev) }}>
+        <div className={cn('mobile__nav', 'container', active && 'active')} onClick={() => { setActive(prev => !prev) }}>
             <div className='mobile__nav-top'>
                 <div className='mobile__nav-close-btn'>
                     <CloseIcon />
@@ -48,7 +50,7 @@ const MobileNav = ({ active, setActive }) => {
                     <ul className="mobile-nav-dropdown-list">
                         {courses.map(({ id }) => (
                             <li key={id}>
-                                <Link to={`/course/${id}`}>{id[0].toUpperCase() + id.slice(1)}</Link>
+                                <Link to={`/course/${id}`}>{capitalize(id)}</Link>
                             </li>
                         ))}
                     </ul>

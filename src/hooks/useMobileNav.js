@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
 import useServices from "../services/Services";
+import useIsCoursePage from "./useIsCoursePage";
 
 const useMobileNav = (active) => {
     const [coursesOpen, setCoursesOpen] = useState(false);
     const [courses, setCourses] = useState([]);
     const { getCourses } = useServices();
-    const location = useLocation();
-    const isCoursePage = location.pathname.startsWith('/course');
+    const isCoursePage = useIsCoursePage();
 
     useEffect(() => {
         getCourses().then(data => setCourses(data || []));

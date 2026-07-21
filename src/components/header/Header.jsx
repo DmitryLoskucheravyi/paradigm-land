@@ -6,6 +6,7 @@ import { HashLink } from "react-router-hash-link"
 import logo from "../../assets/icons/logo.png"
 import { Toggler } from "../Toggler"
 import useHeader from "../../hooks/useHeader"
+import { capitalize } from "../../utils/string"
 
 const BurgerIcon = () => (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -87,7 +88,7 @@ const Header = () => {
                         <ul className="desctop-nav-dropdown-list">
                             {courses.map(({ id }) => (
                                 <li key={id}>
-                                    <Link to={`/course/${id}`} onClick={closeCoursesDropdown}>{id[0].toUpperCase() + id.slice(1)}</Link>
+                                    <Link to={`/course/${id}`} onClick={closeCoursesDropdown}>{capitalize(id)}</Link>
                                 </li>
                             ))}
                         </ul>
