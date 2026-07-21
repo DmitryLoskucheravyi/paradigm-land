@@ -1,4 +1,22 @@
 {
+    "socials": [
+        {
+            "id": "facebook",
+            "url": "https://facebook.com/itparadigma"
+        },
+        {
+            "id": "instagram",
+            "url": "https://instagram.com/itparadigma"
+        },
+        {
+            "id": "tiktok",
+            "url": "https://tiktok.com/@itparadigma"
+        },
+        {
+            "id": "telegram",
+            "url": "https://t.me/itparadigma"
+        }
+    ],
     "video": [
         {
             "id": 1,

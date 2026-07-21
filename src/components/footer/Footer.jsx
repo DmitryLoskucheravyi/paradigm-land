@@ -1,12 +1,15 @@
 import Elipse from "../elipse/Elipse";
 import { Link } from "react-router-dom";
 import LogoText from "@utils/icons/LogoText";
+import useSocials from "../../hooks/useSocials";
 
 import logo from "../../assets/icons/logo.png";
 
 import './Footer.css';
 
 const Footer = (props) => {
+  const { socials } = useSocials();
+
   return (
     <div className="footer_outer">
 
@@ -40,11 +43,16 @@ const Footer = (props) => {
             <div className="footer-contact-block">
               <h3 className="footer-title">Соціальні мережі</h3>
               <div className="social-icons">
+                {socials.map(({ id, url }) => {
+                  const Icon = SOCIAL_ICONS[id];
+                  if (!Icon) return null;
 
-                <a href="#" className="social-icon-placeholder"><FacebookIcon /></a>
-                <a href="#" className="social-icon-placeholder"><InstagramIcon /></a>
-                <a href="#" className="social-icon-placeholder"><TikTokIcon /></a>
-                <a href="#" className="social-icon-placeholder"><TelegramIcon /></a>
+                  return (
+                    <a key={id} href={url} target="_blank" rel="noopener noreferrer" className="social-icon-placeholder">
+                      <Icon />
+                    </a>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -141,5 +149,11 @@ const TelegramIcon = (props) => (
   </svg>
 );
 
+const SOCIAL_ICONS = {
+  facebook: FacebookIcon,
+  instagram: InstagramIcon,
+  tiktok: TikTokIcon,
+  telegram: TelegramIcon,
+};
 
 export default Footer;
