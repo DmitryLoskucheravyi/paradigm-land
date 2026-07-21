@@ -27,28 +27,14 @@
 }
 
 .swiper-slide {
-    overflow-y: visible !important;
-
+    overflow: visible !important;
 }
 
 .swiper-wrapper {
-    overflow-y: visible !important;
+    overflow: visible !important;
 }
 
 .swiper {
-    overflow-y: visible !important;
-}
-
-.swiper-slide:has(.review-card-container:hover) {
-    overflow: visible !important;
-
-}
-
-.swiper-wrapper:has(.review-card-container:hover) {
-    overflow: visible !important;
-}
-
-.swiper:has(.review-card-container:hover) {
     overflow: visible !important;
 }
 

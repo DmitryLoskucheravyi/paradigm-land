@@ -2,16 +2,45 @@ import Button from "../buttons/Button"
 import MobileNav from "../MobileNav/MobileNav"
 import "./Header.css"
 import { Link } from "react-router-dom"
+import { HashLink } from "react-router-hash-link"
 import logo from "../../assets/icons/logo.png"
-import burger from "../../assets/icons/menu-burger.png"
-import { useState } from "react"
 import { Toggler } from "../Toggler"
-const Header = (props) => {
+import useHeader from "../../hooks/useHeader"
 
-    const [active, setActive] = useState(false)
+const BurgerIcon = () => (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 7L4 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+        <path d="M20 12L4 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+        <path d="M20 17L4 17" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+);
+
+const ChevronIcon = () => (
+    <svg width="16" height="8" viewBox="0 0 16 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M14.75 0.750001L7.75 6.75L0.75 0.75" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+);
+
+const Header = () => {
+
+    const {
+        active,
+        setActive,
+        coursesOpen,
+        courses,
+        scrolled,
+        headerHeight,
+        dropdownRef,
+        headerRef,
+        isCoursePage,
+        toggleMobileNav,
+        toggleCoursesDropdown,
+        closeCoursesDropdown,
+    } = useHeader()
 
     return (
-        <header className="container">
+        <>
+        <header ref={headerRef} className={`container${scrolled ? ' header-sticky-scrolled' : ''}`}>
             <nav className="header-nav">
                 <div className="logo">
                     <Link to={`/`}>
@@ -38,13 +67,31 @@ const Header = (props) => {
                         </svg>
                     </Link>
                 </div>
-                <div className="burger-menu" onClick={() => { setActive(prev => !prev) }}>
-                    <img src={burger} alt="" />
+                <div className="burger-menu" onClick={toggleMobileNav}>
+                    <BurgerIcon />
                 </div>
                 <ul className="desctop-nav">
-                    <li><a href="#main">Головна</a></li>
-                    <li><a href="#about">Переваги</a></li>
-                    <li><a href="#courses">Курси</a></li>
+                    <li><HashLink to="/#hero">Головна</HashLink></li>
+                    <li><HashLink to={isCoursePage ? "#about" : "/#features"}>Переваги</HashLink></li>
+                    <li
+                        ref={dropdownRef}
+                        className={`desctop-nav-dropdown ${coursesOpen ? 'open' : ''}`}
+                    >
+                        <div
+                            className="desctop-nav-dropdown-toggle"
+                            onClick={toggleCoursesDropdown}
+                        >
+                            <span>Курси</span>
+                            <ChevronIcon />
+                        </div>
+                        <ul className="desctop-nav-dropdown-list">
+                            {courses.map(({ id }) => (
+                                <li key={id}>
+                                    <Link to={`/course/${id}`} onClick={closeCoursesDropdown}>{id[0].toUpperCase() + id.slice(1)}</Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </li>
                     <li><a href="#responses">Відгуки</a></li>
                     <li><Toggler /></li>
                 </ul>
@@ -55,6 +102,8 @@ const Header = (props) => {
             </nav>
             <MobileNav active={active} setActive={setActive} />
         </header>
+        <div style={{ height: headerHeight }} aria-hidden="true" />
+        </>
     )
 }
 

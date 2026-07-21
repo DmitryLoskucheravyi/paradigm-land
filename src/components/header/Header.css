@@ -1,8 +1,19 @@
   header {
       background: transparent;
-      padding: 4.4rem 0 1.6rem !important;
-      position: relative;
-      z-index: 3;
+      padding-block: 4.4rem 1.6rem !important;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      border-bottom: 1px solid transparent;
+      transition: background-color 0.3s ease, border-color 0.3s ease, padding 0.3s ease;
+  }
+
+  header.header-sticky-scrolled {
+      background-color: var(--bg-primary) !important;
+      border-bottom: 1px solid var(--outline-default);
+      padding-block: 1.6rem !important;
   }
 
   .header-nav {
@@ -89,6 +100,70 @@
       outline: 1px solid white;
   }
 
+  .desctop-nav-dropdown {
+      position: relative;
+  }
+
+  .desctop-nav-dropdown-toggle {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      cursor: pointer;
+      padding: 6px 16px;
+      border-radius: 8px;
+  }
+
+  .desctop-nav-dropdown-toggle:hover {
+      outline: 1px solid white;
+  }
+
+  .desctop-nav-dropdown-toggle svg {
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+  }
+
+  .desctop-nav-dropdown.open .desctop-nav-dropdown-toggle svg {
+      transform: rotate(180deg);
+  }
+
+  .desctop-nav-dropdown-list {
+      position: absolute;
+      top: calc(100% + 1.2rem);
+      left: 0;
+      min-width: 20rem;
+      max-height: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      background-color: var(--bg-secondary);
+      border-radius: 1.6rem;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-8px);
+      transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s, max-height 0.25s ease;
+      z-index: 10;
+  }
+
+  .desctop-nav-dropdown.open .desctop-nav-dropdown-list {
+      max-height: 40rem;
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      padding: 1.2rem;
+  }
+
+  .desctop-nav-dropdown-list a {
+      display: block;
+      padding: 8px 12px;
+      border-radius: 8px;
+      white-space: nowrap;
+  }
+
+  .desctop-nav-dropdown-list a:hover {
+      outline: 1px solid white;
+  }
+
   @media (min-width:1165px) {
       .desctop-nav {
           padding: 0.6rem 1.2rem;
@@ -130,9 +205,7 @@
   @media (min-width:1331px) {
       header {
           background: transparent;
-          padding: 2.5rem 0 8.6rem !important;
-          position: relative;
-          z-index: 3;
+          padding-block: 2.5rem 8.6rem !important;
       }
 
 

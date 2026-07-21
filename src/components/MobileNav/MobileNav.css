@@ -25,9 +25,57 @@
     line-height: 100%;
 }
 
+.mobile-nav-dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    cursor: pointer;
+}
+
+.mobile-nav-dropdown-toggle span {
+    font-size: 2.4rem;
+    line-height: 100%;
+}
+
+.mobile-nav-dropdown-toggle svg {
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.mobile-nav-dropdown.open .mobile-nav-dropdown-toggle svg {
+    transform: rotate(180deg);
+}
+
+.mobile-nav-dropdown-list {
+    max-height: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    transition: max-height 0.3s ease, margin-top 0.3s ease;
+}
+
+.mobile-nav-dropdown.open .mobile-nav-dropdown-list {
+    max-height: 40rem;
+    margin-top: 2rem;
+}
+
+.mobile-nav-dropdown-list a {
+    font-size: 1.8rem;
+    color: var(--f-secondary);
+}
+
 .mobile__nav-top {
     display: flex;
     justify-content: end;
+}
+
+.mobile__nav-close-btn {
+    display: flex;
+    width: fit-content;
+    padding: 1.2rem;
+    border-radius: 10px;
+    background-color: var(--bg-primary);
 }
 
 .mobile__nav.active {
@@ -45,14 +93,17 @@
 
 .phone-icon {
     position: absolute;
-    top: 0;
     left: -12px;
 }
 
 .mobile__nav-bottom {
     position: absolute;
     bottom: 1.6rem;
-    width: fit-content !important;
+    left: 3.2rem;
+    right: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .mobile__nav-bottom a {

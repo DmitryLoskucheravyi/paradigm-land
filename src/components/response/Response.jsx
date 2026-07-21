@@ -1,12 +1,13 @@
-import { useState, useEffect, useMemo } from "react";
+import { useMemo } from "react";
 import { SwiperSlide } from "swiper/react";
 
 import Elipse from "../elipse/Elipse";
 import VideoCard from "../video-card/VideoCard";
 import CustomSlider from "../CustomSlider/CustomSlider";
 import ReviewCard from "../ReviewCard/ReviewCard";
-import useServices from "../services/Services";
 import Loader from "../Loader/Loader";
+import useVideoReviews from "../../hooks/useVideoReviews";
+import useTextReviews from "../../hooks/useTextReviews";
 import "./Response.css";
 
 const Response = ({ useElipse, children }) => {
@@ -38,14 +39,7 @@ export const ResponseTitle = () => (
 );
 
 export const ResponseVideoWrapper = () => {
-    const [videos, setVideos] = useState([]);
-    const [currentSlide, setCurrentSlide] = useState(0);
-
-    const { loading, error, getVideoResponses } = useServices();
-
-    useEffect(() => {
-        getVideoResponses().then(setVideos);
-    }, []);
+    const { loading, videos, currentSlide, setCurrentSlide } = useVideoReviews();
 
     const videosData = useMemo(
         () =>
@@ -81,68 +75,7 @@ export const ResponseTextWrapper = ({
     arrowHideClass,
     useCarousell,
 }) => {
-    const [reviews, setReviews] = useState([]);
-    const [page, setPage] = useState(1);
-    const [hasMore, setHasMore] = useState(true);
-    const [isFetching, setIsFetching] = useState(false);
-
-    const { loading, error, getTextResponses } = useServices();
-
-    useEffect(() => {
-        loadReviews(1);
-    }, []);
-
-    const loadReviews = async (currentPage) => {
-        if (isFetching || !hasMore) return;
-
-        setIsFetching(true);
-
-        try {
-            const response = await getTextResponses(
-                currentPage,
-                6,
-                filter
-            );
-
-            const reviewsData = response.data;
-
-            if (!reviewsData.length) {
-                setHasMore(false);
-                return;
-            }
-
-            setReviews((prev) => {
-                const newReviews = reviewsData.filter(
-                    (review) =>
-                        !prev.some(
-                            (prevReview) => prevReview.id === review.id
-                        )
-                );
-
-                return [...prev, ...newReviews];
-            });
-
-            if (!response.next) {
-                setHasMore(false);
-            }
-        } catch (error) {
-            console.error(error);
-        } finally {
-            setIsFetching(false);
-        }
-    };
-
-    const handleReachEnd = () => {
-        if (isFetching || !hasMore) return;
-
-        setPage((prev) => {
-            const nextPage = prev + 1;
-
-            loadReviews(nextPage);
-
-            return nextPage;
-        });
-    };
+    const { reviews, hasMore, handleReachEnd } = useTextReviews({ filter });
 
     const reviewsData = useMemo(
         () =>

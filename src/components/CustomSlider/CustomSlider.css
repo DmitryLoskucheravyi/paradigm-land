@@ -1,3 +1,16 @@
+.custom-slider {
+    position: relative;
+}
+
+.swiper-clip {
+    position: relative;
+    overflow: hidden;
+    width: calc(100% + 6.4rem);
+    margin-inline: -3.2rem;
+    padding: 3.2rem;
+    box-sizing: border-box;
+}
+
 .arrows {
     display: none;
     /* display: flex; */
@@ -8,7 +21,10 @@
 .arrow-btn {
     background-color: var(--bg-primary);
     outline: 1px solid #93939F;
-    padding: 0.8rem;
+    padding: 1.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 1rem;
     transition: .2s;
 
@@ -32,7 +48,10 @@
 .arrow-btn-dis {
     background-color: var(--bg-primary);
     outline: 1px solid var(--outline-default);
-    padding: 0.8rem;
+    padding: 1.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 1rem;
     opacity: 0.5;
     pointer-events: none;
@@ -78,7 +97,7 @@
     display: none !important;
 }
 
-.cources-container .custom-slider .swiper .swiper-slide {
+.cources-container .custom-slider .swiper-clip .swiper .swiper-slide {
     display: flex;
     justify-content: center;
 }
@@ -94,17 +113,21 @@
 }
 
 .cources-container .custom-slider {
-    width: 100%;
     height: 100%;
     /* ← додати */
 }
 
-.cources-container .custom-slider .swiper {
+.cources-container .custom-slider .swiper-clip {
+    height: calc(100% + 6.4rem);
+    margin-block: -3.2rem;
+}
+
+.cources-container .custom-slider .swiper-clip .swiper {
     height: 100%;
     /* ← додати */
 }
 
-.cources-container .custom-slider .swiper .swiper-wrapper .swiper-slide {
+.cources-container .custom-slider .swiper-clip .swiper .swiper-wrapper .swiper-slide {
     width: 80%;
     display: flex;
     justify-content: center;
@@ -151,7 +174,7 @@
         padding-top: 3rem;
     }
 
-    .cources-container .custom-slider .swiper {
+    .cources-container .custom-slider .swiper-clip .swiper {
         height: 100%;
         padding-top: 6.4rem;
         /* ← додати */

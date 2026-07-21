@@ -33,7 +33,7 @@ const Modal = () => {
                 modalVissionToggler()
             }
         }}>
-            <Form />
+            <Form isModal onClose={modalVissionToggler} />
         </div>,
         document.body
     )

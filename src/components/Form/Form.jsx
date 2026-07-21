@@ -12,7 +12,13 @@ const DEFAULT_VALUES = {
     message: "",
 };
 
-const Form = () => {
+const CloseIcon = () => (
+    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10.75 0.75004L0.750042 10.75M0.75 0.75L10.75 10.75" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+);
+
+const Form = ({ isModal, onClose }) => {
     const [formKey, setFormKey] = useState(0);
 
     const {
@@ -35,6 +41,16 @@ const Form = () => {
     return (
         <div className="form-section container section">
             <div className="form-section-inner form-section-utility bg-secondary">
+                {isModal && (
+                    <button
+                        type="button"
+                        className="form-close-btn"
+                        aria-label="Закрити"
+                        onClick={onClose}
+                    >
+                        <CloseIcon />
+                    </button>
+                )}
                 <div className="form-section-content">
                     <h2 className="h2">Запишіть дитину на IT-курси</h2>
                     <p className="h3 free-lesson-pr" style={{ marginBottom: "2.4rem", marginTop: "1.6rem" }}>

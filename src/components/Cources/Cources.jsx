@@ -2,22 +2,11 @@ import { SwiperSlide } from 'swiper/react';
 import CourcesCard from "../CourcesCard/CourcesCard";
 import { SkeletonCard } from '../Skeletons/Skeletons';
 import CustomSlider from "../CustomSlider/CustomSlider";
-import useServices from '../services/Services';
-import { useEffect, useState } from 'react';
+import useCourses from '../../hooks/useCourses';
 import "./Cources.css"
 
 const Cources = () => {
-    const [courses, setCourses] = useState([])
-    const {
-        loading,
-        error,
-        getCourses
-    } = useServices();
-
-    useEffect(() => {
-        getCourses().then(data => setCourses(data))
-    }, [])
-
+    const { loading, courses } = useCourses();
 
     return (
         <section id="courses" className="container cources-container section">

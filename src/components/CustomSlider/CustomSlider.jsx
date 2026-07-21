@@ -1,11 +1,31 @@
 import { Swiper } from "swiper/react";
 import { Navigation, FreeMode, Mousewheel } from "swiper/modules";
-import { useRef, useState, memo } from "react";
+import { memo } from "react";
 import "swiper/css";
 import "swiper/css/navigation";
 
-import arrow from "../../assets/icons/arrow-icon.png";
+import useCustomSlider from "../../hooks/useCustomSlider";
 import "./CustomSlider.css";
+
+const ArrowIcon = ({ className }) => (
+    <svg
+        className={className}
+        width="8"
+        height="16"
+        viewBox="0 0 8 16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+    >
+        <path
+            d="M0.75 0.75L6.75 7.75L0.75 14.75"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
+    </svg>
+);
 
 const CustomSlider = ({
     children,
@@ -20,142 +40,71 @@ const CustomSlider = ({
     loop = false,
     useCarousell
 }) => {
-
-    const prevRef = useRef(null);
-    const nextRef = useRef(null);
-    const swiperRef = useRef(null);
-
-    const [activeIndex, setActiveIndex] = useState(0);
-    const [isBeginning, setIsBeginning] = useState(true);
-    const [isEnd, setIsEnd] = useState(false);
-
-    const MAX_VISIBLE_DOTS = 10;
-
-    const getVisibleDots = () => {
-
-        if (slidesCount <= MAX_VISIBLE_DOTS) {
-            return Array.from(
-                { length: slidesCount },
-                (_, i) => i
-            );
-        }
-
-        let start = Math.max(
-            0,
-            activeIndex - Math.floor(MAX_VISIBLE_DOTS / 2)
-        );
-
-        let end = start + MAX_VISIBLE_DOTS;
-
-        if (end > slidesCount) {
-            end = slidesCount;
-            start = end - MAX_VISIBLE_DOTS;
-        }
-
-        return Array.from(
-            { length: end - start },
-            (_, i) => start + i
-        );
-    };
+    const {
+        prevRef,
+        nextRef,
+        activeIndex,
+        isBeginning,
+        isEnd,
+        visibleDots,
+        goToSlide,
+        handleSwiperInit,
+        handleSlideChange,
+        handleProgress,
+    } = useCustomSlider({ slidesCount, onSlideChange, onReachEnd });
 
     return (
         <div className="custom-slider">
+            <div className="swiper-clip">
+                <Swiper
+                    loop={loop}
+                    loopAdditionalSlides={slidesCount}
+                    spaceBetween={spaceBetween}
+                    slidesPerView={slidesPerView}
+                    navigation={{ prevEl: null, nextEl: null }}
+                    modules={[Navigation, FreeMode, Mousewheel]}
+                    mousewheel={{
+                        forceToAxis: true,
+                        releaseOnEdges: true,
+                    }}
+                    freeMode={freeScroll}
+                    grabCursor={true}
+                    speed={300}
+                    breakpoints={breakpoints || undefined}
+                    onSwiper={handleSwiperInit}
+                    onSlideChange={handleSlideChange}
+                    onProgress={handleProgress}
+                >
+                    {children}
+                </Swiper>
+            </div>
 
-            <Swiper
-                loop={loop}
-                loopAdditionalSlides={slidesCount}
-                spaceBetween={spaceBetween}
-                slidesPerView={slidesPerView}
-                navigation={{
-                    prevEl: prevRef.current,
-                    nextEl: nextRef.current,
-                }}
-                modules={[Navigation, FreeMode, Mousewheel]}
-                mousewheel={{
-                    forceToAxis: true,
-                    releaseOnEdges: true,
-                }}
-                freeMode={freeScroll}
-                grabCursor={true}
-                speed={300}
-                breakpoints={breakpoints || undefined}
-                onSwiper={(swiper) => {
-                    swiperRef.current = swiper;
-                    setTimeout(() => {
-                        if (!swiper.navigation) return;
-                        swiper.params.navigation.prevEl = prevRef.current;
-                        swiper.params.navigation.nextEl = nextRef.current;
-                        swiper.navigation.init();
-                        swiper.navigation.update();
-                    });
-                }}
-                onSlideChange={(swiper) => {
-                    setActiveIndex(swiper.activeIndex);
-                    setIsBeginning(swiper.isBeginning);
-                    setIsEnd(swiper.isEnd);
-                    const visibleSlides =
-                        typeof swiper.params.slidesPerView === "number"
-                            ? swiper.params.slidesPerView
-                            : 1;
-                    const remaining =
-                        slidesCount - (swiper.activeIndex + visibleSlides);
-                    if (remaining <= 3) {
-                        onReachEnd?.();
-                    }
-                    onSlideChange?.(swiper.activeIndex);
-                }}
-                onProgress={(swiper, progress) => {
-                    if (progress > 0.8) {
-                        onReachEnd?.();
-                    }
-                }}
-            >
-                {children}
-            </Swiper>
             <div className="course-dots">
-                {getVisibleDots().map((index) => (
+                {visibleDots.map((index) => (
                     <div
                         key={index}
-                        onClick={() =>
-                            swiperRef.current?.slideTo(index)
-                        }
-                        className={`dot ${activeIndex === index
-                            ? "active"
-                            : ""
-                            }`}
+                        onClick={() => goToSlide(index)}
+                        className={`dot ${activeIndex === index ? "active" : ""}`}
                     />
                 ))}
             </div>
+
             <div className={`arrows ${arrowHideClass || ""}`}>
                 <div
                     tabIndex={0}
-                    className={
-                        isBeginning && !useCarousell
-                            ? "arrow-btn-dis"
-                            : "arrow-btn"
-                    }
+                    className={isBeginning && !useCarousell ? "arrow-btn-dis" : "arrow-btn"}
                     ref={prevRef}
+                    aria-label="previous"
                 >
-                    <img
-                        className="left-arrow"
-                        src={arrow}
-                        alt="previous"
-                    />
+                    <ArrowIcon className="left-arrow" />
                 </div>
                 <div
                     tabIndex={0}
-                    className={
-                        isEnd && !useCarousell
-                            ? "arrow-btn-dis"
-                            : "arrow-btn"
-                    }
+                    className={isEnd && !useCarousell ? "arrow-btn-dis" : "arrow-btn"}
                     ref={nextRef}
+                    aria-label="next"
                 >
-                    <img
-                        className="right-arrow"
-                        src={arrow}
-                        alt="next"
-                    />
+                    <ArrowIcon className="right-arrow" />
                 </div>
             </div>
         </div>

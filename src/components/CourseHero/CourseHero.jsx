@@ -6,7 +6,6 @@ import './CourseHero.css'
 const CourseHero = (props) => {
 
     const { title, subtitle, description, ageRange, tags, image } = props.content
-    console.log(image)
     return (
         <>
 

@@ -7,36 +7,16 @@ import Tabs from "../../Tabs/Tabs";
 import ChildWork from "../../ChildWork/ChildWork";
 import { CourseHeroSkeleton } from "../../Skeletons/Skeletons";
 import { ResponseTextWrapper } from "../../response/Response";
-import useServices from "../../services/Services";
 import { Link, useParams } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
-import { useEffect, useState } from "react";
+import useCourse from "../../../hooks/useCourse";
 import "./Course.css"
 import Reveal from "../../Reveal/Reveal";
+
 const Course = () => {
-
     const { id } = useParams();
-    console.log(id)
-    const {
-        loading,
-        error,
-        getCourse
-    } = useServices();
+    const { content, loading, error } = useCourse(id);
 
-    const [content, setContent] = useState(null)
-
-    useEffect(() => {
-        let mounted = true;
-        getCourse(id).then(course => {
-            if (mounted) {
-                setContent(course);
-            }
-        });
-
-        return () => {
-            mounted = false;
-        }
-    }, [id, getCourse])
     if (error) {
         return (
             <>
@@ -89,13 +69,3 @@ const Course = () => {
 }
 
 export default Course;
-
-
-
-
-
-
-
-
-
-

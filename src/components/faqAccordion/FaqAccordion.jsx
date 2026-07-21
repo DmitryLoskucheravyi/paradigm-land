@@ -1,25 +1,37 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Elipse from "../elipse/Elipse";
 import Button from "../buttons/Button";
 import Reveal from "../Reveal/Reveal";
-import arrow from "../../assets/icons/arrow-icon.png"
+import useServices from "../../services/Services";
 import "./accordion.css";
 
-const faqData = [
-    { id: 1, title: "З якого віку можна починати професійне програмування?" },
-    { id: 2, title: "Як проходять заняття?" },
-    { id: 3, title: "Чи є офлайн заняття?" },
-    { id: 4, title: "Який графік занять?" },
-    { id: 5, title: "Чи є пробне заняття?" },
-    { id: 6, title: "Коли дитина отримає сертифікат?" },
-    { id: 7, title: "Можна обговорити питання по телефону?" },
-];
-
-const lorem =
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Reprehenderit, ipsa.";
+const ArrowIcon = () => (
+    <svg
+        width="16"
+        height="8"
+        viewBox="0 0 16 8"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+    >
+        <path
+            d="M14.75 0.750001L7.75 6.75L0.75 0.75"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
+    </svg>
+);
 
 const FaqAccordion = () => {
     const [activeId, setActiveId] = useState(null);
+    const [faqData, setFaqData] = useState([]);
+    const { getFaq } = useServices();
+
+    useEffect(() => {
+        getFaq().then(data => setFaqData(data || []));
+    }, []);
 
     const toggleItem = (id) => {
         setActiveId(activeId === id ? null : id);
@@ -50,7 +62,7 @@ const FaqAccordion = () => {
                                 </div>
 
                                 <div tabIndex={0} className={`accordion-icon ${activeId === item.id ? "open" : ""}`}>
-                                    <img src={arrow} alt="" />
+                                    <ArrowIcon />
                                 </div>
                             </div>
                         </Reveal>
@@ -58,7 +70,7 @@ const FaqAccordion = () => {
                             className={`accordion-content ${activeId === item.id ? "show" : ""
                                 }`}
                         >
-                            <p className="accordion-faq-desc">{lorem}</p>
+                            <p className="accordion-faq-desc">{item.description}</p>
                         </div>
                     </div>
                 ))}

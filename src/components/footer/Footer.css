@@ -149,11 +149,27 @@
     width: 2.4rem;
     height: 2.4rem;
     color: var(--f-white);
+    transition: color 0.3s ease;
 }
 
 .social-icon-placeholder:hover {
     border-color: var(--f-white);
     background-color: var(--bg-secondary);
+}
+
+.social-icon-placeholder:hover *,
+.social-icon-placeholder:focus-visible * {
+    color: var(--hover-green);
+}
+
+.social-icon-placeholder:focus-visible {
+    outline: 1px solid var(--hover-green);
+    outline-offset: 2px;
+    border-radius: 0.4rem;
+}
+
+.social-icon-placeholder:active * {
+    color: var(--pressed-green) !important;
 }
 
 .footer-bottom {

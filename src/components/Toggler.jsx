@@ -9,9 +9,9 @@ const getInitialTheme = () => {
 };
 
 export const Toggler = () => {
-    const W = 96;
-    const H = 48;
-    const PAD = 6;
+    const W = 76;
+    const H = 36;
+    const PAD = 4;
     const KNOB = H - PAD * 2;
     const [theme, setTheme] = useState(getInitialTheme);
     const isDark = theme === "dark";
@@ -52,7 +52,7 @@ export const Toggler = () => {
             <span
                 style={{
                     position: "absolute",
-                    left: PAD + 7,
+                    left: PAD + 5,
                     top: "50%",
                     transform: "translateY(-50%)",
                     display: "flex",
@@ -62,13 +62,13 @@ export const Toggler = () => {
                     pointerEvents: "none",
                 }}
             >
-                <Sun size={20} strokeWidth={2.4} />
+                <Sun size={16} strokeWidth={2.4} />
             </span>
 
             <span
                 style={{
                     position: "absolute",
-                    right: PAD + 7,
+                    right: PAD + 5,
                     top: "50%",
                     transform: "translateY(-50%)",
                     display: "flex",
@@ -78,7 +78,7 @@ export const Toggler = () => {
                     pointerEvents: "none",
                 }}
             >
-                <Moon size={18} strokeWidth={2.4} />
+                <Moon size={15} strokeWidth={2.4} />
             </span>
 
             <span
@@ -99,9 +99,9 @@ export const Toggler = () => {
                 }}
             >
                 {isDark ? (
-                    <Moon size={18} strokeWidth={2.4} color="#15161a" />
+                    <Moon size={14} strokeWidth={2.4} color="#15161a" />
                 ) : (
-                    <Sun size={20} strokeWidth={2.4} color="#ffffff" />
+                    <Sun size={15} strokeWidth={2.4} color="#ffffff" />
                 )}
             </span>
         </button>

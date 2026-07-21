@@ -91,12 +91,11 @@
 }
 
 
-.accordion-icon img {
+.accordion-icon svg {
     transition: transform 0.3s ease;
-    rotate: 90deg;
 }
 
-.accordion-icon.open>img {
+.accordion-icon.open>svg {
     transform: rotate(180deg);
 }
 
