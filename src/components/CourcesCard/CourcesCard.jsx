@@ -9,7 +9,7 @@ const CourcesCard = (props) => {
 
     return (
         <>
-            <div className="course-card-container bg-secondary base-card course-card">
+            <div className="course-card-container bg-secondary base-card course-card card-padding">
                 <p className=" absolute-card-span">{ageRange ? ageRange : title}</p>
                 <img src={cardImage} alt="" />
                 <div className="course-card-text-content">

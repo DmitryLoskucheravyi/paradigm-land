@@ -40,7 +40,7 @@ const Form = ({ isModal, onClose }) => {
 
     return (
         <div className="form-section container section">
-            <div className="form-section-inner form-section-utility bg-secondary">
+            <div className="form-section-inner bg-secondary card-padding">
                 {isModal && (
                     <button
                         type="button"

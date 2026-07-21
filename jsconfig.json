@@ -6,7 +6,8 @@
             "@components/*": ["src/components/*"],
             "@hooks/*": ["src/hooks/*"],
             "@services/*": ["src/services/*"],
-            "@utils/*": ["src/utils/*"]
+            "@common/*": ["src/common/*"],
+            "@utils/*": ["src/common/utils/*"]
         }
     },
     "exclude": ["node_modules", "dist"]

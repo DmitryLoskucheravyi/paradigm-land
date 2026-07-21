@@ -30,11 +30,6 @@
     z-index: 1;
 }
 
-.form-section-utility {
-    border-radius: 1.6rem;
-    padding: 1.6rem;
-}
-
 input, textarea {
     background-color: transparent;
     outline: 1px solid var(--bg-def);
@@ -95,18 +90,6 @@ label {
 .error-wrapper img {
     width: 16px;
     height: 16px;
-}
-
-@media (min-width: 492px) {
-    .form-section-utility {
-        padding: 2rem;
-    }
-}
-
-@media (min-width: 950px) {
-    .form-section-utility {
-        padding: 2.4rem;
-    }
 }
 
 .input-utility,

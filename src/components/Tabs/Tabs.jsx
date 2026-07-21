@@ -1,7 +1,8 @@
 import { useState } from "react";
 import Elipse from "../elipse/Elipse";
 import Reveal from "../Reveal/Reveal";
-import { capitalize } from "../../utils/string";
+import { capitalize } from "@utils/string";
+import { formatIndex } from "@utils/format";
 import "./Tabs.css";
 
 function Tabs({ content, course }) {
@@ -50,7 +51,7 @@ function Tabs({ content, course }) {
                             <Reveal key={index}>
                                 <div className="roadmap__card">
                                     <span className="p-small-secondary">
-                                        {String(index + 1).padStart(2, "0")}
+                                        {formatIndex(index)}
                                     </span>
 
                                     <p className="p-small-secondary">

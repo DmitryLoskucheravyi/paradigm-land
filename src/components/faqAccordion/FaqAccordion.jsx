@@ -3,26 +3,9 @@ import Elipse from "../elipse/Elipse";
 import Button from "../buttons/Button";
 import Reveal from "../Reveal/Reveal";
 import useServices from "../../services/Services";
+import ChevronIcon from "@utils/icons/ChevronIcon";
+import { formatIndex } from "@utils/format";
 import "./accordion.css";
-
-const ArrowIcon = () => (
-    <svg
-        width="16"
-        height="8"
-        viewBox="0 0 16 8"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        aria-hidden="true"
-    >
-        <path
-            d="M14.75 0.750001L7.75 6.75L0.75 0.75"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-        />
-    </svg>
-);
 
 const FaqAccordion = () => {
     const [activeId, setActiveId] = useState(null);
@@ -56,13 +39,13 @@ const FaqAccordion = () => {
                             >
                                 <div className="accordion-left">
                                     <span className="accordion-index">
-                                        {String(index + 1).padStart(2, "0")}
+                                        {formatIndex(index)}
                                     </span>
                                     <span className="accordion-title">{item.title}</span>
                                 </div>
 
                                 <div tabIndex={0} className={`accordion-icon ${activeId === item.id ? "open" : ""}`}>
-                                    <ArrowIcon />
+                                    <ChevronIcon />
                                 </div>
                             </div>
                         </Reveal>
