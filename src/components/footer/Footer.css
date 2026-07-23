@@ -96,6 +96,13 @@
     color: var(--f-secondary);
 }
 
+.footer-link:focus-visible {
+    color: var(--hover-green);
+    outline: 1px solid var(--hover-green);
+    outline-offset: 2px;
+    border-radius: 0.4rem;
+}
+
 .social-icons {
     display: flex;
     gap: 1.6rem;
@@ -114,6 +121,12 @@
     display: block;
     position: relative;
     width: fit-content;
+}
+
+.ft-logo a:focus-visible {
+    outline: 1px solid var(--hover-green);
+    outline-offset: 2px;
+    border-radius: 0.4rem;
 }
 
 .ft-logo .logo-icon {

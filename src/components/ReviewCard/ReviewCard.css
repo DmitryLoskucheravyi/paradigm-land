@@ -16,6 +16,7 @@
     flex-direction: column;
     justify-content: space-between;
     background-color: var(--bg-secondary);
+    transition: max-height 0.3s ease;
 }
 
 .review-card-container:hover {
@@ -37,27 +38,51 @@
 }
 
 .review-card-desc {
-    overflow: auto;
-    scrollbar-width: thin;
-    scrollbar-color: #888 #222;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
 }
 
-.review-card-desc::-webkit-scrollbar {
-    width: 6px;
+.review-card-container.has-toggle .review-card-desc {
+    padding-right: 3.2rem;
 }
 
-.review-card-desc::-webkit-scrollbar-track {
-    background: #222;
-    border-radius: 10px;
+.review-card-toggle {
+    position: absolute;
+    right: 1.6rem;
+    bottom: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.2rem;
+    height: 3.2rem;
+    padding: 0;
+    background-color: var(--bg-primary);
+    border: none;
+    border-radius: 0.8rem;
+    color: var(--f-white);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.review-card-desc::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 10px;
+.review-card-toggle:hover {
+    background-color: var(--bg-primary-hover);
 }
 
-.review-card-desc::-webkit-scrollbar-thumb:hover {
-    background: #aaa;
+.review-card-toggle:active {
+    background-color: var(--bg-primary-pressed);
+}
+
+.review-card-toggle:focus-visible {
+    outline: 1px solid var(--f-white);
+    outline-offset: 2px;
+}
+
+.review-card-toggle svg {
+    transition: transform 0.3s ease;
+}
+
+.review-card-container.expanded .review-card-toggle svg {
+    transform: rotate(180deg);
 }
 
 

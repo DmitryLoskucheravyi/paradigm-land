@@ -61,7 +61,7 @@ const Footer = (props) => {
         <div className="footer-bottom">
           <div className="container">
             <p className="footer-copyright">© 2026 IT Paradigma. Всі права захищені</p>
-            <a href="#" className="">Договір оферти</a>
+            <Link to="/oferta" className="footer-link">Договір оферти</Link>
           </div>
         </div>
       </footer>

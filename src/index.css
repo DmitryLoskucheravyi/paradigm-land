@@ -193,9 +193,10 @@ button {
 
 .step-1:focus-visible,
 .course-card-step-1:focus-visible {
-    color: var(--f-white);
+    color: white;
     background-color: var(--primary-hover) !important;
-    outline: 1px solid var(--primary-hover) !important;
+    border: 2px solid var(--bg-primary) !important;
+    outline: 2px solid var(--primary-hover) !important;
 }
 
 .step-1:active,
@@ -221,8 +222,9 @@ button {
 .step-2:not(.header-btn):focus-visible,
 .hero-desctop-btn:focus-visible {
     background-color: var(--hover-green) !important;
-    border-color: black;
-    outline: 1px solid var(--hover-green) !important;
+    border-color: var(--bg-primary);
+     color: white;
+    outline: 2px solid var(--hover-green) !important;
 }
 
 .step-2:not(.header-btn):active {

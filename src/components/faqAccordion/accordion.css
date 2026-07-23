@@ -63,7 +63,7 @@
 .accordion-icon {
     padding: 1rem;
     background-color: var(--bg-primary);
-    border-radius: 1.4rem;
+    border-radius: 0.8rem;
     display: flex;
     justify-content: center;
     align-items: center;
