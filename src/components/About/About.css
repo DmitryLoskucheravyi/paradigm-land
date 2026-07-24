@@ -6,7 +6,7 @@
 
 
 
-.about__cards {
+.about-cards {
     width: 100%;
     display: grid;
     padding-top: 12rem;
@@ -31,7 +31,7 @@
 
 }
 @media(min-width: 650px) {
-    .about__cards {
+    .about-cards {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: repeat(2, auto);
         gap: calc(2.5vw);
@@ -40,7 +40,7 @@
 }
 
 @media(min-width: 1200px) {
-    .about__cards {
+    .about-cards {
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(2, auto);
         gap: calc(2vw - 0.4rem);

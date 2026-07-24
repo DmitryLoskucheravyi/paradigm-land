@@ -21,14 +21,26 @@ const withComputedPrice = (tiers) => {
 
 const usePricing = () => {
     const [tiers, setTiers] = useState([]);
-    const { loading, getPricing } = useServices();
+    const { loading, error, getPricing } = useServices();
 
     useEffect(() => {
-        getPricing().then((data) => setTiers(withComputedPrice(data || [])));
-    }, []);
+        let mounted = true;
+        getPricing()
+            .then((data) => {
+                if (mounted) {
+                    setTiers(withComputedPrice(data || []));
+                }
+            })
+            .catch(() => {});
+
+        return () => {
+            mounted = false;
+        };
+    }, [getPricing]);
 
     return {
         loading,
+        error,
         tiers: tiers.filter((tier) => !tier.hidden),
     };
 };

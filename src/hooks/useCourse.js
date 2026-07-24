@@ -7,11 +7,13 @@ const useCourse = (id) => {
 
     useEffect(() => {
         let mounted = true;
-        getCourse(id).then(course => {
-            if (mounted) {
-                setContent(course);
-            }
-        });
+        getCourse(id)
+            .then(course => {
+                if (mounted) {
+                    setContent(course);
+                }
+            })
+            .catch(() => {});
 
         return () => {
             mounted = false;

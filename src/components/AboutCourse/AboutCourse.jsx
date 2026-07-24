@@ -15,13 +15,13 @@ const AboutCourse = ({ content, suitable }) => {
     return (
         <section id='about' className="about-course section container">
             <Elipse parametr='glow-blue about-course-1-1'></Elipse>
-            <div className="about__course-top">
+            <div className="about-course-top">
                 <h2 className="h2">Кому підходить цей курс</h2>
                 <p className="p-small-secondary">
                     {suitable}
                 </p>
             </div>
-            <ul className="about_course-cards">
+            <ul className="about-course-cards">
                 {content.map(({ title, description }, index) => (
                     <Reveal key={index}>
                         <Card

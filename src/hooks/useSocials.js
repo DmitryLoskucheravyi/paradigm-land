@@ -3,13 +3,24 @@ import useServices from "@services/Services";
 
 const useSocials = () => {
     const [socials, setSocials] = useState([]);
-    const { getSocials } = useServices();
+    const { loading, error, getSocials } = useServices();
 
     useEffect(() => {
-        getSocials().then(data => setSocials(data || []));
-    }, []);
+        let mounted = true;
+        getSocials()
+            .then(data => {
+                if (mounted) {
+                    setSocials(data || []);
+                }
+            })
+            .catch(() => {});
 
-    return { socials };
+        return () => {
+            mounted = false;
+        };
+    }, [getSocials]);
+
+    return { loading, error, socials };
 };
 
 export default useSocials;

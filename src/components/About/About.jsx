@@ -73,7 +73,7 @@ const About = () => {
         <section id="features" className="about container">
             <Button text={'Обрати курс'} classes={'btn-course step-2 mobile-hero-btn '} action='scroll-to' />
 
-            <ul className="about__cards">
+            <ul className="about-cards">
                 {statisticsData.map(({ id, number, title, desc, icon }) =>
                 (
                     <Reveal key={id}>

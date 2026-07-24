@@ -1,4 +1,4 @@
-.modal_outer {
+.modal-outer {
     position: fixed;
     inset: 0;
     background-color: #000000de;
@@ -16,7 +16,7 @@
 }
 
 @media (max-width: 950px) {
-    .modal_outer {
+    .modal-outer {
         .form-section {
             max-width: 56rem;
         }

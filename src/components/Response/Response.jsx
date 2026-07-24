@@ -6,6 +6,7 @@ import VideoCard from "@components/VideoCard/VideoCard";
 import CustomSlider from "@components/CustomSlider/CustomSlider";
 import ReviewCard from "@components/ReviewCard/ReviewCard";
 import Loader from "@components/Loader/Loader";
+import { ReviewCardSkeleton } from "@components/Skeletons/Skeletons";
 import useVideoReviews from "@hooks/useVideoReviews";
 import useTextReviews from "@hooks/useTextReviews";
 import "./Response.css";
@@ -75,7 +76,7 @@ export const ResponseTextWrapper = ({
     arrowHideClass,
     useCarousell,
 }) => {
-    const { reviews, hasMore, handleReachEnd } = useTextReviews({ filter });
+    const { reviews, hasMore, loading, handleReachEnd } = useTextReviews({ filter });
 
     const reviewsData = useMemo(
         () =>
@@ -106,8 +107,27 @@ export const ResponseTextWrapper = ({
         []
     );
 
+    const showSkeleton = loading && !reviews.length;
+
     return (
         <div className="response-slider-text-wrapper">
+            {showSkeleton && (
+                <CustomSlider
+                    slidesCount={3}
+                    freeScroll={false}
+                    spaceBetween={16}
+                    slidesPerView={1}
+                    breakpoints={breakpoints}
+                    arrowHideClass={arrowHideClass}
+                    useCarousell={useCarousell}
+                >
+                    {[0, 1, 2].map((i) => (
+                        <SwiperSlide key={i}>
+                            <ReviewCardSkeleton />
+                        </SwiperSlide>
+                    ))}
+                </CustomSlider>
+            )}
             {!!reviews.length && (
                 <CustomSlider
                     slidesCount={reviews.length}

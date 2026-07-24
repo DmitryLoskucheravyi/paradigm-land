@@ -114,6 +114,10 @@
 }
 
 
+.accordion-status {
+    padding: 1.5rem 0;
+}
+
 .accordion-quest-btn {
     width: 50%;
     font-size: 1.6rem;

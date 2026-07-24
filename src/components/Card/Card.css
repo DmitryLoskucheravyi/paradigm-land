@@ -32,19 +32,19 @@
     stroke: currentColor !important;
 }
 
-.about_card-container {
+.about-card-container {
     border-radius: 1.6rem;
     padding: 2.4rem;
 }
 
 @media (min-width: 492px) {
-    .about_card-container {
+    .about-card-container {
         padding: 2.4rem;
     }
 }
 
 @media (min-width: 950px) {
-    .about_card-container {
+    .about-card-container {
         padding: 3.2rem;
     }
 }
@@ -65,7 +65,7 @@
 
 }
 
-.about_card {
+.about-card {
     position: relative;
     z-index: 2;
     outline: 1px solid var(--outline-default);
@@ -76,7 +76,7 @@
 
 
 @media (min-width: 1200px) {
-    .about_card {
+    .about-card {
         max-height: 32rem;
     }
 
@@ -93,7 +93,7 @@
         font-size: 2rem;
     }
 
-    .about__cards>*:last-child {
+    .about-cards>*:last-child {
         grid-column: 1 / -1;
     }
 }

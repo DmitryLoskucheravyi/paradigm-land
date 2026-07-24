@@ -4,7 +4,7 @@ const Card = ({ number, title, desc, icon, useCoursePageCard }) => {
     const Icon = icon;
 
     return (
-        <li className={"about_card-container bg-def " + (useCoursePageCard ? '' : 'about_card')}>
+        <li className={"about-card-container bg-def " + (useCoursePageCard ? '' : 'about-card')}>
             {Icon ? (
                 <div className="card-icon">
                     {typeof Icon === 'string' ? (

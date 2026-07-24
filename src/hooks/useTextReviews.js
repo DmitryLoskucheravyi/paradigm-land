@@ -4,22 +4,17 @@ import useServices from "@services/Services";
 const useTextReviews = ({ filter }) => {
     const [reviews, setReviews] = useState([]);
     const [hasMore, setHasMore] = useState(true);
-    const [isFetching, setIsFetching] = useState(false);
     const page = useRef(1);
+    const mountedRef = useRef(true);
 
-    const { getTextResponses } = useServices();
+    const { loading, error, getTextResponses } = useServices();
 
     const loadReviews = async (currentPage) => {
-        if (isFetching || !hasMore) return;
-
-        setIsFetching(true);
+        if (loading || !hasMore) return;
 
         try {
-            const response = await getTextResponses(
-                currentPage,
-                6,
-                filter
-            );
+            const response = await getTextResponses(currentPage, 6, filter);
+            if (!mountedRef.current) return;
 
             const reviewsData = response.data;
 
@@ -42,19 +37,21 @@ const useTextReviews = ({ filter }) => {
             if (!response.next) {
                 setHasMore(false);
             }
-        } catch (error) {
-            console.error(error);
-        } finally {
-            setIsFetching(false);
+        } catch {
+            // error is already captured in `error` state returned below
         }
     };
 
     useEffect(() => {
         loadReviews(1);
+
+        return () => {
+            mountedRef.current = false;
+        };
     }, []);
 
     const handleReachEnd = () => {
-        if (isFetching || !hasMore) return;
+        if (loading || !hasMore) return;
 
         page.current += 1;
         loadReviews(page.current);
@@ -63,6 +60,8 @@ const useTextReviews = ({ filter }) => {
     return {
         reviews,
         hasMore,
+        loading,
+        error,
         handleReachEnd,
     };
 };

@@ -10,11 +10,20 @@ import "./FaqAccordion.css";
 const FaqAccordion = () => {
     const [activeId, setActiveId] = useState(null);
     const [faqData, setFaqData] = useState([]);
-    const { getFaq } = useServices();
+    const { loading, error, getFaq } = useServices();
 
     useEffect(() => {
-        getFaq().then(data => setFaqData(data || []));
-    }, []);
+        let mounted = true;
+        getFaq()
+            .then(data => {
+                if (mounted) setFaqData(data || []);
+            })
+            .catch(() => {});
+
+        return () => {
+            mounted = false;
+        };
+    }, [getFaq]);
 
     const toggleItem = (id) => {
         setActiveId(activeId === id ? null : id);
@@ -29,7 +38,13 @@ const FaqAccordion = () => {
             </div>
             <Elipse parametr='glow-green accordion-2'></Elipse>
             <div className="accordion ">
-                {faqData.map((item, index) => (
+                {loading && (
+                    <p className="p-small-secondary accordion-status">Завантаження питань...</p>
+                )}
+                {error && (
+                    <p className="p-small-secondary accordion-status">Не вдалося завантажити питання.</p>
+                )}
+                {!loading && !error && faqData.map((item, index) => (
                     <div key={item.id} className="accordion-item">
 
                         <Reveal>

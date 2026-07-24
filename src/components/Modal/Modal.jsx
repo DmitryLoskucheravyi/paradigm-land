@@ -27,9 +27,9 @@ const Modal = () => {
     if (!isModalOpen) return null
 
     return createPortal(
-        <div className="modal_outer" onClick={(e) => {
+        <div className="modal-outer" onClick={(e) => {
             console.log(e.target)
-            if (e.target.classList.contains('modal_outer') || e.target.classList.contains('h2')) {
+            if (e.target.classList.contains('modal-outer') || e.target.classList.contains('h2')) {
                 modalVissionToggler()
             }
         }}>

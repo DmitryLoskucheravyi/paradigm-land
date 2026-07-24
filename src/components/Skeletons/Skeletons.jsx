@@ -46,6 +46,22 @@ export const ReviewCardSkeleton = () => {
     );
 };
 
+export const PricingCardSkeleton = () => {
+    return (
+        <div className="pricing-card bg-secondary base-card card-padding">
+            <div className="skeleton-pricing-tag shimmer"></div>
+
+            <div className="skeleton-pricing-lessons shimmer"></div>
+
+            <div className="skeleton-pricing-price shimmer"></div>
+
+            <div className="skeleton-pricing-per-lesson shimmer"></div>
+
+            <div className="skeleton-pricing-btn shimmer"></div>
+        </div>
+    );
+};
+
 export const CourseHeroSkeleton = () => {
     return (
         <section className="course-hero-skeleton container">

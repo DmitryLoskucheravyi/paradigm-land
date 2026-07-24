@@ -1,5 +1,5 @@
 import Button from '@components/Button/Button';
-import { Toggler } from '@components/Toggler';
+import Toggler from '@components/Toggler/Toggler';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import useMobileNav from '@hooks/useMobileNav';
@@ -20,13 +20,13 @@ const MobileNav = ({ active, setActive }) => {
     const { coursesOpen, courses, isCoursePage, toggleCoursesDropdown } = useMobileNav(active);
 
     return (
-        <div className={cn('mobile__nav', 'container', active && 'active')} onClick={() => { setActive(prev => !prev) }}>
-            <div className='mobile__nav-top'>
-                <div className='mobile__nav-close-btn'>
+        <div className={cn('mobile-nav', 'container', active && 'active')} onClick={() => { setActive(prev => !prev) }}>
+            <div className='mobile-nav-top'>
+                <div className='mobile-nav-close-btn'>
                     <CloseIcon />
                 </div>
             </div>
-            <ul className="mobile__nav-ul">
+            <ul className="mobile-nav-ul">
                 <li><HashLink to="/#hero">Головна</HashLink></li>
                 <li><HashLink to={isCoursePage ? "#about" : "/#features"}>Переваги</HashLink></li>
                 <li className={`mobile-nav-dropdown ${coursesOpen ? 'open' : ''}`}>
@@ -47,7 +47,7 @@ const MobileNav = ({ active, setActive }) => {
                 </li>
                 <li><a href="#responses">Відгуки</a></li>
             </ul>
-            <div className='mobile__nav-bottom'>
+            <div className='mobile-nav-bottom'>
                 <PhoneIcon className="phone-icon" />
                 <Button text={'+380 50 600 60 94'} link={'+380 50 600 60 94'} classes={'btn-course step-2 mobile-nav-btn'} />
                 <div onClick={(e) => e.stopPropagation()}>

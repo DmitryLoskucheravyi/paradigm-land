@@ -11,7 +11,7 @@ const Footer = (props) => {
   const { socials } = useSocials();
 
   return (
-    <div className="footer_outer">
+    <div className="footer-outer">
 
       <Elipse parametr='glow-green form-2'></Elipse>
 

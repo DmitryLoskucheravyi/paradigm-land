@@ -13,9 +13,9 @@ const Hero = () => {
         <section id="hero" className="hero container  ">
             <Header></Header>
 
-            <div className="hero__wrapper">
-                <div className="hero__content">
-                    <div className="hero__tags">
+            <div className="hero-wrapper">
+                <div className="hero-content">
+                    <div className="hero-tags">
                         <div className="tag" style={{ borderRadius: '1.6rem' }}>
 
                             <svg className="hero-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -43,18 +43,18 @@ const Hero = () => {
                     </div>
 
                     <div>
-                        <div className="hero__text">
-                            <h2 className="hero__content-title">Школа програмування для дітей від 5 років</h2>
-                            <p className="hero__content-desc">З IT Paradigma ваша дитина вже на перших заняттях створить власну гру, програму або сайт. </p>
+                        <div className="hero-text">
+                            <h2 className="hero-content-title">Школа програмування для дітей від 5 років</h2>
+                            <p className="hero-content-desc">З IT Paradigma ваша дитина вже на перших заняттях створить власну гру, програму або сайт. </p>
                         </div>
-                        <div className="btns hero_btns">
+                        <div className="btns hero-btns">
                             <Button text={'Записатися'} classes={'btn-course step-1 hero-mobile-shadow-btn'} action='modal' />
                             <Button text={'Обрати курс'} classes={'btn-course step-2 hero-desctop-btn'} action='scroll-to' />
                         </div>
                     </div>
                 </div>
 
-                <div className="hero__wrapper-imgs">
+                <div className="hero-wrapper-imgs">
                     <img src={image1} alt="" />
                     <img src={image2} alt="" />
                 </div>

@@ -6,6 +6,7 @@ import Footer from "@components/Footer/Footer";
 import Tabs from "@components/Tabs/Tabs";
 import ChildWork from "@components/ChildWork/ChildWork";
 import { CourseHeroSkeleton } from "@components/Skeletons/Skeletons";
+import { ErrorState } from "@components/ErrorBoundary/ErrorBoundary";
 import { ResponseTextWrapper } from "@components/Response/Response";
 import { Link, useParams } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
@@ -18,11 +19,7 @@ const Course = () => {
     const { content, loading, error } = useCourse(id);
 
     if (error) {
-        return (
-            <>
-                <div>Error!</div>
-            </>
-        )
+        return <ErrorState message="Не вдалося завантажити курс. Спробуйте оновити сторінку." />;
     }
     if (loading || !content) {
         return (

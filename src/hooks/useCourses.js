@@ -3,13 +3,24 @@ import useServices from "@services/Services";
 
 const useCourses = () => {
     const [courses, setCourses] = useState([]);
-    const { loading, getCourses } = useServices();
+    const { loading, error, getCourses } = useServices();
 
     useEffect(() => {
-        getCourses().then(data => setCourses(data));
-    }, []);
+        let mounted = true;
+        getCourses()
+            .then(data => {
+                if (mounted) {
+                    setCourses(data);
+                }
+            })
+            .catch(() => {});
 
-    return { loading, courses };
+        return () => {
+            mounted = false;
+        };
+    }, [getCourses]);
+
+    return { loading, error, courses };
 };
 
 export default useCourses;

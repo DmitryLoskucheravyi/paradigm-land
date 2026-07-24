@@ -1,31 +1,31 @@
-.childwork__section{
+.childwork-section{
     position: relative;
 }
-.childwork__top {
+.childwork-top {
     display: flex;
     flex-direction: column;
     gap: 1.6rem;
 }
 
-.childwork__main-descriptions {
+.childwork-main-descriptions {
     margin-top: 2.4rem;
     display: flex;
     flex-direction: column;
     gap: 1.6rem;
 }
 
-.childwork__top-left__content {
+.childwork-top-left-content {
     display: flex;
     justify-content: end;
 }
 
-.childwork__main {
+.childwork-main {
     display: flex;
     width: 100%;
     flex-direction: column;
 }
 
-.video__wrapper {
+.video-wrapper {
     display: flex;
     justify-content: center;
 }
@@ -43,38 +43,38 @@
 }
 
 @media (min-width: 950px) {
-    .childwork__top {
+    .childwork-top {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
     }
 
-    .childwork__top {
+    .childwork-top {
         margin-bottom: 1.2rem;
     }
 }
 
 @media (min-width: 1250px) {
-    .video__wrapper {
+    .video-wrapper {
         width: 50%;
         display: flex;
         justify-content: center;
     }
 
-    .childwork__main {
+    .childwork-main {
         display: flex;
         width: 100%;
         flex-direction: row-reverse;
         justify-content: space-between;
     }
 
-    .childwork__main-descriptions {
+    .childwork-main-descriptions {
         width: 45%;
         display: flex;
         justify-content: space-between;
     }
 
-    .childwork__top {
+    .childwork-top {
         margin-bottom: 2.6rem;
     }
 }

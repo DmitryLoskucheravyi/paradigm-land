@@ -21,23 +21,23 @@ function Tabs({ content, course }) {
             <Elipse parametr="glow-blue tabs-2" />
 
             <div>
-                <div className="roadmap__top">
+                <div className="roadmap-top">
                     <h2 className="h2">План навчання</h2>
                     <p className="p-small-secondary">
                         Після проходження кожного етапу наші учні отримують сертифікат
                     </p>
                 </div>
 
-                <div className="roadmap__main">
-                    <div className="roadmap__tabs">
+                <div className="roadmap-main">
+                    <div className="roadmap-tabs">
                         {tabs.map((tab) => (
                             <button
                                 key={tab.id}
-                                className={`roadmap__tab ${activeTab === tab.id ? "active" : ""
+                                className={`roadmap-tab ${activeTab === tab.id ? "active" : ""
                                     }`}
                                 onClick={() => setActiveTab(tab.id)}
                             >
-                                <span className="roadmap__tab-label">{course} </span>
+                                <span className="roadmap-tab-label">{course} </span>
                                 <span >
                                     {tab.label}
                                 </span>
@@ -46,10 +46,10 @@ function Tabs({ content, course }) {
                         ))}
                     </div>
 
-                    <div className="roadmap__list" key={activeTab}>
+                    <div className="roadmap-list" key={activeTab}>
                         {plans[activeTab]?.map((item, index) => (
                             <Reveal key={index}>
-                                <div className="roadmap__card">
+                                <div className="roadmap-card">
                                     <span className="p-small-secondary">
                                         {formatIndex(index)}
                                     </span>

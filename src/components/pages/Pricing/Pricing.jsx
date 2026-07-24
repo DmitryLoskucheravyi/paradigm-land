@@ -3,6 +3,7 @@ import Footer from "@components/Footer/Footer";
 import Button from "@components/Button/Button";
 import { Link } from "react-router-dom";
 import usePricing from "@hooks/usePricing";
+import { PricingCardSkeleton } from "@components/Skeletons/Skeletons";
 import "./Pricing.css";
 
 const CheckIcon = () => (
@@ -40,7 +41,7 @@ const PricingCard = ({ tier }) => (
 );
 
 const Pricing = () => {
-    const { tiers } = usePricing();
+    const { tiers, loading } = usePricing();
 
     return (
         <div className="main">
@@ -53,9 +54,11 @@ const Pricing = () => {
                 </p>
 
                 <div className="pricing-grid">
-                    {tiers.map((tier) => (
-                        <PricingCard key={tier.id} tier={tier} />
-                    ))}
+                    {loading
+                        ? [0, 1, 2].map((i) => <PricingCardSkeleton key={i} />)
+                        : tiers.map((tier) => (
+                            <PricingCard key={tier.id} tier={tier} />
+                        ))}
                 </div>
 
                 <p className="p-small-secondary pricing-page-footnote">

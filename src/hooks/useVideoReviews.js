@@ -5,14 +5,26 @@ const useVideoReviews = () => {
     const [videos, setVideos] = useState([]);
     const [currentSlide, setCurrentSlide] = useState(0);
 
-    const { loading, getVideoResponses } = useServices();
+    const { loading, error, getVideoResponses } = useServices();
 
     useEffect(() => {
-        getVideoResponses().then(setVideos);
-    }, []);
+        let mounted = true;
+        getVideoResponses()
+            .then(data => {
+                if (mounted) {
+                    setVideos(data);
+                }
+            })
+            .catch(() => {});
+
+        return () => {
+            mounted = false;
+        };
+    }, [getVideoResponses]);
 
     return {
         loading,
+        error,
         videos,
         currentSlide,
         setCurrentSlide,

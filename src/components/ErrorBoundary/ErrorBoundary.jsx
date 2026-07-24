@@ -1,6 +1,18 @@
 import { Component } from "react";
 import "./ErrorBoundary.css";
 
+export const ErrorState = ({ message, onRetry }) => (
+    <div className="error-boundary">
+        <h2 className="h2">Щось пішло не так</h2>
+        <p className="p-small-secondary">
+            {message || "Сталася непередбачена помилка. Спробуйте оновити сторінку."}
+        </p>
+        <button className="error-boundary-btn" onClick={onRetry || (() => window.location.reload())}>
+            Оновити сторінку
+        </button>
+    </div>
+);
+
 class ErrorBoundary extends Component {
     constructor(props) {
         super(props);
@@ -21,17 +33,7 @@ class ErrorBoundary extends Component {
 
     render() {
         if (this.state.hasError) {
-            return (
-                <div className="error-boundary">
-                    <h2 className="h2">Щось пішло не так</h2>
-                    <p className="p-small-secondary">
-                        Сталася непередбачена помилка. Спробуйте оновити сторінку.
-                    </p>
-                    <button className="error-boundary-btn" onClick={this.handleReload}>
-                        Оновити сторінку
-                    </button>
-                </div>
-            );
+            return <ErrorState onRetry={this.handleReload} />;
         }
 
         return this.props.children;
