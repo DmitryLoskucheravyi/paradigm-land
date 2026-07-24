@@ -6,6 +6,7 @@ import Loader from '@components/Loader/Loader'
 const Main = lazy(() => import('@components/pages/Main/Main'))
 const Course = lazy(() => import('@components/pages/Course/Course'))
 const Offer = lazy(() => import('@components/pages/Offer/Offer'))
+const Pricing = lazy(() => import('@components/pages/Pricing/Pricing'))
 const NotFound = lazy(() => import('@components/pages/NotFound/NotFound'))
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
             <Route path='/' element={<Main />} />
             <Route path='/course/:id' element={<Course />} />
             <Route path='/oferta' element={<Offer />} />
+            <Route path='/prices' element={<Pricing />} />
             <Route path='*' element={<NotFound />} />
           </Routes>
         </Router>
