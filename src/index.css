@@ -187,7 +187,7 @@ button {
 
 .step-1:hover,
 .course-card-step-1:hover {
-    color: var(--f-white);
+    color: white;
     background-color: var(--primary-hover) !important;
 }
 
@@ -201,7 +201,7 @@ button {
 
 .step-1:active,
 .course-card-step-1:active {
-    color: var(--bg-primary);
+    color: black;
     background-color: var(--primary-pressed) !important;
 }
 
@@ -217,6 +217,7 @@ button {
 
 .step-2:not(.header-btn):hover {
     background-color: var(--hover-green);
+    color: white;
 }
 
 .step-2:not(.header-btn):focus-visible,
@@ -228,7 +229,7 @@ button {
 }
 
 .step-2:not(.header-btn):active {
-    color: var(--bg-primary);
+    color: black;
     background-color: var(--pressed-green);
 }
 
