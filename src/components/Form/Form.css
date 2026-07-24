@@ -32,7 +32,7 @@
 
 input, textarea {
     background-color: transparent;
-    outline: 1px solid var(--bg-def);
+    outline: 1px solid var(--outline-default);
     border: none;
     resize: none;
     width: 100%;
