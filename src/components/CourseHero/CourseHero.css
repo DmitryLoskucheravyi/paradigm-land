@@ -101,6 +101,74 @@
     pointer-events: none;
 }
 
+.course-logo-sparkles {
+    position: absolute;
+    inset: 0;
+
+    color: var(--f-white);
+    pointer-events: none;
+}
+
+.course-logo-sparkle {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 36px;
+    height: 36px;
+
+    background-color: var(--bg-secondary);
+    border-radius: 10px;
+
+    animation: course-logo-sparkle-float 3.2s ease-in-out infinite backwards;
+}
+
+.course-logo-sparkle svg {
+    transform: scale(1.1);
+}
+
+.course-logo-sparkle-top-left {
+    top: 18%;
+    left: 6%;
+    animation-delay: 0s;
+}
+
+.course-logo-sparkle-top-right {
+    top: 19%;
+    right: 4%;
+    animation-delay: 0.5s;
+}
+
+.course-logo-sparkle-bottom {
+    bottom: 3%;
+    left: 44%;
+    animation-name: course-logo-sparkle-float-center;
+    animation-delay: 1s;
+}
+
+@keyframes course-logo-sparkle-float {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes course-logo-sparkle-float-center {
+    0%,
+    100% {
+        transform: translate(-50%, 0);
+    }
+
+    50% {
+        transform: translate(-50%, -10px);
+    }
+}
+
 @media (min-width: 420px) {
     .hero__course-logo {
         right: -10%;

@@ -112,6 +112,29 @@
     pointer-events: none;
     border-radius: inherit;
 }
+
+[data-theme="light"] .hero-mobile-shadow-btn::after {
+    background: radial-gradient(circle,
+            rgba(255, 255, 255, 0.9) 80%,
+            rgba(255, 255, 255, 0.9) 90%,
+            transparent 90%);
+}
+
+[data-theme="light"] .hero-mobile-shadow-btn::before {
+    content: "";
+    position: absolute;
+    top: -100vh;
+    right: -780px;
+    bottom: -100px;
+    left: -780px;
+
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.9), transparent 70%);
+
+    filter: blur(30px);
+    z-index: -11;
+    pointer-events: none;
+    border-radius: inherit;
+}
 .hero-icon {
     color: var(--f-white);
     transition: color 0.3s ease;
@@ -155,7 +178,8 @@
         font-size: 1.8rem;
     }
 
-    .hero-mobile-shadow-btn::after {
+    .hero-mobile-shadow-btn::after,
+    .hero-mobile-shadow-btn::before {
         display: none;
     }
 
