@@ -26,6 +26,9 @@ const useServices = () => {
     const getSocials = useCallback(() => {
         return req(() => api.socials.getAll());
     }, [req])
+    const getPricing = useCallback(() => {
+        return req(() => api.pricing.getAll());
+    }, [req])
 
     return {
         loading,
@@ -35,7 +38,8 @@ const useServices = () => {
         getCourses,
         getCourse,
         getFaq,
-        getSocials
+        getSocials,
+        getPricing
     };
 
 };

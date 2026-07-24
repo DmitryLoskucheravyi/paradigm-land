@@ -4,6 +4,7 @@ import ReviewsService from "./ReviewsService";
 import VideoService from "./VideoService";
 import FaqService from "./FaqService";
 import SocialsService from "./SocialsService";
+import PricingService from "./PricingService";
 
 class Api {
     constructor(baseURL) {
@@ -13,6 +14,7 @@ class Api {
         this.video = new VideoService(this.client);
         this.faq = new FaqService(this.client);
         this.socials = new SocialsService(this.client);
+        this.pricing = new PricingService(this.client);
     }
 }
 

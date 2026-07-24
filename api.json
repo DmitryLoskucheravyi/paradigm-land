@@ -1,4 +1,42 @@
 {
+    "pricing": [
+        {
+            "id": "base",
+            "tag": "База",
+            "lessonsLabel": "1 заняття",
+            "lessonsCount": 1,
+            "pricePerLesson": 500,
+            "hidden": true
+        },
+        {
+            "id": "start",
+            "tag": "Старт",
+            "lessonsLabel": "4 заняття",
+            "lessonsCount": 4,
+            "pricePerLesson": 475
+        },
+        {
+            "id": "optimal",
+            "tag": "Оптимальний",
+            "lessonsLabel": "8 занять",
+            "lessonsCount": 8,
+            "pricePerLesson": 450
+        },
+        {
+            "id": "power",
+            "tag": "Потужний",
+            "lessonsLabel": "16 занять",
+            "lessonsCount": 16,
+            "pricePerLesson": 425
+        },
+        {
+            "id": "mega",
+            "tag": "Мега",
+            "lessonsLabel": "32 заняття",
+            "lessonsCount": 32,
+            "pricePerLesson": 400
+        }
+    ],
     "socials": [
         {
             "id": "facebook",
