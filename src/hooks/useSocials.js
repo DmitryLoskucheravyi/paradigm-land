@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import useServices from "../services/Services";
+import useServices from "@services/Services";
 
 const useSocials = () => {
     const [socials, setSocials] = useState([]);

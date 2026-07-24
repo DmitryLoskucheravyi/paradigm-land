@@ -46,13 +46,13 @@
       stroke: none !important;
   }
 
-.logo-text {
-    position: absolute;
-    top: 5px;
-    left: clamp(30px, 4vw, 40px);
-  width: clamp(100px, 20vw, 155px);
-  height: auto;
-}
+  .logo-text {
+      position: absolute;
+      top: 5px;
+      left: clamp(30px, 4vw, 40px);
+      width: clamp(100px, 20vw, 155px);
+      height: auto;
+  }
 
   .burger-menu {
       background-color: var(--bg-primary);
@@ -164,7 +164,7 @@
       outline: 1px solid white;
   }
 
-  @media (min-width:1165px) {
+  @media (min-width:1315px) {
       .desctop-nav {
           padding: 0.6rem 1.2rem;
           margin-left: clamp(22.5rem, 12vw, 25rem);
@@ -176,12 +176,6 @@
           align-items: center;
           border-radius: 1.6rem;
       }
-  }
-
-
-  @media (min-width:400px) {}
-
-  @media (min-width:1165px) {
 
       .logo-icon {
           position: absolute;

@@ -1,10 +1,10 @@
-import Button from "../buttons/Button"
+import Button from "@components/Button/Button"
 import { Link } from "react-router-dom";
-import "./CourcesCard.css"
+import "./CourseCard.css"
 
 
 
-const CourcesCard = (props) => {
+const CourseCard = (props) => {
     const { id, title, ageRange, description, cardImage } = props
 
     return (
@@ -26,4 +26,4 @@ const CourcesCard = (props) => {
 }
 
 
-export default CourcesCard;
+export default CourseCard;

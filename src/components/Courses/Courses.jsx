@@ -1,15 +1,15 @@
 import { SwiperSlide } from 'swiper/react';
-import CourcesCard from "../CourcesCard/CourcesCard";
-import { SkeletonCard } from '../Skeletons/Skeletons';
-import CustomSlider from "../CustomSlider/CustomSlider";
-import useCourses from '../../hooks/useCourses';
-import "./Cources.css"
+import CourseCard from "@components/CourseCard/CourseCard";
+import { SkeletonCard } from '@components/Skeletons/Skeletons';
+import CustomSlider from "@components/CustomSlider/CustomSlider";
+import useCourses from '@hooks/useCourses';
+import "./Courses.css"
 
-const Cources = () => {
+const Courses = () => {
     const { loading, courses } = useCourses();
 
     return (
-        <section id="courses" className="container cources-container section">
+        <section id="courses" className="container courses-container section">
 
             <div className="courses-top-content">
                 <h2 className="h2">Наші курси</h2>
@@ -38,7 +38,7 @@ const Cources = () => {
             >
                 {courses.map(({ id, title, ageRange, description, cardImage }) => (
                     <SwiperSlide key={id}>
-                        <CourcesCard
+                        <CourseCard
                             id={id}
                             title={title}
                             ageRange={ageRange}
@@ -53,4 +53,4 @@ const Cources = () => {
     );
 };
 
-export default Cources;
+export default Courses;

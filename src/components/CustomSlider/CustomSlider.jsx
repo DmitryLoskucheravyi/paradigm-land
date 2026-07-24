@@ -4,7 +4,7 @@ import { memo } from "react";
 import "swiper/css";
 import "swiper/css/navigation";
 
-import useCustomSlider from "../../hooks/useCustomSlider";
+import useCustomSlider from "@hooks/useCustomSlider";
 import "./CustomSlider.css";
 
 const ArrowIcon = ({ className }) => (

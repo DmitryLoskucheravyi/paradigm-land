@@ -1,13 +1,13 @@
-import Hero from "../../hero/Hero";
-import About from "../../about/About";
-import Cources from "../../Cources/Cources";
-import FaqAccordion from "../../faqAccordion/FaqAccordion";
-import Response from "../../response/Response";
-import Form from "../../Form/Form";
-import Footer from "../../footer/Footer";
-import { ResponseTextWrapper, ResponseVideoWrapper } from "../../response/Response";
+import Hero from "@components/Hero/Hero";
+import About from "@components/About/About";
+import Courses from "@components/Courses/Courses";
+import FaqAccordion from "@components/FaqAccordion/FaqAccordion";
+import Response from "@components/Response/Response";
+import Form from "@components/Form/Form";
+import Footer from "@components/Footer/Footer";
+import { ResponseTextWrapper, ResponseVideoWrapper } from "@components/Response/Response";
 
-import Reveal from "../../Reveal/Reveal";
+import Reveal from "@components/Reveal/Reveal";
 import "./Main.css"
 const Main = () => {
     return (
@@ -15,7 +15,7 @@ const Main = () => {
             <Hero />
             <About />
             <Reveal>
-                <Cources />
+                <Courses />
             </Reveal>
             <Reveal>
                 <FaqAccordion />

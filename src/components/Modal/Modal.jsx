@@ -1,5 +1,5 @@
-import { useModal } from "../../ModalContext";
-import Form from "../Form/Form";
+import { useModal } from "@/ModalContext";
+import Form from "@components/Form/Form";
 import { createPortal } from "react-dom";
 import { useEffect } from "react";
 import './Modal.css'

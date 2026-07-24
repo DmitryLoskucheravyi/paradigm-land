@@ -1,5 +1,5 @@
-import Header from "../header/Header";
-import Button from "../buttons/Button";
+import Header from "@components/Header/Header";
+import Button from "@components/Button/Button";
 
 
 import './CourseHero.css'

@@ -1,6 +1,6 @@
 import "./VideoCard.css";
-import play from "../../assets/icons/play-icon.png";
-import useVideoCard from "../../hooks/useVideoCard";
+import play from "@/assets/icons/play-icon.png";
+import useVideoCard from "@hooks/useVideoCard";
 import { cn } from "@utils/classNames";
 
 const VideoCard = ({ src, isActive }) => {

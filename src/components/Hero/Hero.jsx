@@ -1,9 +1,9 @@
-import About from "../about/About"
-import Button from "../buttons/Button"
-import Elipse from "../elipse/Elipse"
-import Header from "../header/Header"
-import image1 from "../../assets/images/image1.png"
-import image2 from "../../assets/images/image2.png"
+import About from "@components/About/About"
+import Button from "@components/Button/Button"
+import Elipse from "@components/Elipse/Elipse"
+import Header from "@components/Header/Header"
+import image1 from "@/assets/images/image1.png"
+import image2 from "@/assets/images/image2.png"
 import "./Hero.css"
 
 

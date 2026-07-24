@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import Elipse from "../elipse/Elipse";
-import Button from "../buttons/Button";
-import Reveal from "../Reveal/Reveal";
-import useServices from "../../services/Services";
+import Elipse from "@components/Elipse/Elipse";
+import Button from "@components/Button/Button";
+import Reveal from "@components/Reveal/Reveal";
+import useServices from "@services/Services";
 import ChevronIcon from "@utils/icons/ChevronIcon";
 import { formatIndex } from "@utils/format";
-import "./accordion.css";
+import "./FaqAccordion.css";
 
 const FaqAccordion = () => {
     const [activeId, setActiveId] = useState(null);

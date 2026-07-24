@@ -1,9 +1,9 @@
-import Elipse from "../elipse/Elipse";
+import Elipse from "@components/Elipse/Elipse";
 import { Link } from "react-router-dom";
 import LogoText from "@utils/icons/LogoText";
-import useSocials from "../../hooks/useSocials";
+import useSocials from "@hooks/useSocials";
 
-import logo from "../../assets/icons/logo.png";
+import logo from "@/assets/icons/logo.png";
 
 import './Footer.css';
 

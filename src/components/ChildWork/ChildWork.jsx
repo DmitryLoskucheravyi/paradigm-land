@@ -1,5 +1,5 @@
-import VideoCard from "../video-card/VideoCard"
-import Elipse from "../elipse/Elipse"
+import VideoCard from "@components/VideoCard/VideoCard"
+import Elipse from "@components/Elipse/Elipse"
 import './ChildWork.css'
 
 const ChildWork = ({ video, isActive }) => {

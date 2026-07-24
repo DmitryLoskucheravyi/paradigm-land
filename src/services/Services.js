@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import useHttp from "../hooks/useHttp";
+import useHttp from "@hooks/useHttp";
 import api from "./api";
 
 const useServices = () => {

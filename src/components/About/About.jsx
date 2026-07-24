@@ -1,6 +1,6 @@
-import Card from "../card/Card";
-import Button from "../buttons/Button";
-import Reveal from "../Reveal/Reveal";
+import Card from "@components/Card/Card";
+import Button from "@components/Button/Button";
+import Reveal from "@components/Reveal/Reveal";
 import "./About.css"
 
 const AcademicIcon = ({ className }) => (

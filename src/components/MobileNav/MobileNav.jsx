@@ -1,8 +1,8 @@
-import Button from '../buttons/Button';
-import { Toggler } from '../Toggler';
+import Button from '@components/Button/Button';
+import { Toggler } from '@components/Toggler';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
-import useMobileNav from '../../hooks/useMobileNav';
+import useMobileNav from '@hooks/useMobileNav';
 import { capitalize } from '@utils/string';
 import { cn } from '@utils/classNames';
 import CloseIcon from '@utils/icons/CloseIcon';

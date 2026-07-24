@@ -1,13 +1,13 @@
 import { useMemo } from "react";
 import { SwiperSlide } from "swiper/react";
 
-import Elipse from "../elipse/Elipse";
-import VideoCard from "../video-card/VideoCard";
-import CustomSlider from "../CustomSlider/CustomSlider";
-import ReviewCard from "../ReviewCard/ReviewCard";
-import Loader from "../Loader/Loader";
-import useVideoReviews from "../../hooks/useVideoReviews";
-import useTextReviews from "../../hooks/useTextReviews";
+import Elipse from "@components/Elipse/Elipse";
+import VideoCard from "@components/VideoCard/VideoCard";
+import CustomSlider from "@components/CustomSlider/CustomSlider";
+import ReviewCard from "@components/ReviewCard/ReviewCard";
+import Loader from "@components/Loader/Loader";
+import useVideoReviews from "@hooks/useVideoReviews";
+import useTextReviews from "@hooks/useTextReviews";
 import "./Response.css";
 
 const Response = ({ useElipse, children }) => {

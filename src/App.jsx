@@ -1,12 +1,12 @@
 import { lazy, Suspense } from 'react'
-import Modal from './components/modal/Modal'
-import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary'
+import Modal from '@components/Modal/Modal'
+import ErrorBoundary from '@components/ErrorBoundary/ErrorBoundary'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Loader from './components/Loader/Loader'
-const Main = lazy(() => import('./components/pages/main/Main'))
-const Course = lazy(() => import('./components/pages/cource/Course'))
-const Offer = lazy(() => import('./components/pages/Offer/Offer'))
-const NotFound = lazy(() => import('./components/pages/NotFound/NotFound'))
+import Loader from '@components/Loader/Loader'
+const Main = lazy(() => import('@components/pages/Main/Main'))
+const Course = lazy(() => import('@components/pages/Course/Course'))
+const Offer = lazy(() => import('@components/pages/Offer/Offer'))
+const NotFound = lazy(() => import('@components/pages/NotFound/NotFound'))
 function App() {
 
   return (

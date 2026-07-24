@@ -17,5 +17,13 @@ export default defineConfig([
       globals: globals.browser,
       parserOptions: { ecmaFeatures: { jsx: true } },
     },
+    rules: {
+      'no-restricted-imports': ['error', {
+        patterns: [{
+          group: ['../*'],
+          message: 'Use a path alias (@, @components, @hooks, @services, @common, @utils) instead of a cross-folder relative import.',
+        }],
+      }],
+    },
   },
 ])

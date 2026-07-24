@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Elipse from "../elipse/Elipse";
-import Reveal from "../Reveal/Reveal";
+import Elipse from "@components/Elipse/Elipse";
+import Reveal from "@components/Reveal/Reveal";
 import { capitalize } from "@utils/string";
 import { formatIndex } from "@utils/format";
 import "./Tabs.css";

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import useServices from "../services/Services";
+import useServices from "@services/Services";
 
 const useTextReviews = ({ filter }) => {
     const [reviews, setReviews] = useState([]);

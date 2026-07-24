@@ -2,8 +2,8 @@ import { useForm, Controller } from "react-hook-form";
 import { IMaskInput } from "react-imask";
 import { useState } from "react";
 
-import Button from "../buttons/Button";
-import errorIcon from '../../assets/icons/invalid-icon.png'
+import Button from "@components/Button/Button";
+import errorIcon from '@/assets/icons/invalid-icon.png'
 import "./Form.css";
 
 const DEFAULT_VALUES = {

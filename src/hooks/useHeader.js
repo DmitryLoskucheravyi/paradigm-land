@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import useServices from "../services/Services";
+import useServices from "@services/Services";
 import useIsCoursePage from "./useIsCoursePage";
 
 const useHeader = () => {

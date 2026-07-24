@@ -1,6 +1,6 @@
-import Card from '../card/Card'
-import Elipse from '../elipse/Elipse'
-import Reveal from '../Reveal/Reveal'
+import Card from '@components/Card/Card'
+import Elipse from '@components/Elipse/Elipse'
+import Reveal from '@components/Reveal/Reveal'
 import './AboutCourse.css'
 
 const AboutCourseIcon = ({ className }) => (

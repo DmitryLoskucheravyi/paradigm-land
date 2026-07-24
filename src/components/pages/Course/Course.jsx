@@ -1,17 +1,17 @@
-import Response from "../../response/Response";
-import CourseHero from "../../CourseHero/CourseHero";
-import AboutCourse from "../../AboutCourse/AboutCourse";
-import Form from "../../Form/Form";
-import Footer from "../../footer/Footer";
-import Tabs from "../../Tabs/Tabs";
-import ChildWork from "../../ChildWork/ChildWork";
-import { CourseHeroSkeleton } from "../../Skeletons/Skeletons";
-import { ResponseTextWrapper } from "../../response/Response";
+import Response from "@components/Response/Response";
+import CourseHero from "@components/CourseHero/CourseHero";
+import AboutCourse from "@components/AboutCourse/AboutCourse";
+import Form from "@components/Form/Form";
+import Footer from "@components/Footer/Footer";
+import Tabs from "@components/Tabs/Tabs";
+import ChildWork from "@components/ChildWork/ChildWork";
+import { CourseHeroSkeleton } from "@components/Skeletons/Skeletons";
+import { ResponseTextWrapper } from "@components/Response/Response";
 import { Link, useParams } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import useCourse from "@hooks/useCourse";
 import "./Course.css"
-import Reveal from "../../Reveal/Reveal";
+import Reveal from "@components/Reveal/Reveal";
 
 const Course = () => {
     const { id } = useParams();
